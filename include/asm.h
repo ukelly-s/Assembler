@@ -18,9 +18,9 @@
 
 # define ALT_COMMENT_CHAR	';'
 
-char 	*name;
-char 	*comment;
-int		code_size;
+//char 	*name;
+//char 	*comment;
+//int		code_size;
 
 typedef enum			e_line_type
 {
@@ -33,7 +33,7 @@ typedef enum			e_line_type
 void					*ft_strrev(register char *begin);
 void					*assembler(char *filename);
 void					*disassembler(char *filename);
-int						get_line(int fd, char *line);
+int						get_line(int fd, char *line, t_line_type line_type);
 void					parse(int fd);
 
 #endif
