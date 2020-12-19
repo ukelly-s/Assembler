@@ -73,4 +73,5 @@ set_target_properties(libft PROPERTIES PUBLIC_HEADER
 add_executable(assembler $<TARGET_OBJECTS:libft>
         source/main.c
         source/assembler/parse.c
+        source/assembler/asm.c
         )
