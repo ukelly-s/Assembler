@@ -37,7 +37,7 @@ void					*assembler(char *filename);
 void					*disassembler(char *filename);
 int						get_line(int fd, char *line);
 void					parse(int fd);
-void					clean_line_no_comments(char *tmp, char *line);
+char *array_words_to_string(char **str, int len_str, int count_words);
 int						ft_strnequ(char const *s1, char const *s2, size_t n);
 
 #endif

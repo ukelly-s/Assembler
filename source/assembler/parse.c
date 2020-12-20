@@ -5,15 +5,37 @@ static t_line_type	get_line_type(char *line)
 {
 	//char	*tmp;
 
-	if (!ft_strnequ(NAME_CMD_STRING, line, 5))
+	if (ft_strnequ(NAME_CMD_STRING, line, 5))
 		return (LINE_NAME);
-	else if (!ft_strnequ(COMMENT_CMD_STRING, line, 8))
+	else if (ft_strnequ(COMMENT_CMD_STRING, line, 8))
 		return (LINE_COMMENT);
 //	else if ()
 //		;
 	else if (!*line)
-		ft_kill("ERROR", NULL, __func__, __FILE__);
+		return (LINE_UNDEFINED);
 	return (LINE_UNDEFINED);
+}
+
+static void	clean_line(char *tmp, char *line)//todo ф-я которая обрежит коммент
+{
+	int		len;
+	char	**str;
+	int		words;
+	char **buff;
+
+	words = 0;
+	len = 0;
+	str = ft_strsplit(line, ' ');
+	buff = str;
+	free(line);
+	while (*str != NULL)
+	{
+		words++;
+		len = ft_strlen(*str) + len;
+		str++;
+	}
+	g_clear_line = array_words_to_string(buff, len, words);
+
 }
 
 int 		get_line(int fd, char *line)
@@ -24,8 +46,9 @@ int 		get_line(int fd, char *line)
 		ft_kill("ERROR", NULL, __func__, __FILE__);
 	if ((tmp = ft_strchr(line, COMMENT_CHAR)) != NULL ||
 			(tmp = ft_strchr(line, ALT_COMMENT_CHAR)) != NULL)
-		clean_line_no_comments(tmp, line);//todo ф-я которая обрежит коммент
-
+		ft_bzero(tmp, ft_strlen(tmp));
+		//clean_line_no_comments(tmp, line);//todo ф-я которая обрежит коммент
+	clean_line(tmp, line);
 	return (0);
 	//обрезать коммент если есть COMMENT_CHAR или ALT_COMMENT_CHAR
 	//если пустая строка или только строка с комментами, то пропускаем и ещё раз запускаем get_line
@@ -49,7 +72,7 @@ void		parse(int fd)//todo
 			write(1, "operation", 9);
 		else if (line_type == LINE_ARGUMENT)
 			write(1, "argument", 8);
-		else
-			ft_kill("ERROR", NULL, __func__, __FILE__);
+		if (line_type != LINE_UNDEFINED)
+			free(g_clear_line);
 	}
 }

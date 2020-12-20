@@ -1,7 +1,7 @@
 #include "asm.h"
 #include <string.h>
 
-static char *array_words_to_string(char **str, int len_str, int count_words)
+char *array_words_to_string(char **str, int len_str, int count_words)
 {
 	char	*line;
 	char	*tmp;
@@ -21,29 +21,6 @@ static char *array_words_to_string(char **str, int len_str, int count_words)
 			line[len] = ' ';
 	}
 	return (tmp);
-}
-void	clean_line_no_comments(char *tmp, char *line)//todo ф-я которая обрежит коммент
-{
-	int		len;
-	char	**str;
-	int		words;
-	char **buff;
-
-	words = 0;
-	len = ft_strlen(tmp);
-	ft_bzero(tmp, len);
-	len = 0;
-	str = ft_strsplit(line, ' ');
-	buff = str;
-	free(line);
-	while (*str != NULL)
-	{
-		words++;
-		len = ft_strlen(*str) + len;
-		str++;
-	}
-	//думала потом в line с одним пробелом запихнуть слова из массива
-	g_clear_line = array_words_to_string(buff, len, words);
 }
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
