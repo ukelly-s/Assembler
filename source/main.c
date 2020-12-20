@@ -3,9 +3,9 @@
 
 _Bool	check_name_the_file(char *name_the_file, char *file_extension)
 {
-	char *tmp;
+	char	*tmp;
 
-	tmp = strrchr(name_the_file, '.');
+	tmp = strrchr(name_the_file, '.');//fixme strrchr -> ft_strrchr
 	while (*tmp != '\0')
 	{
 		if (*tmp!= *file_extension)
