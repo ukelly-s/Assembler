@@ -25,7 +25,7 @@ static void	clean_line(char *tmp, char *line)//todo ф-я которая обр�
 
 	words = 0;
 	len = 0;
-	str = ft_strsplit(line, ' ');
+	str = ft_strsplit(line, ' ');//fixme в строке могут быть \t
 	buff = str;
 	free(line);
 	while (*str != NULL)
