@@ -1,31 +1,22 @@
 #include "asm.h"
 #include <string.h>
 
-static void	clean_line_no_comments(char *tmp, char *line)
+static t_line_type	get_line_type(char *line)
 {
-	int		len;
-	char	**str;
-	int		words;
-	char	**buff;
-	words = 0;
-	len = ft_strlen(tmp);
-	ft_bzero(tmp, len);
-	len = 0;
-	str = ft_strsplit(line, ' ');
-	free(line);
-	buff = str;
-	while (*buff != NULL)
-	{
-		words++;
-		len = ft_strlen(*buff) + len;
-		buff++;
-	}
-	line = malloc(sizeof(char) * (len + words));
-	//думала потом в line с одним пробелом запихнуть слова из массива
+	//char	*tmp;
 
+	if (!ft_strnequ(NAME_CMD_STRING, line, 5))
+		return (LINE_NAME);
+	else if (!ft_strnequ(COMMENT_CMD_STRING, line, 8))
+		return (LINE_COMMENT);
+//	else if ()
+//		;
+	else if (!*line)
+		ft_kill("ERROR", NULL, __func__, __FILE__);
+	return (LINE_UNDEFINED);
 }
 
-int 		get_line(int fd, char *line, t_line_type line_type)
+int 		get_line(int fd, char *line)
 {
 	char	*tmp;
 
@@ -35,6 +26,7 @@ int 		get_line(int fd, char *line, t_line_type line_type)
 			(tmp = ft_strchr(line, ALT_COMMENT_CHAR)) != NULL)
 		clean_line_no_comments(tmp, line);//todo ф-я которая обрежит коммент
 
+	return (0);
 	//обрезать коммент если есть COMMENT_CHAR или ALT_COMMENT_CHAR
 	//если пустая строка или только строка с комментами, то пропускаем и ещё раз запускаем get_line
 }
@@ -45,9 +37,10 @@ void		parse(int fd)//todo
 	t_line_type line_type;
 	char		*line;
 
-	while (get_line(fd, &line, line_type) > 0)
+	while (get_line(fd, &line) == 0)
 	{
-		list_push_back(input, line);
+		line_type = get_line_type(g_clear_line);
+		//list_push_back(input, line);
 		if (line_type == LINE_NAME)
 			write(1, "name", 4);
 		else if (line_type == LINE_COMMENT)

@@ -21,9 +21,11 @@
 //char 	*name;
 //char 	*comment;
 //int		code_size;
+char 	*g_clear_line;
 
 typedef enum			e_line_type
 {
+	LINE_UNDEFINED,
 	LINE_NAME,
 	LINE_COMMENT,
 	LINE_OPERATION,
@@ -33,7 +35,9 @@ typedef enum			e_line_type
 void					*ft_strrev(register char *begin);
 void					*assembler(char *filename);
 void					*disassembler(char *filename);
-int						get_line(int fd, char *line, t_line_type line_type);
+int						get_line(int fd, char *line);
 void					parse(int fd);
+void					clean_line_no_comments(char *tmp, char *line);
+int						ft_strnequ(char const *s1, char const *s2, size_t n);
 
 #endif
