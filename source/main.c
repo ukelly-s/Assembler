@@ -8,7 +8,7 @@ _Bool	check_name_the_file(char *name_the_file, char *file_extension)
 	tmp = strrchr(name_the_file, '.');//fixme strrchr -> ft_strrchr
 	while (*tmp != '\0')
 	{
-		if (*tmp!= *file_extension)
+		if (*tmp != *file_extension)
 			return (false);
 		tmp++;
 		file_extension++;
