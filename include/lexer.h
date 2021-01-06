@@ -1,6 +1,12 @@
  #ifndef ASSEMBLER_LEXER_H
 #define ASSEMBLER_LEXER_H
 
+typedef struct s_strtype{
+	int cmd;
+	int label;
+	int hash_comm;
+}t_strtype;
+
 # define L 'l'
 # define S 's'
 # define A 'a'

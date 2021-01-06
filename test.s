@@ -1,11 +1,4 @@
-
-
-
-
 .comment"Just a basic Winner Program"
-
-
-
 
 
 .name"42"

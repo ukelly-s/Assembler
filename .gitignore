@@ -9,3 +9,6 @@
  test
  test.dSYM/*
  .DS_Store
+libft/.cache_exists
+libft/libft.a
+test.dSYM/Contents/Resources/DWARF/test

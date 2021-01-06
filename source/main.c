@@ -81,37 +81,44 @@ int     find_cmd(char *s)
     return (0);
 }
 
-//int     find_label(char *s)
-//{
-//
-//}
-
-int     find_start_str(char *s)
+int     find_label(char *s)
 {
-//    if (find_start_cmd(s))
-//    {
-//        if(find_cmd(s) || find_label(s))
-        if(find_cmd(s))
-        {
-//            printf("HERE\n"); //debug
-            return (1);
-        }
-//        else if(find_label(s))
-//    }
-    return (0);
+	char *ret_s;
+	if ((ret_s = ft_strchr(s, ':')))
+		printf("%s\n", ret_s);
+	return (0);
+}
+
+int     find_hash(char *s)
+{
+	char *ret_s;
+	if ((ret_s = ft_strchr(s, '#')))
+		printf("%s\n", ret_s);
+	return (0);
+}
+
+t_strtype			find_start_str(char *s)
+{
+	t_strtype		finded;
+
+	ft_bzero(&finded, sizeof(finded));
+		if(find_cmd(s))
+			finded.cmd = 1;
+		else if(find_label(s))
+			finded.label = 1;
+		else if(find_hash(s))
+			finded.hash_comm = 1;
+	return (finded);
 }
 
 int     find_op(char *line)
 {
     char *str;
-    static int i;
 
     str = ft_strtrim(line);
-    if (find_start_str(str))
+    if ((find_start_str(str)).hash_comm)
     {
-        printf("%d\n", i);
-        printf("%s\n", str);
-        i++;
+//        printf("%s\n", str);
     }
     return (0);
 }
