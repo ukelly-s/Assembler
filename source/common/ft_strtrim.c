@@ -1,4 +1,5 @@
 #include "asm.h"
+
 static size_t	ft_lensp(char const *src)
 {
 	size_t len;

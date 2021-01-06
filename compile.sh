@@ -1,0 +1,1 @@
+make && ./test test.s

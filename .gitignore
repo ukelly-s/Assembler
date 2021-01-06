@@ -2,3 +2,10 @@
 /cmake-build-debug/
 .idea
 .idea/.gitignore
+*.o
+ libft/obj/
+ libft/.DS_Store
+ *.cor
+ test
+ test.dSYM/*
+ .DS_Store

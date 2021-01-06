@@ -11,8 +11,8 @@ static t_line_type	get_line_type(char *line)
 		return (LINE_COMMENT);
 	else if (ft_strnequ("sti", line, 3))//todo сделать корректную проверку на то операция это или аргумент
 		return (LINE_OPERATION);
-//	else if (ft_strnequ("sti", line, 3))
-//		return (LINE_ARGUMENT);
+	else if (find_cmd(line))
+		return (LINE_ARGUMENT);
 	else if (!*line)
 		return (LINE_UNDEFINED);
 	return (LINE_UNDEFINED);
@@ -36,10 +36,12 @@ int 		get_line(int fd, char **line)//fixme получилась хуйня, но
 			(ft_strnequ(COMMENT_CMD_STRING, *line, 8)))
 		{
 			if ((tmp_line = ft_strchr(*line, '\"')) != NULL)
+            {
 				if ((tmp_line = ft_strchr(++tmp_line, '\"')) != NULL)
 					break;
 				else
 					continue;
+            }
 		}
 		if ((tmp_line = ft_strchr(*line, COMMENT_CHAR)) != NULL ||
 			(tmp_line = ft_strchr(*line, ALT_COMMENT_CHAR)) != NULL)
@@ -54,7 +56,7 @@ int 		get_line(int fd, char **line)//fixme получилась хуйня, но
 
 void		parse(int fd)//todo
 {
-	t_list		*input;
+//	t_list		*input;
 	t_line_type line_type;
 	char		*line;
 

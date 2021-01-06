@@ -77,4 +77,4 @@ add_executable(assembler $<TARGET_OBJECTS:libft>
         source/assembler/util.c
         source/common/ft_strtrim.c
         source/assembler/parse_name_comment.c
-        )
+        include/lexer.h)

@@ -13,7 +13,7 @@
 #ifndef IO_H
 # define IO_H
 
-# define BUFF_SIZE 512
+# define BUFF_SIZE 1
 
 typedef struct			s_fd_list
 {

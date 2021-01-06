@@ -37,12 +37,18 @@ void					*assembler(char *filename);
 void					*disassembler(char *filename);
 int						get_line(int fd, char **line);
 void					parse(int fd);
-char *array_words_to_string(char **str, int len_str, int count_words);
+char					*array_words_to_string(char **str, int len_str, int count_words);
 int						ft_strnequ(char const *s1, char const *s2, size_t n);
 
 /**
  * libft
  **/
 char			*ft_strtrim(char const *s);
+
+
+/*
+ * cmd
+ */
+int     find_cmd(char *s);
 
 #endif
