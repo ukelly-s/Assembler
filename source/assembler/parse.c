@@ -20,9 +20,9 @@ static t_line_type	get_line_type(char *line)
 
 int 		get_line(int fd, char **line)//fixme получилась хуйня, но она работает, я исправлю завтра, а то мозг не варит
 {
-	char	*tmp_line;
-	char	*tmp;
-	char	*buff;
+	char	*tmp_line;//fixme убрать лишнее
+	char	*tmp;//fixme отследить утечки
+	char	*buff;//fixme нагородила херню, удивительно что работает
 
 	while (get_next_line(fd, &tmp_line) > 0)
 	{
@@ -32,7 +32,8 @@ int 		get_line(int fd, char **line)//fixme получилась хуйня, но
 		if (*line)
 			free(*line);
 		*line = tmp;
-		if (ft_strnequ(NAME_CMD_STRING, *line, 5) || (ft_strnequ(COMMENT_CMD_STRING, *line, 8)))
+		if (ft_strnequ(NAME_CMD_STRING, *line, 5) ||
+			(ft_strnequ(COMMENT_CMD_STRING, *line, 8)))
 		{
 			if ((tmp_line = ft_strchr(*line, '\"')) != NULL)
 				if ((tmp_line = ft_strchr(++tmp_line, '\"')) != NULL)
