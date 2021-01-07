@@ -1,26 +1,44 @@
 #include "asm.h"
 #include <string.h>
 
-char *array_words_to_string(char **str, int len_str, int count_words)
+static int		len_clear_line(char *str)
 {
-	char	*line;
-	char	*tmp;
-	int		i;
-	int 	len;
+	register int	i;
 
 	i = 0;
-	len = 0;
-	line = malloc(sizeof(char) * (len_str + count_words));
-	tmp = line;
-	while (i < count_words)
+	while (*str != '\0')
 	{
-		strcat(line, str[i]);
-		len = ft_strlen(str[i]) + len;
-		i++;
-		if (i < count_words)
-			line[len] = ' ';
+		if(*str != ' ' && *str != '\t')
+			i++;
+		str++;
 	}
-	return (tmp);
+	return (i);
+}
+
+char	*clear_line(char *str)
+{
+	char			*line;
+	char			*tmp;
+	int 			len;
+	register int	i;
+
+	i = 0;
+	if ((tmp = ft_strchr(str, COMMENT_CHAR)) != NULL ||
+		(tmp = ft_strchr(str, ALT_COMMENT_CHAR)) != NULL)
+		ft_bzero(tmp, ft_strlen(tmp));
+	len = len_clear_line(str);
+	line = malloc(sizeof(char) * (len + 1));
+	tmp = str;
+	while (*str != '\0')
+	{
+		if(*str != ' ' && *str != '\t')
+			line[i++] = *str;
+		str++;
+	}
+	free(tmp);
+	line[i] = '\0';
+	ft_putstr(line);
+	return (line);
 }
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)

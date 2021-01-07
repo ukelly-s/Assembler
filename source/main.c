@@ -1,7 +1,7 @@
 #include "asm.h"
 #include <string.h>
 
-_Bool	check_name_the_file(char *name_the_file, char *file_extension)
+static _Bool	check_name_the_file(char *name_the_file, char *file_extension)
 {
 	char	*tmp;
 
