@@ -27,6 +27,8 @@ char	*clear_line(char *str)
 		(tmp = ft_strchr(str, ALT_COMMENT_CHAR)) != NULL)
 		ft_bzero(tmp, ft_strlen(tmp));
 	len = len_clear_line(str);
+	//fixme захерачить сюда проверку если нашли двоеточие то проверяем если перед ним нет пробела или таба то это метка
+	//fixme выпарсиваем нахрен метку иначе это скорее всего операция
 	line = malloc(sizeof(char) * (len + 1));
 	tmp = str;
 	while (*str != '\0')

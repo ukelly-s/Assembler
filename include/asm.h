@@ -43,7 +43,6 @@
 
 typedef enum			e_name_comment_flags
 {
-	FLAG_UNDEFINED = -1,
 	FLAG_DEFAULT,
 	FLAG_NAME,
 	FLAG_COMMENT
@@ -61,8 +60,8 @@ typedef enum			e_line_type
 
 typedef struct			s_parse
 {
-	int					name;
-	int 				comment;
+	int 			name;
+	int				comment;
 }						t_parse;
 
 void					*ft_strrev(register char *begin);

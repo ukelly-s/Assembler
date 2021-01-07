@@ -7,8 +7,8 @@ static t_parse	*new_parse(void)
 
 	g = malloc(sizeof(t_parse));
 	ft_assert(g != NULL, __func__, "malloc error");
-	g->name = FLAG_UNDEFINED;
-	g->comment = FLAG_UNDEFINED;
+	g->name = FLAG_DEFAULT;
+	g->comment = FLAG_DEFAULT;
 	return (g);
 }
 
@@ -20,7 +20,7 @@ void	*assembler(char *filename)
 	g = new_parse();
 	if ((fd = open(filename, O_RDONLY)) == -1)
 		;//error(ERR_OPEN_FILE)
-	parse(fd, &g);
+	parse(fd, g);
 //	filename = replace_extension(filename, ".s", ".cor");
 	if ((fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
 		;//error(ERR_CREATE_FILE);

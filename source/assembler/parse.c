@@ -2,7 +2,7 @@
 #include "asm_errors.h"
 #include <string.h>
 
-static int			find_cmd(char *s)
+static int			find_cmd(const char *s)
 {
 	if (ft_strnequ(s, LIVE, 4) || ft_strnequ(s, LD, 2)
 		|| ft_strnequ(s, LDI, 3) || ft_strnequ(s, LLD, 3)
@@ -18,7 +18,7 @@ static int			find_cmd(char *s)
 
 static t_line_type	get_line_type(const char *line, t_parse *g)
 {
-	if (ft_strnequ(NAME_CMD_STRING, line, 5) && g->comment == FLAG_DEFAULT)
+	if (ft_strnequ(NAME_CMD_STRING, line, 5) && g->name == FLAG_DEFAULT)
 	{
 		g->name = FLAG_NAME;
 		return (LINE_NAME);
@@ -37,35 +37,43 @@ static t_line_type	get_line_type(const char *line, t_parse *g)
 	return (LINE_UNDEFINED);
 }
 
+static char	*get_line_name_comment(int fd, char *line)
+{
+	char	*tmp;
+	char	*buff;
+	int		i = 0;
+
+	while (i > 0)
+	{
+		if ((buff = ft_strchr(line, '\"')) != NULL)
+			if ((buff = ft_strchr(++buff, '\"')) != NULL)
+				break;
+		if (get_next_line(fd, &buff) < 0)
+			ft_kill("ERROR", NULL, __func__, __FILE__);
+		tmp = line ? ft_strjoin(line, buff) : ft_strdup(buff);
+		free(buff);
+		free(line);
+		line = tmp;
+	}
+	return (line);
+}
+
 int 		get_line(int fd, char **line)//fixme
 {
 	char	*tmp;
 	char	*buff;
 
-	while (get_next_line(fd, &tmp) > 0)
-	{
-		if (!*tmp)
-			break;
-		buff = ft_strtrim(tmp);
-		free(tmp);
-		if (ft_strnequ(NAME_CMD_STRING, buff, 5) ||
-			(ft_strnequ(COMMENT_CMD_STRING, buff, 8)))
-		{
-			tmp = *line ? ft_strjoin(*line, buff) : ft_strdup(buff);
-			if (*line)
-				free(*line);
-			*line = tmp;
-			free(buff);
-			if ((buff = ft_strchr(*line, '\"')) != NULL)
-				if ((buff = ft_strchr(++buff, '\"')) != NULL)
-					break;
-				else
-					continue;
-		}
-		else
-			*line = clear_line(buff);
-		break;
-	}
+	if (get_next_line(fd, &tmp) < 0)
+		ft_kill("ERROR", NULL, __func__, __FILE__);
+	if (!*tmp && (*line = tmp))
+		return (0);
+	buff = ft_strtrim(tmp);
+	free(tmp);
+	if (ft_strnequ(NAME_CMD_STRING, buff, 5) ||
+		(ft_strnequ(COMMENT_CMD_STRING, buff, 8)))
+		*line = get_line_name_comment(fd, buff);
+	else
+		*line = clear_line(buff);
 	return (0);
 }
 
@@ -88,11 +96,8 @@ void		parse(int fd, t_parse *g)//todo
 			ft_putstr(line);//todo нужно ещё что-то с метками придумать, мне в голову ничего не пришло
 		else if (line_type == LINE_UNDEFINED)
 			ft_kill(ERR_INV_LINE, NULL, __func__, __FILE__);
-		if (line_type != LINE_EMPTY)
-		{
-			free(line);
-			line = NULL;
-		}
+		free(line);
+		line = NULL;
 		write(1, "\n", 1);//todo delete
 	}
 }
