@@ -1,3 +1,4 @@
+#include "lexer.h"
 void debug_print(t_label *lb)
 {
 	t_label *tmp;

@@ -101,7 +101,7 @@
 # define T_DIR 0x100
 # define T_IND 0x200
 # define T_REG 0x400
-# define T_ZER
+# define T_ZER 0x800
 
 # define LABEL_CHARS			"abcdefghijklmnopqrstuvwxyz_0123456789"
 #endif

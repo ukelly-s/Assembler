@@ -42,7 +42,9 @@ int lexer(char *s)
 	t_strbag        all_str;
 	int             type;
 	static int      prev_type;
+	static size_t   nbr_cmd;
 
+	//функция калькулятор для расчёта относительной позиции метки
 	type = whatistype(s);
 	ft_bzero(&all_str, sizeof(all_str));
 	if (type == LABEL)
@@ -55,10 +57,12 @@ int lexer(char *s)
 	{
 		add_cmd_mem(&all_str.cmd);
 		find_cmd_tree(s, &all_str.cmd);
+		all_str.cmd->n_cmd = nbr_cmd;
 		if (prev_type == LABEL)
 			set_addr_label(&all_str);
 		prev_type = CMD;
-		printf("CMD\n"); //debug
+		nbr_cmd++;
+		printf("CMD:\t%zu\n", nbr_cmd); //debug
 	}
 	return 0;
 }
