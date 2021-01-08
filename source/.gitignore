@@ -12,3 +12,4 @@
 libft/.cache_exists
 libft/libft.a
 test.dSYM/Contents/Resources/DWARF/test
+/source/minitest
