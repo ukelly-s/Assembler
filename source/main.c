@@ -4,8 +4,7 @@
 #include <fcntl.h>
 # define MAX_SIZE_T 18446744073709551615ULL
 
-/*
-_Bool	check_name_the_file(char *name_the_file, char *file_extension)
+static _Bool	check_name_the_file(char *name_the_file, char *file_extension)
 {
 	char	*tmp;
 
