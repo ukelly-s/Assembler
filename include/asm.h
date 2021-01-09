@@ -66,6 +66,7 @@ void					*ft_strrev(register char *begin);
 void					*assembler(char *filename);
 void					*disassembler(char *filename);
 int						get_line(int fd, char **line);
+
 void					parse(int fd, t_parse *g);
 char					*clear_line(char **str);
 int						ft_strnequ(char const *s1, char const *s2, size_t n);
@@ -74,5 +75,11 @@ int						ft_strnequ(char const *s1, char const *s2, size_t n);
  * libft
  **/
 char			*ft_strtrim(char const *s);
+
+
+/*
+ * cmd
+ */
+int     find_cmd(char *s);
 
 #endif

@@ -84,7 +84,7 @@ int 		get_line(int fd, char **line)//fixme
 		buff = NULL;
 	}
 	else
-		{
+	{
 		*line = clear_line(&buff);
 		buff = NULL;
 	}
