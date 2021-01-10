@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(assembler C)
+project(Asssemb_pr2 C)
 
 set(CMAKE_C_STANDARD 99)
 
@@ -70,11 +70,11 @@ set_target_properties(libft PROPERTIES PUBLIC_HEADER
         libft/inc/str.h
         libft/inc/util.h)
 
-add_executable(assembler $<TARGET_OBJECTS:libft>
+add_executable(Asssemb_pr2 $<TARGET_OBJECTS:libft>
         source/main.c
         source/assembler/parse.c
         source/assembler/asm.c
         source/assembler/util.c
         source/common/ft_strtrim.c
         source/assembler/parse_name_comment.c
-        include/lexer.h)
+        )

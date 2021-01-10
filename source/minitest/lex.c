@@ -15,7 +15,7 @@ void    set_addr_label(t_strbag *bag)
 	bag->label->address = bag->cmd->n_cmd;
 }
 
-int     add_cmd_mem(t_cmd **cmd)
+int     add_cmd_mem(t_cmd **cmd) //est v command
 {
 	t_cmd       *tmp;
 
@@ -28,14 +28,13 @@ int     add_cmd_mem(t_cmd **cmd)
 	else
 	{
 		while (tmp)
-		{
 			tmp = tmp->next;
-		}
-		if (!(tmp = ft_memalloc(sizeof(t_cmd))))
+		if (!(tmp = (t_cmd *)ft_memalloc(sizeof(t_cmd))))
 			return (0);
 	}
 	return (1);
 }
+//TODO: глобальная структура, которая подаётся сюда, чтобы чистить из 1 места.
 
 int lexer(char *s)
 {
@@ -55,9 +54,10 @@ int lexer(char *s)
 	}
 	else if (type == CMD)
 	{
-		add_cmd_mem(&all_str.cmd);
+		if (!(add_cmd_mem(&all_str.cmd)))
+			exit(0); //malloc
 		find_cmd_tree(s, &all_str.cmd);
-		all_str.cmd->n_cmd = nbr_cmd;
+		all_str.cmd->n_cmd = nbr_cmd;      //not work
 		if (prev_type == LABEL)
 			set_addr_label(&all_str);
 		prev_type = CMD;
@@ -68,9 +68,4 @@ int lexer(char *s)
 }
 
 
-int main()
-{
-	printf("\tTEST_1\n");
-	char *s1 = "fork\t%:b1";
-	lexer(s1);
-}
+

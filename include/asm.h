@@ -80,6 +80,6 @@ char			*ft_strtrim(char const *s);
 /*
  * cmd
  */
-int     find_cmd(char *s);
+
 
 #endif

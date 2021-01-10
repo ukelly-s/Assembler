@@ -1,7 +1,6 @@
 #ifndef OP_STRUCT_H
 #define OP_STRUCT_H
 
-
 #include "op.h"
 
 typedef struct	s_op

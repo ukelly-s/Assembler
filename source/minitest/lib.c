@@ -4,15 +4,43 @@
 #include <stdlib.h>
 
 ///lft///
-int		            find_start_cmd(char *s)
+static int	nbr_len(unsigned long long n)
 {
-	if (s[0] == L || s[0] == S
-	    || s[0] == A || s[0] == O
-	    || s[0] == X || s[0] == Z
-	    || s[0] == F)
-		return (1);
-	else
-		return (0);
+	int len;
+
+	len = 1;
+	while ((n /= 10) != 0)
+		len++;
+	return (len);
+}
+
+long long	ft_atol(const char *str)
+{
+	int					sign;
+	unsigned long long	res;
+
+	sign = 1;
+	res = 0;
+	while (*str == ' ' || *str == '\t')
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		sign = (*str == '-') ? (-1) : (1);
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		res = res * 10 + (*str - '0');
+		str++;
+		if (res > LONG_LONG_MAX && sign > 0)
+			return (-1);
+		if (res > 0)
+			if (res - 1 > LONG_LONG_MAX && sign < 0)
+				return (0);
+		if (nbr_len(res) >= 19 && (*str >= '0' && *str <= '9'))
+			return ((sign > 0) ? (-1) : (0));
+	}
+	return ((long long)res * sign);
 }
 
 void				ft_bzero(void *s, size_t n)

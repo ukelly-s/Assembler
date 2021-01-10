@@ -1,20 +1,13 @@
 #include "lexer.h"
 
-void    write_cmd_fork(char *s, t_cmd **cmd_fork)
-{
-	//сюда чтобы поступало уже замалочено
-	(*cmd_fork)->cmd = ft_strdup_prot(s);
-	(*cmd_fork)->args_type[0] = T_DIR;
-	printf("%i\n", T_REG);
-	return;
-}
-
 int     cmd_l(char *s, t_cmd **cmd)
 {
 	if (s[1] == I)
 	{
 		if (s[2] == V && s[3] == E)
-			printf("this is live\n");
+		{
+			do_livejmpfork(s, cmd, LIVE);
+		}
 	}
 	else if (s[1] == D)
 	{
@@ -36,7 +29,9 @@ int     cmd_l(char *s, t_cmd **cmd)
 	else if (s[1] == F)
 	{
 		if (s[2] == O && s[3] == R && s[4] == K)
-			printf("this is lfork\n");
+		{
+			do_livejmpfork(s, cmd, LFORK);
+		}
 	}
 	return (0);
 }
@@ -84,9 +79,9 @@ int		find_cmd_tree(char *s, t_cmd **cmd)
 	else if (s[0] == X && s[1] == O && s[2] == R)
 		printf("this is xor\n");
 	else if (s[0] == Z && s[1] == J && s[2] == M && s[3] == P)
-		printf("this is zjmp\n");
+		do_livejmpfork(s, cmd, ZJMP);
 	else if (s[0] == F && s[1] == O && s[2] == R && s[3] == K)
-		write_cmd_fork(s, cmd);
+		do_livejmpfork(s, cmd, FORK);
 	else
 		printf("not founded\n");
 	return 0;
