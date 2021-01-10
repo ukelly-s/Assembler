@@ -12,8 +12,8 @@
 
 #include "asm.h"
 #include <string.h>
-#include <fcntl.h>
-
+#include <stdbool.h>
+#include "io.h"
 
 static _Bool	check_name_the_file(char *name_the_file, char *file_extension)
 {

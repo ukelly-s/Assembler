@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/aeclipso/Desktop/Assemb_pr2
+CMAKE_SOURCE_DIR = /Users/ukelly/Desktop/Assembler_2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/ukelly/Desktop/Assembler_2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles /Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ukelly/Desktop/Assembler_2/cmake-build-debug/CMakeFiles /Users/ukelly/Desktop/Assembler_2/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ukelly/Desktop/Assembler_2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,17 +131,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Asssemb_pr2
+# Target rules for targets named Assembler_2
 
 # Build rule for target.
-Asssemb_pr2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Asssemb_pr2
-.PHONY : Asssemb_pr2
+Assembler_2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Assembler_2
+.PHONY : Assembler_2
 
 # fast build rule for target.
-Asssemb_pr2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/build
-.PHONY : Asssemb_pr2/fast
+Assembler_2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/build
+.PHONY : Assembler_2/fast
 
 #=============================================================================
 # Target rules for targets named libft
@@ -1485,7 +1485,7 @@ source/assembler/asm.o: source/assembler/asm.c.o
 
 # target to build an object file
 source/assembler/asm.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/asm.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/asm.c.o
 .PHONY : source/assembler/asm.c.o
 
 source/assembler/asm.i: source/assembler/asm.c.i
@@ -1494,7 +1494,7 @@ source/assembler/asm.i: source/assembler/asm.c.i
 
 # target to preprocess a source file
 source/assembler/asm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/asm.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/asm.c.i
 .PHONY : source/assembler/asm.c.i
 
 source/assembler/asm.s: source/assembler/asm.c.s
@@ -1503,7 +1503,7 @@ source/assembler/asm.s: source/assembler/asm.c.s
 
 # target to generate assembly for a file
 source/assembler/asm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/asm.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/asm.c.s
 .PHONY : source/assembler/asm.c.s
 
 source/assembler/find_cmd.o: source/assembler/find_cmd.c.o
@@ -1512,7 +1512,7 @@ source/assembler/find_cmd.o: source/assembler/find_cmd.c.o
 
 # target to build an object file
 source/assembler/find_cmd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/find_cmd.c.o
 .PHONY : source/assembler/find_cmd.c.o
 
 source/assembler/find_cmd.i: source/assembler/find_cmd.c.i
@@ -1521,7 +1521,7 @@ source/assembler/find_cmd.i: source/assembler/find_cmd.c.i
 
 # target to preprocess a source file
 source/assembler/find_cmd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/find_cmd.c.i
 .PHONY : source/assembler/find_cmd.c.i
 
 source/assembler/find_cmd.s: source/assembler/find_cmd.c.s
@@ -1530,35 +1530,8 @@ source/assembler/find_cmd.s: source/assembler/find_cmd.c.s
 
 # target to generate assembly for a file
 source/assembler/find_cmd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/find_cmd.c.s
 .PHONY : source/assembler/find_cmd.c.s
-
-source/assembler/labeler.o: source/assembler/labeler.c.o
-
-.PHONY : source/assembler/labeler.o
-
-# target to build an object file
-source/assembler/labeler.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.o
-.PHONY : source/assembler/labeler.c.o
-
-source/assembler/labeler.i: source/assembler/labeler.c.i
-
-.PHONY : source/assembler/labeler.i
-
-# target to preprocess a source file
-source/assembler/labeler.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.i
-.PHONY : source/assembler/labeler.c.i
-
-source/assembler/labeler.s: source/assembler/labeler.c.s
-
-.PHONY : source/assembler/labeler.s
-
-# target to generate assembly for a file
-source/assembler/labeler.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.s
-.PHONY : source/assembler/labeler.c.s
 
 source/assembler/labelfind.o: source/assembler/labelfind.c.o
 
@@ -1566,7 +1539,7 @@ source/assembler/labelfind.o: source/assembler/labelfind.c.o
 
 # target to build an object file
 source/assembler/labelfind.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/labelfind.c.o
 .PHONY : source/assembler/labelfind.c.o
 
 source/assembler/labelfind.i: source/assembler/labelfind.c.i
@@ -1575,7 +1548,7 @@ source/assembler/labelfind.i: source/assembler/labelfind.c.i
 
 # target to preprocess a source file
 source/assembler/labelfind.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/labelfind.c.i
 .PHONY : source/assembler/labelfind.c.i
 
 source/assembler/labelfind.s: source/assembler/labelfind.c.s
@@ -1584,7 +1557,7 @@ source/assembler/labelfind.s: source/assembler/labelfind.c.s
 
 # target to generate assembly for a file
 source/assembler/labelfind.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/labelfind.c.s
 .PHONY : source/assembler/labelfind.c.s
 
 source/assembler/labels.o: source/assembler/labels.c.o
@@ -1593,7 +1566,7 @@ source/assembler/labels.o: source/assembler/labels.c.o
 
 # target to build an object file
 source/assembler/labels.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/labels.c.o
 .PHONY : source/assembler/labels.c.o
 
 source/assembler/labels.i: source/assembler/labels.c.i
@@ -1602,7 +1575,7 @@ source/assembler/labels.i: source/assembler/labels.c.i
 
 # target to preprocess a source file
 source/assembler/labels.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/labels.c.i
 .PHONY : source/assembler/labels.c.i
 
 source/assembler/labels.s: source/assembler/labels.c.s
@@ -1611,7 +1584,7 @@ source/assembler/labels.s: source/assembler/labels.c.s
 
 # target to generate assembly for a file
 source/assembler/labels.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/labels.c.s
 .PHONY : source/assembler/labels.c.s
 
 source/assembler/lex.o: source/assembler/lex.c.o
@@ -1620,7 +1593,7 @@ source/assembler/lex.o: source/assembler/lex.c.o
 
 # target to build an object file
 source/assembler/lex.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/lex.c.o
 .PHONY : source/assembler/lex.c.o
 
 source/assembler/lex.i: source/assembler/lex.c.i
@@ -1629,7 +1602,7 @@ source/assembler/lex.i: source/assembler/lex.c.i
 
 # target to preprocess a source file
 source/assembler/lex.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/lex.c.i
 .PHONY : source/assembler/lex.c.i
 
 source/assembler/lex.s: source/assembler/lex.c.s
@@ -1638,7 +1611,7 @@ source/assembler/lex.s: source/assembler/lex.c.s
 
 # target to generate assembly for a file
 source/assembler/lex.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/lex.c.s
 .PHONY : source/assembler/lex.c.s
 
 source/assembler/live.o: source/assembler/live.c.o
@@ -1647,7 +1620,7 @@ source/assembler/live.o: source/assembler/live.c.o
 
 # target to build an object file
 source/assembler/live.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/live.c.o
 .PHONY : source/assembler/live.c.o
 
 source/assembler/live.i: source/assembler/live.c.i
@@ -1656,7 +1629,7 @@ source/assembler/live.i: source/assembler/live.c.i
 
 # target to preprocess a source file
 source/assembler/live.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/live.c.i
 .PHONY : source/assembler/live.c.i
 
 source/assembler/live.s: source/assembler/live.c.s
@@ -1665,7 +1638,7 @@ source/assembler/live.s: source/assembler/live.c.s
 
 # target to generate assembly for a file
 source/assembler/live.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/live.c.s
 .PHONY : source/assembler/live.c.s
 
 source/assembler/parse.o: source/assembler/parse.c.o
@@ -1674,7 +1647,7 @@ source/assembler/parse.o: source/assembler/parse.c.o
 
 # target to build an object file
 source/assembler/parse.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse.c.o
 .PHONY : source/assembler/parse.c.o
 
 source/assembler/parse.i: source/assembler/parse.c.i
@@ -1683,7 +1656,7 @@ source/assembler/parse.i: source/assembler/parse.c.i
 
 # target to preprocess a source file
 source/assembler/parse.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse.c.i
 .PHONY : source/assembler/parse.c.i
 
 source/assembler/parse.s: source/assembler/parse.c.s
@@ -1692,7 +1665,7 @@ source/assembler/parse.s: source/assembler/parse.c.s
 
 # target to generate assembly for a file
 source/assembler/parse.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse.c.s
 .PHONY : source/assembler/parse.c.s
 
 source/assembler/parse_clear_line.o: source/assembler/parse_clear_line.c.o
@@ -1701,7 +1674,7 @@ source/assembler/parse_clear_line.o: source/assembler/parse_clear_line.c.o
 
 # target to build an object file
 source/assembler/parse_clear_line.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_clear_line.c.o
 .PHONY : source/assembler/parse_clear_line.c.o
 
 source/assembler/parse_clear_line.i: source/assembler/parse_clear_line.c.i
@@ -1710,7 +1683,7 @@ source/assembler/parse_clear_line.i: source/assembler/parse_clear_line.c.i
 
 # target to preprocess a source file
 source/assembler/parse_clear_line.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_clear_line.c.i
 .PHONY : source/assembler/parse_clear_line.c.i
 
 source/assembler/parse_clear_line.s: source/assembler/parse_clear_line.c.s
@@ -1719,8 +1692,35 @@ source/assembler/parse_clear_line.s: source/assembler/parse_clear_line.c.s
 
 # target to generate assembly for a file
 source/assembler/parse_clear_line.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_clear_line.c.s
 .PHONY : source/assembler/parse_clear_line.c.s
+
+source/assembler/parse_mark.o: source/assembler/parse_mark.c.o
+
+.PHONY : source/assembler/parse_mark.o
+
+# target to build an object file
+source/assembler/parse_mark.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_mark.c.o
+.PHONY : source/assembler/parse_mark.c.o
+
+source/assembler/parse_mark.i: source/assembler/parse_mark.c.i
+
+.PHONY : source/assembler/parse_mark.i
+
+# target to preprocess a source file
+source/assembler/parse_mark.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_mark.c.i
+.PHONY : source/assembler/parse_mark.c.i
+
+source/assembler/parse_mark.s: source/assembler/parse_mark.c.s
+
+.PHONY : source/assembler/parse_mark.s
+
+# target to generate assembly for a file
+source/assembler/parse_mark.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_mark.c.s
+.PHONY : source/assembler/parse_mark.c.s
 
 source/assembler/parse_name_comment.o: source/assembler/parse_name_comment.c.o
 
@@ -1728,7 +1728,7 @@ source/assembler/parse_name_comment.o: source/assembler/parse_name_comment.c.o
 
 # target to build an object file
 source/assembler/parse_name_comment.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_name_comment.c.o
 .PHONY : source/assembler/parse_name_comment.c.o
 
 source/assembler/parse_name_comment.i: source/assembler/parse_name_comment.c.i
@@ -1737,7 +1737,7 @@ source/assembler/parse_name_comment.i: source/assembler/parse_name_comment.c.i
 
 # target to preprocess a source file
 source/assembler/parse_name_comment.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_name_comment.c.i
 .PHONY : source/assembler/parse_name_comment.c.i
 
 source/assembler/parse_name_comment.s: source/assembler/parse_name_comment.c.s
@@ -1746,7 +1746,7 @@ source/assembler/parse_name_comment.s: source/assembler/parse_name_comment.c.s
 
 # target to generate assembly for a file
 source/assembler/parse_name_comment.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_name_comment.c.s
 .PHONY : source/assembler/parse_name_comment.c.s
 
 source/assembler/parse_operation.o: source/assembler/parse_operation.c.o
@@ -1755,7 +1755,7 @@ source/assembler/parse_operation.o: source/assembler/parse_operation.c.o
 
 # target to build an object file
 source/assembler/parse_operation.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_operation.c.o
 .PHONY : source/assembler/parse_operation.c.o
 
 source/assembler/parse_operation.i: source/assembler/parse_operation.c.i
@@ -1764,7 +1764,7 @@ source/assembler/parse_operation.i: source/assembler/parse_operation.c.i
 
 # target to preprocess a source file
 source/assembler/parse_operation.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_operation.c.i
 .PHONY : source/assembler/parse_operation.c.i
 
 source/assembler/parse_operation.s: source/assembler/parse_operation.c.s
@@ -1773,7 +1773,7 @@ source/assembler/parse_operation.s: source/assembler/parse_operation.c.s
 
 # target to generate assembly for a file
 source/assembler/parse_operation.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/parse_operation.c.s
 .PHONY : source/assembler/parse_operation.c.s
 
 source/assembler/util.o: source/assembler/util.c.o
@@ -1782,7 +1782,7 @@ source/assembler/util.o: source/assembler/util.c.o
 
 # target to build an object file
 source/assembler/util.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/util.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/util.c.o
 .PHONY : source/assembler/util.c.o
 
 source/assembler/util.i: source/assembler/util.c.i
@@ -1791,7 +1791,7 @@ source/assembler/util.i: source/assembler/util.c.i
 
 # target to preprocess a source file
 source/assembler/util.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/util.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/util.c.i
 .PHONY : source/assembler/util.c.i
 
 source/assembler/util.s: source/assembler/util.c.s
@@ -1800,7 +1800,7 @@ source/assembler/util.s: source/assembler/util.c.s
 
 # target to generate assembly for a file
 source/assembler/util.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/util.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/assembler/util.c.s
 .PHONY : source/assembler/util.c.s
 
 source/common/ft_isdigit.o: source/common/ft_isdigit.c.o
@@ -1809,7 +1809,7 @@ source/common/ft_isdigit.o: source/common/ft_isdigit.c.o
 
 # target to build an object file
 source/common/ft_isdigit.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/common/ft_isdigit.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/common/ft_isdigit.c.o
 .PHONY : source/common/ft_isdigit.c.o
 
 source/common/ft_isdigit.i: source/common/ft_isdigit.c.i
@@ -1818,7 +1818,7 @@ source/common/ft_isdigit.i: source/common/ft_isdigit.c.i
 
 # target to preprocess a source file
 source/common/ft_isdigit.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/common/ft_isdigit.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/common/ft_isdigit.c.i
 .PHONY : source/common/ft_isdigit.c.i
 
 source/common/ft_isdigit.s: source/common/ft_isdigit.c.s
@@ -1827,7 +1827,7 @@ source/common/ft_isdigit.s: source/common/ft_isdigit.c.s
 
 # target to generate assembly for a file
 source/common/ft_isdigit.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/common/ft_isdigit.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/common/ft_isdigit.c.s
 .PHONY : source/common/ft_isdigit.c.s
 
 source/common/ft_strtrim.o: source/common/ft_strtrim.c.o
@@ -1836,7 +1836,7 @@ source/common/ft_strtrim.o: source/common/ft_strtrim.c.o
 
 # target to build an object file
 source/common/ft_strtrim.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/common/ft_strtrim.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/common/ft_strtrim.c.o
 .PHONY : source/common/ft_strtrim.c.o
 
 source/common/ft_strtrim.i: source/common/ft_strtrim.c.i
@@ -1845,7 +1845,7 @@ source/common/ft_strtrim.i: source/common/ft_strtrim.c.i
 
 # target to preprocess a source file
 source/common/ft_strtrim.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/common/ft_strtrim.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/common/ft_strtrim.c.i
 .PHONY : source/common/ft_strtrim.c.i
 
 source/common/ft_strtrim.s: source/common/ft_strtrim.c.s
@@ -1854,7 +1854,7 @@ source/common/ft_strtrim.s: source/common/ft_strtrim.c.s
 
 # target to generate assembly for a file
 source/common/ft_strtrim.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/common/ft_strtrim.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/common/ft_strtrim.c.s
 .PHONY : source/common/ft_strtrim.c.s
 
 source/main.o: source/main.c.o
@@ -1863,7 +1863,7 @@ source/main.o: source/main.c.o
 
 # target to build an object file
 source/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/main.c.o
 .PHONY : source/main.c.o
 
 source/main.i: source/main.c.i
@@ -1872,7 +1872,7 @@ source/main.i: source/main.c.i
 
 # target to preprocess a source file
 source/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/main.c.i
 .PHONY : source/main.c.i
 
 source/main.s: source/main.c.s
@@ -1881,7 +1881,7 @@ source/main.s: source/main.c.s
 
 # target to generate assembly for a file
 source/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assembler_2.dir/build.make CMakeFiles/Assembler_2.dir/source/main.c.s
 .PHONY : source/main.c.s
 
 # Help Target
@@ -1892,7 +1892,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Asssemb_pr2"
+	@echo "... Assembler_2"
 	@echo "... libft"
 	@echo "... libft/src/array_list/arrlist_new.o"
 	@echo "... libft/src/array_list/arrlist_new.i"
@@ -2047,9 +2047,6 @@ help:
 	@echo "... source/assembler/find_cmd.o"
 	@echo "... source/assembler/find_cmd.i"
 	@echo "... source/assembler/find_cmd.s"
-	@echo "... source/assembler/labeler.o"
-	@echo "... source/assembler/labeler.i"
-	@echo "... source/assembler/labeler.s"
 	@echo "... source/assembler/labelfind.o"
 	@echo "... source/assembler/labelfind.i"
 	@echo "... source/assembler/labelfind.s"
@@ -2068,6 +2065,9 @@ help:
 	@echo "... source/assembler/parse_clear_line.o"
 	@echo "... source/assembler/parse_clear_line.i"
 	@echo "... source/assembler/parse_clear_line.s"
+	@echo "... source/assembler/parse_mark.o"
+	@echo "... source/assembler/parse_mark.i"
+	@echo "... source/assembler/parse_mark.s"
 	@echo "... source/assembler/parse_name_comment.o"
 	@echo "... source/assembler/parse_name_comment.i"
 	@echo "... source/assembler/parse_name_comment.s"

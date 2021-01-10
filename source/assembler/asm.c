@@ -1,5 +1,10 @@
 #include "asm.h"
-
+#include "list.h"
+#include "op.h"
+#include "util.h"
+#include "io.h"
+#include <fcntl.h>
+#include <stdlib.h>
 
 static t_parse		*new_parse(void)
 {
@@ -15,31 +20,31 @@ static t_parse		*new_parse(void)
 	g->header->prog_size = 0;
 	return (g);
 }
-
-static t_strbag2	*new_lexer(void)
-{
-	t_strbag2 *g;
-
-	g = malloc(sizeof(t_strbag2 ));
-	ft_assert(g != NULL, __func__, "malloc error");
-	g->cmd = list_new();
-	ft_assert(g->cmd != NULL, __func__, "malloc error");
-	g->label = list_new();
-	ft_assert(g->label != NULL, __func__, "malloc error");
-	return (g);
-}
+//
+//static t_list	*new_lexer(void)
+//{
+//	t_list *g;
+//
+//	g = malloc(sizeof(t_list));
+//	ft_assert(g != NULL, __func__, "malloc error");
+//	g->cmd = list_new();
+//	ft_assert(g->cmd != NULL, __func__, "malloc error");
+//	g->label = list_new();
+//	ft_assert(g->label != NULL, __func__, "malloc error");
+//	return (g);
+//}
 
 void	*assembler(char *filename)
 {
 	int			fd;
 	t_parse		*g;
-	t_strbag2	*all_str;
+	t_list	*info_operations;
 
 	g = new_parse();
-	all_str = new_lexer();
+	info_operations = list_new();
 	if ((fd = open(filename, O_RDONLY)) == -1)
 		;//error(ERR_OPEN_FILE)
-	parse(fd, g, all_str);
+	parse(fd, g, info_operations);
 //	filename = replace_extension(filename, ".s", ".cor");
 //	if ((fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
 //	    ; //error(ERR_CREATE_FILE);
@@ -49,4 +54,3 @@ void	*assembler(char *filename)
 	ft_putstr("Writing output program to ");
 	ft_putstr(filename);
 }
-

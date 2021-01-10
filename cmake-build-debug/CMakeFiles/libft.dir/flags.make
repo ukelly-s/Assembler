@@ -6,5 +6,5 @@ C_FLAGS =  -Wall -Wextra -g -isysroot /Applications/Xcode.app/Contents/Developer
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/aeclipso/Desktop/Assemb_pr2/includes -I/Users/aeclipso/Desktop/Assemb_pr2/include -I/Users/aeclipso/Desktop/Assemb_pr2/libft/inc 
+C_INCLUDES = -I/Users/ukelly/Desktop/Assembler_2/includes -I/Users/ukelly/Desktop/Assembler_2/include -I/Users/ukelly/Desktop/Assembler_2/libft/inc 
 
