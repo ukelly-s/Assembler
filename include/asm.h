@@ -27,6 +27,7 @@
 # include "util.h"
 # include "op.h"
 # include "op_struct.h"
+# include "lexer.h"
 
 # define SEPARATOR	' '
 # define ALT_SEPARATOR		'\t'
@@ -64,7 +65,7 @@ void				*ft_strrev(register char *begin);
 void				*assembler(char *filename);
 void				*disassembler(char *filename);
 int					get_line(int fd, char **line);
-void				parse(int fd, t_parse *g);
+void				parse(int fd, t_parse *g, t_strbag2 *all_str);
 char				*clear_line(char **str);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					number_operation(const char *str);
@@ -75,5 +76,11 @@ t_line_type			mark_operation_type(const char *str);
 ** libft
 */
 char				*ft_strtrim(char const *s);
+
+/*
+** parse_operation
+*/
+
+void				parse_operation(char *str, t_strbag2 *all_str);
 
 #endif

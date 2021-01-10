@@ -98,7 +98,7 @@ int					get_line(int fd, char **line)//fixme
 	return (i);
 }
 
-void				parse(int fd, t_parse *g)
+void				parse(int fd, t_parse *g, t_strbag2 *all_str)
 {
 	t_line_type	line_type;
 	char		*line;
@@ -111,9 +111,9 @@ void				parse(int fd, t_parse *g)
 		else if (line_type == LINE_COMMENT)
 			parse_comment(line, g);
 		else if (line_type == LINE_OPERATION)
-			ft_putstr(line);//todo
+			parse_operation(line, all_str);//todo
 		else if (line_type == LINE_MARK)
-			ft_putstr(line);//todo
+			labeler(line, all_str);//todo
 		else if (line_type == LINE_UNDEFINED)
 			ft_kill(ERR_INV_LINE, NULL, __func__, __FILE__);
 		free(line);
