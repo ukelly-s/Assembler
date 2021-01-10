@@ -13,9 +13,16 @@
 #ifndef ASSEMBLER_LEXER_H
 # define ASSEMBLER_LEXER_H
 
-# include "asm.h"
-
 # include <stdio.h> //fixme delete
+# include "array_list.h"
+# include "conv.h"
+# include "hash_map.h"
+# include "io.h"
+# include "list.h"
+# include "math.h"
+# include "mem.h"
+# include "str.h"
+# include "util.h"
 
 # define L 'l'
 # define S 's'
@@ -24,23 +31,19 @@
 # define X 'x'
 # define Z 'z'
 # define F 'f'
-
-# define LIVE "live"
-# define LD "ld"
-# define LDI "ldi"
-# define LLD "lld"
-# define LLDI "lldi"
-# define LFORK "lfork"
-# define ST "st"
-# define STI "sti"
-# define SUB "sub"
-# define ADD "add"
-# define AND "and"
-# define AFF "aff"
-# define OR "or"
-# define XOR "xor"
-# define ZJMP "zjmp"
-# define FORK "fork"
+# define D 'd'
+# define I 'i'
+# define V 'v'
+# define E 'e'
+# define R 'r'
+# define K 'k'
+# define T 't'
+# define U 'u'
+# define B 'b'
+# define N 'n'
+# define J 'j'
+# define M 'm'
+# define P 'p'
 
 # define LABEL 1
 # define CMD   2
@@ -119,12 +122,6 @@ typedef struct	s_strbag2{
 	t_list		*cmd;
 }				t_strbag2;
 
-/*
-** lib.c
-*/
-
-size_t			ft_strlen_prot(const char *str);
-char			*ft_strdup_prot(const char *s);
 
 /*
 ** find_cmd.c
@@ -142,21 +139,14 @@ int				find_cmd_tree(char *s, t_cmd **cmd);
 
 int				find_label(char *s, t_label **label);
 t_label			*new_lable(char *s);
-void			add_label(char *s, t_label **label);
-int				labeler(char *s, t_label **label);
+void			add_label(char *s, t_label**label);
+int				labeler(char *s, t_label *label);
 
 /*
 ** labelfind.c
 */
 
-int				labeler2(char *s, t_list **label);
-
-/*
-** debug.c
-*/
-
-void			debug_print(t_label *lb);
-void			debug_print_lst(t_list *lb);
+int				labeler2(char *s, t_list *label);
 
 /*
 **live.c

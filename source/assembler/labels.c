@@ -5,7 +5,7 @@
 
 int is_label(char *s)
 {
-	size_t len = ft_strlen_prot(s);
+	size_t len = ft_strlen(s);
 
 	if (s[len - 1] == ':')
 		return (1);
@@ -43,7 +43,7 @@ int create_label(t_label *labels, char *s)
 		}
 	}
 	tmp->id = i + 1;
-	tmp->name = ft_strdup_prot(s);
+	tmp->name = ft_strdup(s);
 	tmp->next = NULL;
 	if (labels && labels->next)
 		labels->next->next = tmp;

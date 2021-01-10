@@ -1,7 +1,7 @@
 //
 // Created by Alethia Eclipso on 1/10/21.
 //
-
+#include "asm.h"
 #include "lexer.h"
 
 void do_livejmpfork(char *s, t_cmd **cmd, int8_t cmdind)
@@ -10,7 +10,7 @@ void do_livejmpfork(char *s, t_cmd **cmd, int8_t cmdind)
 
 	while ((*cmd)->next)
 		*cmd = (*cmd)->next;
-	(*cmd)->cmd = ft_strdup_prot(s);
+	(*cmd)->cmd = ft_strdup(s);
 	(*cmd)->args_cnt = 1;
 	(*cmd)->args_types_code = 0;
 	(*cmd)->args_type[0] = DIR_CODE;

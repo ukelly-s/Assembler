@@ -8,7 +8,7 @@ int whatistype(char *s)
 {
 	size_t  len;
 
-	len = ft_strlen_prot(s);
+	len = ft_strlen(s);
 	if (s[len - 1] == ':')
 		return (LABEL);
 	return (CMD);

@@ -1506,33 +1506,6 @@ source/assembler/asm.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/asm.c.s
 .PHONY : source/assembler/asm.c.s
 
-source/assembler/debug.o: source/assembler/debug.c.o
-
-.PHONY : source/assembler/debug.o
-
-# target to build an object file
-source/assembler/debug.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.o
-.PHONY : source/assembler/debug.c.o
-
-source/assembler/debug.i: source/assembler/debug.c.i
-
-.PHONY : source/assembler/debug.i
-
-# target to preprocess a source file
-source/assembler/debug.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.i
-.PHONY : source/assembler/debug.c.i
-
-source/assembler/debug.s: source/assembler/debug.c.s
-
-.PHONY : source/assembler/debug.s
-
-# target to generate assembly for a file
-source/assembler/debug.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.s
-.PHONY : source/assembler/debug.c.s
-
 source/assembler/find_cmd.o: source/assembler/find_cmd.c.o
 
 .PHONY : source/assembler/find_cmd.o
@@ -1667,33 +1640,6 @@ source/assembler/lex.s: source/assembler/lex.c.s
 source/assembler/lex.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.s
 .PHONY : source/assembler/lex.c.s
-
-source/assembler/lib.o: source/assembler/lib.c.o
-
-.PHONY : source/assembler/lib.o
-
-# target to build an object file
-source/assembler/lib.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.o
-.PHONY : source/assembler/lib.c.o
-
-source/assembler/lib.i: source/assembler/lib.c.i
-
-.PHONY : source/assembler/lib.i
-
-# target to preprocess a source file
-source/assembler/lib.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.i
-.PHONY : source/assembler/lib.c.i
-
-source/assembler/lib.s: source/assembler/lib.c.s
-
-.PHONY : source/assembler/lib.s
-
-# target to generate assembly for a file
-source/assembler/lib.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.s
-.PHONY : source/assembler/lib.c.s
 
 source/assembler/live.o: source/assembler/live.c.o
 
@@ -1856,6 +1802,33 @@ source/assembler/util.s: source/assembler/util.c.s
 source/assembler/util.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/util.c.s
 .PHONY : source/assembler/util.c.s
+
+source/common/ft_isdigit.o: source/common/ft_isdigit.c.o
+
+.PHONY : source/common/ft_isdigit.o
+
+# target to build an object file
+source/common/ft_isdigit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/common/ft_isdigit.c.o
+.PHONY : source/common/ft_isdigit.c.o
+
+source/common/ft_isdigit.i: source/common/ft_isdigit.c.i
+
+.PHONY : source/common/ft_isdigit.i
+
+# target to preprocess a source file
+source/common/ft_isdigit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/common/ft_isdigit.c.i
+.PHONY : source/common/ft_isdigit.c.i
+
+source/common/ft_isdigit.s: source/common/ft_isdigit.c.s
+
+.PHONY : source/common/ft_isdigit.s
+
+# target to generate assembly for a file
+source/common/ft_isdigit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/common/ft_isdigit.c.s
+.PHONY : source/common/ft_isdigit.c.s
 
 source/common/ft_strtrim.o: source/common/ft_strtrim.c.o
 
@@ -2071,9 +2044,6 @@ help:
 	@echo "... source/assembler/asm.o"
 	@echo "... source/assembler/asm.i"
 	@echo "... source/assembler/asm.s"
-	@echo "... source/assembler/debug.o"
-	@echo "... source/assembler/debug.i"
-	@echo "... source/assembler/debug.s"
 	@echo "... source/assembler/find_cmd.o"
 	@echo "... source/assembler/find_cmd.i"
 	@echo "... source/assembler/find_cmd.s"
@@ -2089,9 +2059,6 @@ help:
 	@echo "... source/assembler/lex.o"
 	@echo "... source/assembler/lex.i"
 	@echo "... source/assembler/lex.s"
-	@echo "... source/assembler/lib.o"
-	@echo "... source/assembler/lib.i"
-	@echo "... source/assembler/lib.s"
 	@echo "... source/assembler/live.o"
 	@echo "... source/assembler/live.i"
 	@echo "... source/assembler/live.s"
@@ -2110,6 +2077,9 @@ help:
 	@echo "... source/assembler/util.o"
 	@echo "... source/assembler/util.i"
 	@echo "... source/assembler/util.s"
+	@echo "... source/common/ft_isdigit.o"
+	@echo "... source/common/ft_isdigit.i"
+	@echo "... source/common/ft_isdigit.s"
 	@echo "... source/common/ft_strtrim.o"
 	@echo "... source/common/ft_strtrim.i"
 	@echo "... source/common/ft_strtrim.s"

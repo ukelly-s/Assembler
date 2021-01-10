@@ -76,6 +76,7 @@ t_line_type			mark_operation_type(const char *str);
 ** libft
 */
 char				*ft_strtrim(char const *s);
+int                 ft_isdigit(int c);
 
 /*
 ** parse_operation
