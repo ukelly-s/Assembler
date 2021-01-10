@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/10 06:14:23 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/10 06:14:24 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "asm.h"
-#include "lexer.h"
 #include <string.h>
 #include <fcntl.h>
-# define MAX_SIZE_T 18446744073709551615ULL
-#include <stdio.h> //debu
+
 
 static _Bool	check_name_the_file(char *name_the_file, char *file_extension)
 {
@@ -92,6 +102,8 @@ static _Bool	check_name_the_file(char *name_the_file, char *file_extension)
 //    process_oper(fd);
 //}
 
+=======
+>>>>>>> 3d1134c4237246edabf29021a0dac0bdeac6cf27
 
 int		main(int ac, char **av)
 {

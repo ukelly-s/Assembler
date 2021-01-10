@@ -1506,6 +1506,222 @@ source/assembler/asm.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/asm.c.s
 .PHONY : source/assembler/asm.c.s
 
+source/assembler/debug.o: source/assembler/debug.c.o
+
+.PHONY : source/assembler/debug.o
+
+# target to build an object file
+source/assembler/debug.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.o
+.PHONY : source/assembler/debug.c.o
+
+source/assembler/debug.i: source/assembler/debug.c.i
+
+.PHONY : source/assembler/debug.i
+
+# target to preprocess a source file
+source/assembler/debug.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.i
+.PHONY : source/assembler/debug.c.i
+
+source/assembler/debug.s: source/assembler/debug.c.s
+
+.PHONY : source/assembler/debug.s
+
+# target to generate assembly for a file
+source/assembler/debug.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.s
+.PHONY : source/assembler/debug.c.s
+
+source/assembler/find_cmd.o: source/assembler/find_cmd.c.o
+
+.PHONY : source/assembler/find_cmd.o
+
+# target to build an object file
+source/assembler/find_cmd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.o
+.PHONY : source/assembler/find_cmd.c.o
+
+source/assembler/find_cmd.i: source/assembler/find_cmd.c.i
+
+.PHONY : source/assembler/find_cmd.i
+
+# target to preprocess a source file
+source/assembler/find_cmd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.i
+.PHONY : source/assembler/find_cmd.c.i
+
+source/assembler/find_cmd.s: source/assembler/find_cmd.c.s
+
+.PHONY : source/assembler/find_cmd.s
+
+# target to generate assembly for a file
+source/assembler/find_cmd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.s
+.PHONY : source/assembler/find_cmd.c.s
+
+source/assembler/labeler.o: source/assembler/labeler.c.o
+
+.PHONY : source/assembler/labeler.o
+
+# target to build an object file
+source/assembler/labeler.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.o
+.PHONY : source/assembler/labeler.c.o
+
+source/assembler/labeler.i: source/assembler/labeler.c.i
+
+.PHONY : source/assembler/labeler.i
+
+# target to preprocess a source file
+source/assembler/labeler.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.i
+.PHONY : source/assembler/labeler.c.i
+
+source/assembler/labeler.s: source/assembler/labeler.c.s
+
+.PHONY : source/assembler/labeler.s
+
+# target to generate assembly for a file
+source/assembler/labeler.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.s
+.PHONY : source/assembler/labeler.c.s
+
+source/assembler/labelfind.o: source/assembler/labelfind.c.o
+
+.PHONY : source/assembler/labelfind.o
+
+# target to build an object file
+source/assembler/labelfind.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.o
+.PHONY : source/assembler/labelfind.c.o
+
+source/assembler/labelfind.i: source/assembler/labelfind.c.i
+
+.PHONY : source/assembler/labelfind.i
+
+# target to preprocess a source file
+source/assembler/labelfind.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.i
+.PHONY : source/assembler/labelfind.c.i
+
+source/assembler/labelfind.s: source/assembler/labelfind.c.s
+
+.PHONY : source/assembler/labelfind.s
+
+# target to generate assembly for a file
+source/assembler/labelfind.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.s
+.PHONY : source/assembler/labelfind.c.s
+
+source/assembler/labels.o: source/assembler/labels.c.o
+
+.PHONY : source/assembler/labels.o
+
+# target to build an object file
+source/assembler/labels.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.o
+.PHONY : source/assembler/labels.c.o
+
+source/assembler/labels.i: source/assembler/labels.c.i
+
+.PHONY : source/assembler/labels.i
+
+# target to preprocess a source file
+source/assembler/labels.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.i
+.PHONY : source/assembler/labels.c.i
+
+source/assembler/labels.s: source/assembler/labels.c.s
+
+.PHONY : source/assembler/labels.s
+
+# target to generate assembly for a file
+source/assembler/labels.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.s
+.PHONY : source/assembler/labels.c.s
+
+source/assembler/lex.o: source/assembler/lex.c.o
+
+.PHONY : source/assembler/lex.o
+
+# target to build an object file
+source/assembler/lex.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.o
+.PHONY : source/assembler/lex.c.o
+
+source/assembler/lex.i: source/assembler/lex.c.i
+
+.PHONY : source/assembler/lex.i
+
+# target to preprocess a source file
+source/assembler/lex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.i
+.PHONY : source/assembler/lex.c.i
+
+source/assembler/lex.s: source/assembler/lex.c.s
+
+.PHONY : source/assembler/lex.s
+
+# target to generate assembly for a file
+source/assembler/lex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.s
+.PHONY : source/assembler/lex.c.s
+
+source/assembler/lib.o: source/assembler/lib.c.o
+
+.PHONY : source/assembler/lib.o
+
+# target to build an object file
+source/assembler/lib.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.o
+.PHONY : source/assembler/lib.c.o
+
+source/assembler/lib.i: source/assembler/lib.c.i
+
+.PHONY : source/assembler/lib.i
+
+# target to preprocess a source file
+source/assembler/lib.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.i
+.PHONY : source/assembler/lib.c.i
+
+source/assembler/lib.s: source/assembler/lib.c.s
+
+.PHONY : source/assembler/lib.s
+
+# target to generate assembly for a file
+source/assembler/lib.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.s
+.PHONY : source/assembler/lib.c.s
+
+source/assembler/live.o: source/assembler/live.c.o
+
+.PHONY : source/assembler/live.o
+
+# target to build an object file
+source/assembler/live.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.o
+.PHONY : source/assembler/live.c.o
+
+source/assembler/live.i: source/assembler/live.c.i
+
+.PHONY : source/assembler/live.i
+
+# target to preprocess a source file
+source/assembler/live.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.i
+.PHONY : source/assembler/live.c.i
+
+source/assembler/live.s: source/assembler/live.c.s
+
+.PHONY : source/assembler/live.s
+
+# target to generate assembly for a file
+source/assembler/live.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.s
+.PHONY : source/assembler/live.c.s
+
 source/assembler/parse.o: source/assembler/parse.c.o
 
 .PHONY : source/assembler/parse.o
@@ -1533,6 +1749,33 @@ source/assembler/parse.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse.c.s
 .PHONY : source/assembler/parse.c.s
 
+source/assembler/parse_clear_line.o: source/assembler/parse_clear_line.c.o
+
+.PHONY : source/assembler/parse_clear_line.o
+
+# target to build an object file
+source/assembler/parse_clear_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.o
+.PHONY : source/assembler/parse_clear_line.c.o
+
+source/assembler/parse_clear_line.i: source/assembler/parse_clear_line.c.i
+
+.PHONY : source/assembler/parse_clear_line.i
+
+# target to preprocess a source file
+source/assembler/parse_clear_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.i
+.PHONY : source/assembler/parse_clear_line.c.i
+
+source/assembler/parse_clear_line.s: source/assembler/parse_clear_line.c.s
+
+.PHONY : source/assembler/parse_clear_line.s
+
+# target to generate assembly for a file
+source/assembler/parse_clear_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.s
+.PHONY : source/assembler/parse_clear_line.c.s
+
 source/assembler/parse_name_comment.o: source/assembler/parse_name_comment.c.o
 
 .PHONY : source/assembler/parse_name_comment.o
@@ -1559,6 +1802,33 @@ source/assembler/parse_name_comment.s: source/assembler/parse_name_comment.c.s
 source/assembler/parse_name_comment.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.s
 .PHONY : source/assembler/parse_name_comment.c.s
+
+source/assembler/parse_operation.o: source/assembler/parse_operation.c.o
+
+.PHONY : source/assembler/parse_operation.o
+
+# target to build an object file
+source/assembler/parse_operation.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.o
+.PHONY : source/assembler/parse_operation.c.o
+
+source/assembler/parse_operation.i: source/assembler/parse_operation.c.i
+
+.PHONY : source/assembler/parse_operation.i
+
+# target to preprocess a source file
+source/assembler/parse_operation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.i
+.PHONY : source/assembler/parse_operation.c.i
+
+source/assembler/parse_operation.s: source/assembler/parse_operation.c.s
+
+.PHONY : source/assembler/parse_operation.s
+
+# target to generate assembly for a file
+source/assembler/parse_operation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Asssemb_pr2.dir/build.make CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.s
+.PHONY : source/assembler/parse_operation.c.s
 
 source/assembler/util.o: source/assembler/util.c.o
 
@@ -1801,12 +2071,42 @@ help:
 	@echo "... source/assembler/asm.o"
 	@echo "... source/assembler/asm.i"
 	@echo "... source/assembler/asm.s"
+	@echo "... source/assembler/debug.o"
+	@echo "... source/assembler/debug.i"
+	@echo "... source/assembler/debug.s"
+	@echo "... source/assembler/find_cmd.o"
+	@echo "... source/assembler/find_cmd.i"
+	@echo "... source/assembler/find_cmd.s"
+	@echo "... source/assembler/labeler.o"
+	@echo "... source/assembler/labeler.i"
+	@echo "... source/assembler/labeler.s"
+	@echo "... source/assembler/labelfind.o"
+	@echo "... source/assembler/labelfind.i"
+	@echo "... source/assembler/labelfind.s"
+	@echo "... source/assembler/labels.o"
+	@echo "... source/assembler/labels.i"
+	@echo "... source/assembler/labels.s"
+	@echo "... source/assembler/lex.o"
+	@echo "... source/assembler/lex.i"
+	@echo "... source/assembler/lex.s"
+	@echo "... source/assembler/lib.o"
+	@echo "... source/assembler/lib.i"
+	@echo "... source/assembler/lib.s"
+	@echo "... source/assembler/live.o"
+	@echo "... source/assembler/live.i"
+	@echo "... source/assembler/live.s"
 	@echo "... source/assembler/parse.o"
 	@echo "... source/assembler/parse.i"
 	@echo "... source/assembler/parse.s"
+	@echo "... source/assembler/parse_clear_line.o"
+	@echo "... source/assembler/parse_clear_line.i"
+	@echo "... source/assembler/parse_clear_line.s"
 	@echo "... source/assembler/parse_name_comment.o"
 	@echo "... source/assembler/parse_name_comment.i"
 	@echo "... source/assembler/parse_name_comment.s"
+	@echo "... source/assembler/parse_operation.o"
+	@echo "... source/assembler/parse_operation.i"
+	@echo "... source/assembler/parse_operation.s"
 	@echo "... source/assembler/util.o"
 	@echo "... source/assembler/util.i"
 	@echo "... source/assembler/util.s"

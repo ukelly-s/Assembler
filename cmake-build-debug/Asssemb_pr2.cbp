@@ -427,10 +427,40 @@
 		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/asm.c">
 			<Option target="Asssemb_pr2"/>
 		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/debug.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/find_cmd.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labeler.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labelfind.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labels.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/lex.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/lib.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/live.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
 		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse.c">
 			<Option target="Asssemb_pr2"/>
 		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_clear_line.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
 		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_name_comment.c">
+			<Option target="Asssemb_pr2"/>
+		</Unit>
+		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_operation.c">
 			<Option target="Asssemb_pr2"/>
 		</Unit>
 		<Unit filename="/Users/aeclipso/Desktop/Assemb_pr2/source/assembler/util.c">

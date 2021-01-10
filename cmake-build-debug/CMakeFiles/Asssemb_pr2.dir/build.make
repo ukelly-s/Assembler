@@ -155,6 +155,136 @@ CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_name_comment.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.s
 
+CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.o: ../source/assembler/parse_clear_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_clear_line.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_clear_line.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_clear_line.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.s
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.o: ../source/assembler/debug.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/debug.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/debug.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/debug.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.s
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.o: ../source/assembler/find_cmd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/find_cmd.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/find_cmd.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/find_cmd.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.s
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.o: ../source/assembler/labeler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labeler.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labeler.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labeler.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.s
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.o: ../source/assembler/labelfind.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labelfind.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labelfind.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labelfind.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.s
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.o: ../source/assembler/labels.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labels.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labels.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/labels.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.s
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.o: ../source/assembler/lex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/lex.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/lex.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/lex.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.s
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.o: ../source/assembler/lib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/lib.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/lib.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/lib.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.s
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.o: ../source/assembler/live.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/live.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/live.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/live.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.s
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.o: CMakeFiles/Asssemb_pr2.dir/flags.make
+CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.o: ../source/assembler/parse_operation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.o   -c /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_operation.c
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_operation.c > CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.i
+
+CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aeclipso/Desktop/Assemb_pr2/source/assembler/parse_operation.c -o CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.s
+
 # Object files for target Asssemb_pr2
 Asssemb_pr2_OBJECTS = \
 "CMakeFiles/Asssemb_pr2.dir/source/main.c.o" \
@@ -162,7 +292,17 @@ Asssemb_pr2_OBJECTS = \
 "CMakeFiles/Asssemb_pr2.dir/source/assembler/asm.c.o" \
 "CMakeFiles/Asssemb_pr2.dir/source/assembler/util.c.o" \
 "CMakeFiles/Asssemb_pr2.dir/source/common/ft_strtrim.c.o" \
-"CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.o"
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.o" \
+"CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.o"
 
 # External object files for target Asssemb_pr2
 Asssemb_pr2_EXTERNAL_OBJECTS = \
@@ -222,6 +362,16 @@ Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/asm.c.o
 Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/util.c.o
 Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/common/ft_strtrim.c.o
 Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_name_comment.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_clear_line.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/debug.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/find_cmd.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/labeler.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/labelfind.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/labels.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/lex.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/lib.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/live.c.o
+Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/source/assembler/parse_operation.c.o
 Asssemb_pr2: CMakeFiles/libft.dir/libft/src/array_list/arrlist_new.c.o
 Asssemb_pr2: CMakeFiles/libft.dir/libft/src/array_list/arrlist_peek.c.o
 Asssemb_pr2: CMakeFiles/libft.dir/libft/src/array_list/arrlist_pop.c.o
@@ -273,7 +423,7 @@ Asssemb_pr2: CMakeFiles/libft.dir/libft/src/util/ft_kill.c.o
 Asssemb_pr2: CMakeFiles/libft.dir/libft/src/util/ft_log_error.c.o
 Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/build.make
 Asssemb_pr2: CMakeFiles/Asssemb_pr2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Asssemb_pr2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/aeclipso/Desktop/Assemb_pr2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking C executable Asssemb_pr2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Asssemb_pr2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
