@@ -1,11 +1,17 @@
- #ifndef ASSEMBLER_LEXER_H
-#define ASSEMBLER_LEXER_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lexer.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/10 05:57:55 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/10 05:57:57 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct s_strtype{
-	int cmd;
-	int label;
-	int hash_comm;
-}t_strtype;
+#ifndef ASSEMBLER_LEXER_H
+# define ASSEMBLER_LEXER_H
 
 # define L 'l'
 # define S 's'
@@ -31,5 +37,11 @@ typedef struct s_strtype{
 # define XOR "xor"
 # define ZJMP "zjmp"
 # define FORK "fork"
-# define LABEL_CHARS			"abcdefghijklmnopqrstuvwxyz_0123456789"
+
+typedef struct	s_strtype{
+	int			cmd;
+	int			label;
+	int			hash_comm;
+}				t_strtype;
+
 #endif
