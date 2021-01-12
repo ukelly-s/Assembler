@@ -78,12 +78,7 @@ add_executable(Asssemb_pr2 $<TARGET_OBJECTS:libft>
         source/common/ft_strtrim.c
         source/assembler/parse_name_comment.c
         source/assembler/parse_clear_line.c
-        source/assembler/find_cmd.c
         source/assembler/labeler.c
-        source/assembler/labelfind.c
-        source/assembler/labels.c
-        source/assembler/lex.c
-        source/assembler/live.c
         source/assembler/parse_operation.c
         source/common/ft_isdigit.c)
 
