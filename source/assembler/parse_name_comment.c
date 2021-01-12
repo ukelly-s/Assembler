@@ -1,5 +1,10 @@
 #include "asm.h"
 #include "asm_errors.h"
+# include "list.h"
+# include "mem.h"
+# include "str.h"
+# include "util.h"
+# include "op.h"
 
 static void		check_excess_information(char *str)
 {

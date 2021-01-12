@@ -13,7 +13,12 @@
 #ifndef ASM_H
 # define ASM_H
 
-# include <stdbool.h>
+# define SEPARATOR	' '
+# define ALT_SEPARATOR		'\t'
+# define ALT_COMMENT_CHAR	';'
+
+/*
+ # include <stdbool.h>
 # include <fcntl.h>
 # include <unistd.h>
 # include "array_list.h"
@@ -29,10 +34,11 @@
 # include "op_struct.h"
 # include "lexer.h"
 
-# define SEPARATOR	' '
-# define ALT_SEPARATOR		'\t'
-# define ALT_COMMENT_CHAR	';'
+ */
 
+# include "list.h"
+# include "op.h"
+# include "hash_map.h"
 /*
 ** lexer
 */
@@ -61,11 +67,12 @@ typedef struct		s_parse
 	t_header		*header;
 }					t_parse;
 
-void				*ft_strrev(register char *begin);
+//void				*ft_strrev(register char *begin);
 void				*assembler(char *filename);
 void				*disassembler(char *filename);
 int					get_line(int fd, char **line);
-void				parse(int fd, t_parse *g, t_strbag2 *all_str);
+void				parse(int fd, t_parse *g, t_list *info_operations,
+						  t_hashmap *info_mark);
 char				*clear_line(char **str);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					number_operation(const char *str);
@@ -82,7 +89,7 @@ int                 ft_isdigit(int c);
 ** parse_operation
 */
 
-void				parse_operation(char *str, t_strbag2 *all_str);
-
+void				parse_operation(char *str, t_list *all_str);
+void				parse_mark(char *str, t_list *all_str, t_hashmap *info_mark);
 
 #endif

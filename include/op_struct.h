@@ -14,7 +14,7 @@
 #ifndef OP_STRUCT_H
 # define OP_STRUCT_H
 # include "op.h"
-
+# include <stdbool.h>
 
 typedef struct	s_op
 {
@@ -26,7 +26,15 @@ typedef struct	s_op
 	uint8_t		t_dir_size;
 }				t_op;
 
-static t_op		g_op[16] = {
+static t_op		g_op[17] = {
+	{
+		.name = "",
+		.code = 0x0,
+		.args_num = 0,
+		.args_types_code = false,
+		.args_types = {0, 0, 0},
+		.t_dir_size = 0,
+	},
 	{
 		.name = "live",
 		.code = 0x01,

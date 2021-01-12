@@ -1,4 +1,8 @@
 #include "asm.h"
+# include "list.h"
+# include "mem.h"
+# include "str.h"
+# include "op.h"
 
 static int		len_clear_line(char *str)
 {

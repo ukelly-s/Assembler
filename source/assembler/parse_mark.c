@@ -15,7 +15,6 @@
 # include "op_struct.h"
 # include "lexer.h"
 
-void	parse_operation(char *str, t_list *all_str)
-{
 
-}
+void				parse_mark(char *str, t_list *all_str, t_hashmap *info_mark)
+{}

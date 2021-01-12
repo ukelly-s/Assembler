@@ -1,5 +1,20 @@
 #include "asm.h"
 #include "asm_errors.h"
+# include <stdbool.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include "array_list.h"
+# include "conv.h"
+# include "hash_map.h"
+# include "io.h"
+# include "list.h"
+# include "math.h"
+# include "mem.h"
+# include "str.h"
+# include "util.h"
+# include "op.h"
+# include "op_struct.h"
+# include "lexer.h"
 
 int					number_operation(const char *str)
 {
@@ -34,7 +49,7 @@ static t_line_type	get_line_type(const char *line, t_parse *g)
 		return (LINE_NAME);
 	}
 	else if (ft_strnequ(COMMENT_CMD_STRING, line, 8)
-			&& g->comment == FLAG_DEFAULT)
+			 && g->comment == FLAG_DEFAULT)
 	{
 		g->comment = FLAG_COMMENT;
 		return (LINE_COMMENT);
@@ -81,7 +96,7 @@ int					get_line(int fd, char **line)//fixme
 	if ((i = get_next_line(fd, &tmp)) < 0)
 		ft_kill(ERR_READINING, NULL, __func__, __FILE__);
 	if (i == 0 || ((!*tmp || tmp[0] == COMMENT_CHAR
-		|| tmp[0] == ALT_COMMENT_CHAR) && (*line = tmp)))
+					|| tmp[0] == ALT_COMMENT_CHAR) && (*line = tmp)))
 		return (i);
 	buff = ft_strtrim(tmp);
 	free(tmp);
@@ -98,7 +113,8 @@ int					get_line(int fd, char **line)//fixme
 	return (i);
 }
 
-void				parse(int fd, t_parse *g, t_strbag2 *all_str)
+void				parse(int fd, t_parse *g, t_list *info_operations,
+						  t_hashmap *info_mark)
 {
 	t_line_type	line_type;
 	char		*line;
@@ -111,9 +127,9 @@ void				parse(int fd, t_parse *g, t_strbag2 *all_str)
 		else if (line_type == LINE_COMMENT)
 			parse_comment(line, g);
 		else if (line_type == LINE_OPERATION)
-			parse_operation(line, all_str);//todo
+			parse_operation(line, info_operations);//todo
 		else if (line_type == LINE_MARK)
-			labeler(line, all_str);//todo
+			parse_mark(line, info_operations, info_mark);//todo
 		else if (line_type == LINE_UNDEFINED)
 			ft_kill(ERR_INV_LINE, NULL, __func__, __FILE__);
 		free(line);

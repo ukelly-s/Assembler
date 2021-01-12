@@ -1,6 +1,11 @@
 #include "asm.h"
 #include "asm_errors.h"
-#include <string.h>
+#include <string.h> //fixme delete
+# include "array_list.h"
+# include "str.h"
+# include "util.h"
+# include "op.h"
+
 
 t_line_type		mark_operation_type(const char *str)
 {
