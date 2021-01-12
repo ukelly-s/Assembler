@@ -1,12 +1,3 @@
 # Project exclude paths
 /cmake-build-debug/
 .idea
-.idea/.gitignore
-*.o
- libft/obj/
- libft/.DS_Store
- *.cor
- test
- .DS_Store
-libft/.cache_exists
-libft/libft.a
