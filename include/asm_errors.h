@@ -13,12 +13,15 @@
 #ifndef ASM_ERRORS_H
 # define ASM_ERRORS_H
 
-# define ERR_INV_LINE		"invalid line"
+# define ERR_INV_LINE		"Invalid line"
 # define ERR_PROG_NAME_LEN	"Exceeded the maximum length of the program name"
 # define ERR_COM_LEN		"Exceeded the maximum length of the program comment"
 # define ERR_NAME_COMMENT	"Excess information after the name/comment"
 # define ERR_INVALID_STRING	"Invalid string(no operation, no mark)"
 # define ERR_READINING		"Reading error"
-# define ERR_SYNTAX			"syntax error"
+# define ERR_SYNTAX			"Syntax error"
+# define ERR_LOTS_ARG		"Lots of arguments"
+# define ERR_INV_ARG_TYPE	"Invalid argument type"
+# define ERR_INV_ARG		"Invalid argument"
 
 #endif
