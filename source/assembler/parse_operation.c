@@ -29,6 +29,8 @@ static int 	get_type_args(char c)
 }
 
 static void	parse_args(char *str, t_cmd	*cmd)
+//todo проверить аргументы, если не метка то в аргументе то запятой может быть
+//todo r, % , -, числа, а также проверить чтобы всего вместе в одном арг этого тоже не было
 {
 	char **args;
 	register int 	i;
