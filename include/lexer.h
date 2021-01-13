@@ -49,7 +49,7 @@ typedef struct	s_cmd
 	uint8_t		code;
 	uint8_t		args_types[3];
 	uint8_t		args_value[3];
-	char		*mark;
+	char		*mark[3];
 }				t_cmd;
 
 #endif

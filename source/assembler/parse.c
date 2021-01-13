@@ -16,7 +16,7 @@
 # include "op_struct.h"
 # include "lexer.h"
 
-int					number_operation(const char *str)
+int					get_number_operation(const char *str)
 {
 	register int		i;
 	int					check;
@@ -56,7 +56,7 @@ static t_line_type	get_line_type(const char *line, t_parse *g)
 	}
 	else if ((tmp = ft_strchr(line, LABEL_CHAR)) != NULL && (*(++tmp) == '\0'))
 		return (LINE_MARK);
-	else if (number_operation(line) != -1)
+	else if (get_number_operation(line) != -1)
 		return (LINE_OPERATION);
 	else if (!*line || line[0] == COMMENT_CHAR || line[0] == ALT_COMMENT_CHAR)
 		return (LINE_EMPTY);

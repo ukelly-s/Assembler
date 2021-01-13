@@ -13,10 +13,10 @@
 #ifndef ASM_H
 # define ASM_H
 
-# define SEPARATOR	' '
+# define SEPARATOR			' '
 # define ALT_SEPARATOR		'\t'
 # define ALT_COMMENT_CHAR	';'
-
+# define REGISTER_CHAR		'r'
 /*
  # include <stdbool.h>
 # include <fcntl.h>
@@ -75,7 +75,7 @@ void				parse(int fd, t_parse *g, t_list *info_operations,
 						  t_hashmap *info_mark);
 char				*clear_line(char **str);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
-int					number_operation(const char *str);
+int					get_number_operation(const char *str);
 void				parse_name(char *str, t_parse *g);
 void				parse_comment(char *str, t_parse *g);
 t_line_type			mark_operation_type(const char *str);
