@@ -89,7 +89,7 @@ int                 ft_isdigit(int c);
 ** parse_operation
 */
 
-void				parse_operation(char *str, t_list *all_str);
-void				parse_mark(char *str, t_list *all_str, t_hashmap *info_mark);
+void				parse_operation(char *str, t_list *all_str, t_parse *g);
+void				parse_mark(char *str, t_hashmap *info_mark, t_parse *g);
 
 #endif

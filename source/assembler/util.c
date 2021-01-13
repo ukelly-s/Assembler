@@ -22,11 +22,11 @@ t_line_type		mark_operation_type(const char *str)
 	ft_kill(ERR_INVALID_STRING, NULL, __func__, __FILE__);
 }
 
-int				ft_strnequ(char const *s1, char const *s2, size_t n)
+int				ft_strnequ(char const *s1, char const *s2, size_t n)//fixme
 {
 	if (s1 == NULL || s2 == NULL)
 		return (0);
-	if (strncmp(s1, s2, n) == 0)//fixme
+	if (strncmp(s1, s2, n) == 0)//fixme  strncmp -> ft_strncmp
 		return (1);
 	return (0);
 }

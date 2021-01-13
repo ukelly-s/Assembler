@@ -1,4 +1,7 @@
 #include "asm.h"
+# include "list.h"
+# include "mem.h"
+# include "str.h"
 
 static size_t	ft_lensp(char const *src)
 {

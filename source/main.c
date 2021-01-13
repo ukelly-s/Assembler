@@ -15,7 +15,8 @@
 #include <stdbool.h>
 #include "io.h"
 
-static _Bool	check_name_the_file(char *name_the_file, char *file_extension)
+static _Bool	check_name_the_file(char *name_the_file, char *file_extension)//fixme
+//fixme 100% не во всех случаях корректно работает (например, файл *.co - будет валидным)
 {
 	char	*tmp;
 

@@ -19,7 +19,7 @@ static t_parse		*new_parse(void)
 	g->header = malloc(sizeof(t_header));
 	ft_assert(g->header != NULL, __func__, "malloc error");
 	g->header->magic = COREWAR_EXEC_MAGIC;
-	g->header->prog_size = 0;
+	g->header->prog_size = 5;
 	return (g);
 }
 

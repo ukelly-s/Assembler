@@ -25,7 +25,7 @@ static int		f_len_mark(char *str)
 	i = 0;
 	while(*str++ != LABEL_CHAR)
 		i++;
-	return (i + 1);
+	return (i);
 }
 
 static char		*clear_line_operation(char **str)
@@ -79,7 +79,7 @@ char			*clear_line(char **str)
 		ft_bzero(tmp, ft_strlen(tmp));
 	if (mark_operation_type(*str) == LINE_MARK)
 	{
-		len_mark = f_len_mark(*str);
+		len_mark = f_len_mark(*str) + 1;
 		line = clear_line_mark(str, len_mark);
 	}
 	else

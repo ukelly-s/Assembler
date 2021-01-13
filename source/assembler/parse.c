@@ -22,8 +22,8 @@ int					number_operation(const char *str)
 	int					check;
 	int					len;
 
-	i = 0;
-	while (i < 16)
+	i = 1;
+	while (i < 17)
 	{
 		len = ft_strlen(g_op[i].name);
 		check = ft_strnequ(str, g_op[i].name, len);
@@ -127,9 +127,9 @@ void				parse(int fd, t_parse *g, t_list *info_operations,
 		else if (line_type == LINE_COMMENT)
 			parse_comment(line, g);
 		else if (line_type == LINE_OPERATION)
-			parse_operation(line, info_operations);//todo
+			parse_operation(line, info_operations, g);//todo
 		else if (line_type == LINE_MARK)
-			parse_mark(line, info_operations, info_mark);//todo
+			parse_mark(line, info_mark, g);//todo
 		else if (line_type == LINE_UNDEFINED)
 			ft_kill(ERR_INV_LINE, NULL, __func__, __FILE__);
 		free(line);
