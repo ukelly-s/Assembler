@@ -5,12 +5,13 @@
 # include "array_list.h"
 # include "conv.h"
 # include "hash_map.h"
-# include "io.h"
+# include "io_.h"
 # include "list.h"
 # include "math.h"
 # include "mem.h"
 # include "str.h"
 # include "util.h"
+# include "ft_printf.h"
 # include "op.h"
 # include "op_struct.h"
 # include "lexer.h"
@@ -62,7 +63,7 @@ void	parse_operation(char *str, t_list *all_str, t_parse *g)
 	t_cmd				*list_cmd;
 
 	list_cmd = ft_memalloc(sizeof(t_cmd));
-	ft_putstr(str);//fixme delete
+	ft_printf(str);//fixme debug
 	i = get_number_operation(str);
 	list_cmd->code = g_op[i].code;
 	parse_args(str + ft_strlen(g_op[i].name), list_cmd);

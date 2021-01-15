@@ -13,7 +13,6 @@
 #ifndef ASSEMBLER_LEXER_H
 # define ASSEMBLER_LEXER_H
 
-# include <stdio.h> //fixme delete
 # include <stdint.h>
 #include	"list.h"
 

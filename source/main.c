@@ -13,22 +13,24 @@
 #include "asm.h"
 #include <string.h>
 #include <stdbool.h>
-#include "io.h"
+#include "str.h"
+#include "io_.h"
 
-static _Bool	check_name_the_file(char *name_the_file, char *file_extension)//fixme
-//fixme 100% не во всех случаях корректно работает (например, файл *.co - будет валидным)
+static _Bool	check_name_the_file(char *name_the_file, char *file_extension)//fixed
 {
 	char	*tmp;
 
-	tmp = strrchr(name_the_file, '.');//fixme strrchr -> ft_strrchr
-	while (*tmp != '\0')
-	{
-		if (*tmp != *file_extension)
-			return (false);
-		tmp++;
-		file_extension++;
-	}
-	return (true);
+	tmp = strrchr(name_the_file, '.');
+
+//	while (*tmp != '\0') - тут сега, strchr может возвр налл
+//	{
+//		if (*tmp != *file_extension)
+//			return (false);
+//		tmp++;
+//		file_extension++;
+//	}
+//	return (true);
+	return (ft_strequ(tmp, file_extension));
 }
 
 int		main(int ac, char **av)

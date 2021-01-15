@@ -24,7 +24,7 @@
 # include "array_list.h"
 # include "conv.h"
 # include "hash_map.h"
-# include "io.h"
+# include "io_.h"
 # include "list.h"
 # include "math.h"
 # include "mem.h"
@@ -74,7 +74,6 @@ int					get_line(int fd, char **line);
 void				parse(int fd, t_parse *g, t_list *info_operations,
 						  t_hashmap *info_mark);
 char				*clear_line(char **str);
-int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					get_number_operation(const char *str);
 void				parse_name(char *str, t_parse *g);
 void				parse_comment(char *str, t_parse *g);

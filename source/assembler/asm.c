@@ -3,7 +3,7 @@
 #include "op.h"
 #include "op_struct.h"
 #include "util.h"
-#include "io.h"
+#include "io_.h"
 #include "hash_map.h"
 #include <fcntl.h>
 #include <stdlib.h>
@@ -11,6 +11,8 @@
 //debug
 #include <unistd.h>
 #include <stdio.h>
+#include "io_.h"
+
 static t_parse		*new_parse(void)
 {
 	t_parse *g;
