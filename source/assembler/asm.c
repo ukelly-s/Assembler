@@ -28,7 +28,7 @@ static t_parse		*new_parse(void)
 	return (g);
 }
 
-void	*assembler(char *filename)
+void	assembler(char *filename)
 {
 	int			fd;
 	t_parse		*g;

@@ -27,12 +27,7 @@ int					get_number_operation(const char *str)
 	{
 		len = ft_strlen(g_op[i].name);
 		check = ft_strnequ(str, g_op[i].name, len);
-		if (check == 1 && (str[len - 1] == 'i' || str[len] == 'i'))
-		{
-			if (g_op[i].name[len - 1] == 'i')
-				return (i);
-		}
-		else if (check == 1)
+		if (check == 1 && str[len] == ' ')
 			return (i);
 		i++;
 	}
@@ -118,6 +113,7 @@ void				parse(int fd, t_parse *g, t_list *info_operations,
 {
 	t_line_type	line_type;
 	char		*line;
+static int i;
 
 	while (get_line(fd, &line) > 0)
 	{
@@ -135,5 +131,6 @@ void				parse(int fd, t_parse *g, t_list *info_operations,
 		free(line);
 		line = NULL;
 		write(1, "\n", 1);//fixme delete
+		i++;
 	}
 }

@@ -3,6 +3,7 @@
 # include "mem.h"
 # include "str.h"
 # include "op.h"
+#include "logger.h"
 
 static int		len_clear_line(char *str)
 {
@@ -33,9 +34,11 @@ static char		*clear_line_operation(char **str)
 	char				*line;
 	char				*tmp;
 	int					len;
+	int					check_space;
 	register int		i;
 
 	i = 0;
+	check_space = 0;
 	len = len_clear_line(*str);
 	line = malloc(sizeof(char) * (len + 1));
 	tmp = *str;
@@ -43,6 +46,8 @@ static char		*clear_line_operation(char **str)
 	{
 		if(**str != ' ' && **str != '\t')
 			line[i++] = **str;
+		if ((**str == ' ' || **str == '\t') && check_space++ == 0)
+			line[i++] = ' ';
 		(*str)++;
 	}
 	free(tmp);
@@ -81,6 +86,7 @@ char			*clear_line(char **str)
 	{
 		len_mark = f_len_mark(*str) + 1;
 		line = clear_line_mark(str, len_mark);
+		*str = NULL;
 	}
 	else
 	{

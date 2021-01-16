@@ -16,7 +16,8 @@
 #include <logger.h>
 #include "str.h"
 #include "io_.h"
-
+#include "ft_printf.h"
+#include "conv.h"
 static _Bool	check_name_the_file(char *name_the_file, char *file_extension)//fixed
 {
 	char	*tmp;
@@ -37,7 +38,7 @@ static _Bool	check_name_the_file(char *name_the_file, char *file_extension)//fix
 void	logger_show()
 {
 	logger_set_log_lvl(TRACE);					//Глобальный уровень логгирования - все сообщеня ниже уровнем будут проигнорированы.
-	logger_switch_flags(L_USE_STDERR, L_ENABLE);//Включаем/выключаем флаги
+	logger_switch_flags(L_USE_COLORS, L_ENABLE);//Включаем/выключаем флаги
 	logger_set_app_log_lvl(L_STDOUT, INFO);		//Локальный уровень логгирования - stdout логгирует сообщения уровня trace и выше
 	logger_set_app_log_lvl(L_STDERR, ERROR);	//stderr будет логгировать только ошибки (самый большой уровень)
 	logger_add_app("new app", "./test", DEBUG);	//Добавляем файловый аппендер. Появится в симейк-билт-дибук. По-умолчанию имя генерится автоматически, можно изменить флагами
@@ -59,6 +60,8 @@ int		main(int ac, char **av)
 					//В string добавил склейку строк: ft_concat(2, "1", "2"); ft_concat(3, "1", "2". NULL);
 					//В system ныне лежат	ft_mkpath - для создания пути папок
 					//						ft_open_path - что выше + открывает файл на конце
+	//ft_printf("%i", ft_atol("s00002"));
+	logger_set_log_lvl(ALL);
 	if (ac == 2 && check_name_the_file(*(av + 1), ".s"))
 		assembler(*(av + 1));
 	else if (ac == 2 && check_name_the_file(*(av + 1), ".cor"))

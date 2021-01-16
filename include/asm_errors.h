@@ -23,5 +23,6 @@
 # define ERR_LOTS_ARG		"Lots of arguments"
 # define ERR_INV_ARG_TYPE	"Invalid argument type"
 # define ERR_INV_ARG		"Invalid argument"
+# define ERR_INV_VAl		"Invalid argument value"
 
 #endif

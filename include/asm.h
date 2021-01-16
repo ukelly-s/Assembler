@@ -17,6 +17,15 @@
 # define ALT_SEPARATOR		'\t'
 # define ALT_COMMENT_CHAR	';'
 # define REGISTER_CHAR		'r'
+# define ARG3_REG 0b00000100
+# define ARG3_DIR 0b00001000
+# define ARG3_IND 0b00001100
+# define ARG2_REG 0b00010000
+# define ARG2_DIR 0b00100000
+# define ARG2_IND 0b00110000
+# define ARG1_REG 0b01000000
+# define ARG1_DIR 0b10000000
+# define ARG1_IND 0b11000000
 /*
  # include <stdbool.h>
 # include <fcntl.h>
@@ -68,8 +77,8 @@ typedef struct		s_parse
 }					t_parse;
 
 //void				*ft_strrev(register char *begin);
-void				*assembler(char *filename);
-void				*disassembler(char *filename);
+void				assembler(char *filename);
+void				disassembler(char *filename);
 int					get_line(int fd, char **line);
 void				parse(int fd, t_parse *g, t_list *info_operations,
 						  t_hashmap *info_mark);

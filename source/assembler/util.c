@@ -19,6 +19,7 @@ t_line_type		mark_operation_type(const char *str)
 		str++;
 	}
 	ft_kill(ERR_INVALID_STRING, NULL, __func__, __FILE__);
+	return (LINE_UNDEFINED);
 }
 
 uint32_t		rev_bytes(uint32_t define)
