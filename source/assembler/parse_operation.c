@@ -61,6 +61,7 @@ void	parse_operation(char *str, t_list *all_str, t_parse *g)
 {
 	register int		i;
 	t_cmd				*list_cmd;
+	static int i1;
 
 	list_cmd = ft_memalloc(sizeof(t_cmd));
 	ft_printf("%s", str);//fixme debug
@@ -72,4 +73,5 @@ void	parse_operation(char *str, t_list *all_str, t_parse *g)
 //todo но как по мне в лююбом случае смотри и туда
 //todo list_cmd	 добавить в all_str
 	list_push_back(all_str, list_cmd);
+	i1++;
 }

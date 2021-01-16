@@ -65,6 +65,7 @@ typedef struct		s_parse
 	int				name;
 	int				comment;
 	t_header		*header;
+	char            *byte_str;
 }					t_parse;
 
 //void				*ft_strrev(register char *begin);
@@ -101,6 +102,6 @@ void				parse_mark(char *str, t_hashmap *info_mark, t_parse *g);
 ** translation to bytecode
 */
 
-void				translation_bytecode(t_list *operations, t_hashmap *mark);
+void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g);
 
 #endif
