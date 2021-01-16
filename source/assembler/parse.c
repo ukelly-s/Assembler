@@ -72,7 +72,12 @@ static char			*get_line_name_comment(int fd, char *line)
 				break;
 		if (( i = get_next_line(fd, &buff)) < 0)
 			ft_kill(ERR_READINING, NULL, __func__, __FILE__);
-		tmp = line ? ft_strjoin(line, buff) : ft_strdup(buff);
+		if (*buff == '\0')
+			tmp = ft_concat(2, line, "\n");
+		else if (ft_strchr(buff, '\"') != NULL)
+			tmp = line ? ft_concat(3, line, "\n", buff) : ft_strdup(buff);
+		else
+			tmp = line ? ft_concat(3, line, "\n", buff) : ft_strdup(buff);
 		free(buff);
 		free(line);
 		line = tmp;
