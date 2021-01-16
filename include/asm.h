@@ -85,6 +85,12 @@ char				*ft_strtrim(char const *s);
 int                 ft_isdigit(int c);
 
 /*
+** parse header
+ */
+
+uint32_t			rev_bytes(uint32_t define);
+
+/*
 ** parse_operation
 */
 

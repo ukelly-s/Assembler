@@ -19,6 +19,8 @@
 
 # include <stdint.h>
 # include <float.h>
+# include <stdarg.h>
+# include <wchar.h>
 
 # if defined(_POSIX_VERSION) || defined(__unix__) || defined(linux)
 #  include <sys/select.h>

@@ -1,6 +1,5 @@
-#include <stdio.h>
 #include <util.h>
-#include <fcntl.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include "error.h"
 #include "logger_.h"

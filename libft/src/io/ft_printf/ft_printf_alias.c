@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "ft_printf.h"
+#include <unistd.h>
 
 int					ft_vprintf(const char *format, va_list ap)
 {

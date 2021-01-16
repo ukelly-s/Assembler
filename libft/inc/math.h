@@ -21,6 +21,7 @@
 */
 
 #include <stdint.h>
+#include <stddef.h>
 
 /**
 * @file abs.c

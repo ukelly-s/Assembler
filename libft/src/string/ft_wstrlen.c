@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <wchar.h>
 
 size_t	ft_wstrlen(const wint_t *s)
 {

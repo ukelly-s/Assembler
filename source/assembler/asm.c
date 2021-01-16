@@ -23,8 +23,8 @@ static t_parse		*new_parse(void)
 	g->comment = FLAG_DEFAULT;
 	g->header = malloc(sizeof(t_header));
 	ft_assert(g->header != NULL, __func__, "malloc error");
-	g->header->magic = COREWAR_EXEC_MAGIC;
-	g->header->prog_size = 53;
+	g->header->magic = rev_bytes(COREWAR_EXEC_MAGIC);
+	g->header->prog_size = rev_bytes(77); //fixme debug
 	return (g);
 }
 
@@ -45,10 +45,9 @@ void	*assembler(char *filename)
 	parse(fd, g, info_operations, info_mark);
 	//TODO перевод в байт код и подсчёт размера исполняемого блока
 //	filename = replace_extension(filename, ".s", ".cor");
-//	if ((fd = open("test_header.txt", O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
-//	    ; //error(ERR_CREATE_FILE);
-//	write(fd, ((uint8_t)(g->header->magic)), sizeof(uint32_t));
-//	printf("%lli\n", write(fd, g->header, sizeof(t_header)));
+	if ((fd = open("test_header.cor", O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
+	    ; //error(ERR_CREATE_FILE);
+	printf("%lli\n", write(fd, g->header, sizeof(t_header)));
 	//bite code record in file
 	free(g->header);//TODO
 	free(g);//fixme
