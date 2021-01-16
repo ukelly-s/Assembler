@@ -4,23 +4,23 @@
 # include "logger.h"
 # include "hash_map.h"
 
-typedef struct			s_appender
+struct			s_appender
 {
 	enum e_log_level	log_lvl;
 	char				*name;
 	char				*path;
 	int					fd;
 	int					enabled;
-}						t_appender;
+};
 
-typedef struct			s_logger
+struct			s_logger
 {
 	enum e_log_level	log_lvl;
 	t_appender			*stdout_app;
 	t_appender			*stderr_app;
 	t_hashmap			*file_apps;
 	unsigned			flags;
-}						t_logger;
+};
 
 void					logger_init_storage(void);
 void					logger_free_app(void *app);
