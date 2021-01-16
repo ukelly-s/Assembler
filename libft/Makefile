@@ -4,7 +4,7 @@ ARRAYPATH:= array_list/
 ARRAY:= arrlist_new arrlist_pop arrlist_util arrlisti_peek  arrlisti_push  \
         arrlist_peek arrlist_push arrlisti_new arrlisti_pop arrlisti_utils
 
-BITWISEPATH:= conv/
+BITWISEPATH:= bitwise/
 BITWISE:= hasbyte mask operations shift
 
 CONVPATH:= conv/
@@ -25,8 +25,7 @@ PRINTF:= buffered_printer float_processing float_processing_ag \
          get_format_arg number_processing string_processing
 
 LOGGERPATH:= logger/
-LOGGER:= logger
-         logger_appenders logger_config logger_log logger_log_alias
+LOGGER:= logger logger_appenders logger_config logger_log logger_log_alias
 
 LISTPATH:= list/
 LIST:= list_clear list_new list_pop list_push
@@ -96,20 +95,20 @@ $(OBJPATH)%.o: $(SRCPATH)%.c | $(CCHF)
 	@echo $(RED) "Missing file : $@"
 
 $(CCHF):
-	@mkdir $(OBJPATH)
-	@mkdir $(OBJPATH)$(ARRAYPATH)
-	@mkdir $(OBJPATH)$(BITWISEPATH)
-	@mkdir $(OBJPATH)$(CONVPATH)
-	@mkdir $(OBJPATH)$(HASHMAPPATH)
-	@mkdir $(OBJPATH)$(IOPATH)
-	@mkdir $(OBJPATH)$(PRINTFPATH)
-	@mkdir $(OBJPATH)$(LOGGERPATH)
-	@mkdir $(OBJPATH)$(LISTPATH)
-	@mkdir $(OBJPATH)$(MEMPATH)
-	@mkdir $(OBJPATH)$(STRINGPATH)
-	@mkdir $(OBJPATH)$(UTILPATH)
-	@mkdir $(OBJPATH)$(MATHPATH)
-	@mkdir $(OBJPATH)$(SYSTEMPATH)
+	@mkdir -p $(OBJPATH)
+	@mkdir -p $(OBJPATH)$(ARRAYPATH)
+	@mkdir -p $(OBJPATH)$(BITWISEPATH)
+	@mkdir -p $(OBJPATH)$(CONVPATH)
+	@mkdir -p $(OBJPATH)$(HASHMAPPATH)
+	@mkdir -p $(OBJPATH)$(IOPATH)
+	@mkdir -p $(OBJPATH)$(PRINTFPATH)
+	@mkdir -p $(OBJPATH)$(LOGGERPATH)
+	@mkdir -p $(OBJPATH)$(LISTPATH)
+	@mkdir -p $(OBJPATH)$(MEMPATH)
+	@mkdir -p $(OBJPATH)$(STRINGPATH)
+	@mkdir -p $(OBJPATH)$(UTILPATH)
+	@mkdir -p $(OBJPATH)$(MATHPATH)
+	@mkdir -p $(OBJPATH)$(SYSTEMPATH)
 	@touch $(CCHF)
 
 clean:
