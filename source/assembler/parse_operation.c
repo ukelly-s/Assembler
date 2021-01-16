@@ -63,7 +63,7 @@ void	parse_operation(char *str, t_list *all_str, t_parse *g)
 	t_cmd				*list_cmd;
 
 	list_cmd = ft_memalloc(sizeof(t_cmd));
-	ft_printf(str);//fixme debug
+	ft_printf("%s", str);//fixme debug
 	i = get_number_operation(str);
 	list_cmd->code = g_op[i].code;
 	parse_args(str + ft_strlen(g_op[i].name), list_cmd);

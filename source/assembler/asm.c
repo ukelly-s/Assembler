@@ -43,11 +43,12 @@ void	*assembler(char *filename)
 	if ((fd = open(filename, O_RDONLY)) == -1)
 		;//error(ERR_OPEN_FILE)
 	parse(fd, g, info_operations, info_mark);
+	translation_bytecode(info_operations, info_mark);
 	//TODO перевод в байт код и подсчёт размера исполняемого блока
 //	filename = replace_extension(filename, ".s", ".cor");
-	if ((fd = open("test_header.cor", O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
-	    ; //error(ERR_CREATE_FILE);
-	printf("%lli\n", write(fd, g->header, sizeof(t_header)));
+//	if ((fd = open("test_header.cor", O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
+//	    ; //error(ERR_CREATE_FILE);
+//	printf("%lli\n", write(fd, g->header, sizeof(t_header)));
 	//bite code record in file
 	free(g->header);//TODO
 	free(g);//fixme

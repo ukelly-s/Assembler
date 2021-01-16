@@ -97,4 +97,10 @@ uint32_t			rev_bytes(uint32_t define);
 void				parse_operation(char *str, t_list *all_str, t_parse *g);
 void				parse_mark(char *str, t_hashmap *info_mark, t_parse *g);
 
+/*
+** translation to bytecode
+*/
+
+void				translation_bytecode(t_list *operations, t_hashmap *mark);
+
 #endif

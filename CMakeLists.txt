@@ -138,5 +138,6 @@ add_executable(Asssembler $<TARGET_OBJECTS:libft>
         source/assembler/parse_mark.c
         source/common/ft_isdigit.c
         source/common/ft_strtrim.c
+		source/assembler/translation_bytecode.c
         )
 
