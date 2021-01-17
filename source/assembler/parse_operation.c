@@ -56,9 +56,9 @@ static void	parse_args(char *str, t_cmd	*cmd)
 	register int 	i;
 
 	i = 0;
-	args = ft_strsplit(str, SEPARATOR_CHAR);
-	if (args[g_op[cmd->code].args_num] != NULL)
+	if (g_op[cmd->code].args_num != ft_words_count(str, SEPARATOR_CHAR))
 		ft_kill(ERR_LOTS_ARG, NULL, __func__, __FILE__);
+	args = ft_strsplit(str, SEPARATOR_CHAR);
 	while (args[i] != NULL)
 	{
 		cmd->args_types[i] = get_type_args(*args[i]);
@@ -86,13 +86,10 @@ void	parse_operation(char *str, t_list *all_str, t_parse *g)
 
 	list_cmd = ft_memalloc(sizeof(t_cmd));
 	i = get_number_operation(str);
-	//ft_printf("%s - %i", str, i);//fixme debug
-
 	list_cmd->code = g_op[i].code;
 	parse_args(str + ft_strlen(g_op[i].name) + 1, list_cmd);
 	get_prog_size(list_cmd);
-	list_cmd->size_op = list_cmd->size_op + g->header->prog_size;
-	ft_printf("\nSIZE  %llu \n", g->header->prog_size);
+	list_cmd->size_op += g->header->prog_size;
 	g->header->prog_size = list_cmd->size_op;
 	list_push_back(all_str, list_cmd);
 }

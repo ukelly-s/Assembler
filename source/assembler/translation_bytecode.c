@@ -96,28 +96,30 @@ static void		arg_types_to_byte(t_list_node *shuffle)
 void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 {
 	t_list_node		*shuffle;
-	char 			*str;
+	t_byte			*str;
 	int32_t			step_mark[3];
 	register int 	i;
-	size_t			j = 0;
+	size_t			j;
+
+	j = 0;
 	i = 0;
 	ft_bzero(step_mark, sizeof(step_mark));
 	str = malloc(g->header->prog_size + 1);
-	size_t					j = 0;
+//	size_t					j = 0;
 	shuffle = operations->front;
 	while (shuffle)
 	{
 		mark_to_address(shuffle, mark);
 		arg_types_to_byte(shuffle);
-
-		while (head_str < g->header->prog_size) //true
-		j = 0;
-		while (j < sizeof(shuffle->data))
-		{
-			str[head_str + j] =
-			j++;
-		}
-		head_str = head_str + j;
+//
+//		while (i < ) //true
+//		j = 0;
+//		while (j < sizeof(shuffle->data))
+//		{
+//			str[head_str + j] =
+//			j++;
+//		}
+//		head_str = head_str + j;
 		debugprint(shuffle, i);
 		i++;
 		shuffle = shuffle->next;

@@ -3,6 +3,7 @@
 # include <stdbool.h>
 # include <fcntl.h>
 # include <unistd.h>
+#include <logger.h>
 # include "array_list.h"
 # include "conv.h"
 # include "hash_map.h"
@@ -16,18 +17,17 @@
 # include "op_struct.h"
 # include "lexer.h"
 #include "ft_printf.h"
+
 int					get_number_operation(const char *str)
 {
 	register int		i;
-	int					check;
 	int					len;
 
 	i = 1;
 	while (i < 17)
 	{
 		len = ft_strlen(g_op[i].name);
-		check = ft_strnequ(str, g_op[i].name, len);
-		if (check == 1 && str[len] == ' ')
+		if (ft_strnequ(str, g_op[i].name, len) && str[len] == ' ')
 			return (i);
 		i++;
 	}
@@ -70,7 +70,7 @@ static char			*get_line_name_comment(int fd, char *line)
 		if ((buff = ft_strchr(line, '\"')) != NULL)
 			if ((buff = ft_strchr(++buff, '\"')) != NULL)
 				break;
-		if (( i = get_next_line(fd, &buff)) < 0)
+		if ((i = get_next_line(fd, &buff)) < 0)
 			ft_kill(ERR_READINING, NULL, __func__, __FILE__);
 		if (*buff == '\0')
 			tmp = ft_concat(2, line, "\n");
@@ -138,5 +138,5 @@ static int i;
 		write(1, "\n", 1);//fixme delete
 		i++;
 	}
-	ft_printf("SIZE%llu \n\t", g->header->prog_size);
+	log_debug(__func__, "Size: '%u'", g->header->prog_size);
 }

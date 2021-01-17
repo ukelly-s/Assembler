@@ -3,6 +3,8 @@ project(Asssembler C)
 
 set(CMAKE_C_STANDARD 99)
 
+#-pedantic -Wshadow
+
 set(CMAKE_C_FLAGS " -Wall -Wextra")
 
 include_directories(includes include)

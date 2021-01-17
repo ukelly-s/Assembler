@@ -45,6 +45,7 @@
 
  */
 
+#include <mem.h>
 # include "list.h"
 # include "op.h"
 # include "hash_map.h"
@@ -75,7 +76,7 @@ typedef struct		s_parse
 	int				name;
 	int				comment;
 	t_header		*header;
-	char            *byte_str;
+	t_byte			*byte_str;
 }					t_parse;
 
 //void				*ft_strrev(register char *begin);
