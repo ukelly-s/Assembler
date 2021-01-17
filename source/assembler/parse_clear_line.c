@@ -39,7 +39,7 @@ static char		*clear_line_operation(char **str)
 
 	i = 0;
 	check_space = 0;
-	len = len_clear_line(*str);
+	len = len_clear_line(*str) + 1;
 	line = malloc(sizeof(char) * (len + 1));
 	tmp = *str;
 	while (**str != '\0')
