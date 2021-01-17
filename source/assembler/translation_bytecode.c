@@ -98,6 +98,7 @@ void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 				else if (((t_cmd*)(shuffle->data))->args_types[iter] == T_REG)
 					((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_REG >> (iter * 2));
 			}
+
 		}
 
 //		while (head_str < g->header->prog_size) //true
