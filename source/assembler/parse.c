@@ -15,7 +15,7 @@
 # include "op.h"
 # include "op_struct.h"
 # include "lexer.h"
-
+#include "ft_printf.h"
 int					get_number_operation(const char *str)
 {
 	register int		i;
@@ -138,4 +138,5 @@ static int i;
 		write(1, "\n", 1);//fixme delete
 		i++;
 	}
+	ft_printf("SIZE%llu \n\t", g->header->prog_size);
 }

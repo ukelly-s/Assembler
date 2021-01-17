@@ -5,6 +5,7 @@
 #include "ft_printf.h"
 #include <stdlib.h>
 #include "str.h"
+#include "mem.h"
 
 //static void check_valid_arg_reg(t_cmd	*cmd, int32_t i)
 //{
@@ -54,11 +55,12 @@ void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 {
 	t_list_node 			*shuffle;
 	uint8_t					*str;					//str_byte_code
+	char 					*buff;
 	t_cmd					*tmp;
 	int32_t					iter;
 	uint32_t 				calc;
 	int32_t 				step_mark[3];
-
+//TODO ввести ДРУГУЮ ПЕРЕМЕННУЮ вместо tmp
 	iter = -1;
 	ft_bzero(step_mark, sizeof(step_mark));
 //	str = malloc(g->header->prog_size);
@@ -71,12 +73,12 @@ void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 	{
 		while (++iter < 3)
 		{
-			tmp = ((t_cmd*)(shuffle->data))->mark[iter];
-			if (!tmp)
+			buff = ((t_cmd*)(shuffle->data))->mark[iter];
+			if (!buff)
 				continue ;
-			calc = (unsigned int)(long long)hashmap_get(mark, tmp, ft_strlen(tmp));
+			calc = (unsigned int)(long long)hashmap_get(mark, buff, ft_strlen(buff));
 //			step_mark[iter] = calc - ((t_cmd *)(shuffle->data))->size_op;
-			if(tmp->mark[i])
+			if(((t_cmd*)(shuffle->data))->mark[iter])
 				((t_cmd*)(shuffle->data))->args_value[iter] = calc - ((t_cmd *)(shuffle->data))->size_op;
 		}
 //		while (head_str < g->header->prog_size) //true
