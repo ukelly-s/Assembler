@@ -54,61 +54,70 @@ void				debugprint(t_list_node *shuffle, size_t i)
 	ft_printf("MK2:\t%s\n", mk2);
 	ft_printf("MK3:\t%s\n", mk3);
 }
+static void		mark_to_address(t_list_node *shuffle, t_hashmap *mark)
+{
+	int32_t		iter;
+	char 		*buff;
+	uint32_t 	val_byte_mark;
+
+	iter = -1;
+	while (++iter < 3)
+	{
+		buff = ((t_cmd*)(shuffle->data))->mark[iter];
+		if (!buff)
+			continue ;
+		val_byte_mark = (unsigned int)(long long)hashmap_get(mark, buff, ft_strlen(buff));
+//			step_mark[iter] = val_byte_mark - ((t_cmd *)(shuffle->data))->size_op;
+		if(((t_cmd*)(shuffle->data))->mark[iter])
+			((t_cmd*)(shuffle->data))->args_value[iter] = val_byte_mark - ((t_cmd *)(shuffle->data))->size_op;
+	}
+}
+
+static void		arg_types_to_byte(t_list_node *shuffle)
+{
+	int32_t		iter;
+
+	iter = -1;
+	while (++iter < 3)
+	{
+		if(g_op[((t_cmd*)(shuffle->data))->code].args_types_code)
+		{
+			if (((t_cmd*)(shuffle->data))->args_types[iter] == T_DIR)
+				((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_DIR >> (iter * 2));
+			else if (((t_cmd*)(shuffle->data))->args_types[iter] == T_IND)
+				((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_IND >> (iter * 2));
+			else if (((t_cmd*)(shuffle->data))->args_types[iter] == T_REG)
+				((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_REG >> (iter * 2));
+		}
+
+	}
+}
 
 void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 {
-	t_list_node 			*shuffle;
-	uint8_t					*str;					//str_byte_code
-	char 					*buff;
-	t_cmd					*tmp;
-	int32_t					iter;
-	uint32_t 				calc;
-	int32_t 				step_mark[3];
-//TODO ввести ДРУГУЮ ПЕРЕМЕННУЮ вместо tmp
-
+	t_list_node		*shuffle;
+	char 			*str;
+	int32_t			step_mark[3];
+	register int 	i;
+	size_t			j = 0;
+	i = 0;
 	ft_bzero(step_mark, sizeof(step_mark));
-	str = malloc((sizeof)g->header->prog_size + 1);
-	//str = malloc(200);
-	size_t					i = 0;
+	str = malloc(g->header->prog_size + 1);
 	size_t					j = 0;
-	size_t					head_str = 0;
 	shuffle = operations->front;
 	while (shuffle)
 	{
-		iter = -1;
-		while (++iter < 3)
-		{
-			buff = ((t_cmd*)(shuffle->data))->mark[iter];
-			if (!buff)
-				continue ;
-			calc = (unsigned int)(long long)hashmap_get(mark, buff, ft_strlen(buff));
-//			step_mark[iter] = calc - ((t_cmd *)(shuffle->data))->size_op;
-			if(((t_cmd*)(shuffle->data))->mark[iter])
-				((t_cmd*)(shuffle->data))->args_value[iter] = calc - ((t_cmd *)(shuffle->data))->size_op;
-		}
-		iter = -1;
-		while (++iter < 3)
-		{
-			if(g_op[((t_cmd*)(shuffle->data))->code].args_types_code)
-			{
-				if (((t_cmd*)(shuffle->data))->args_types[iter] == T_DIR)
-					((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_DIR >> (iter * 2));
-				else if (((t_cmd*)(shuffle->data))->args_types[iter] == T_IND)
-					((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_IND >> (iter * 2));
-				else if (((t_cmd*)(shuffle->data))->args_types[iter] == T_REG)
-					((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_REG >> (iter * 2));
-			}
+		mark_to_address(shuffle, mark);
+		arg_types_to_byte(shuffle);
 
+		while (head_str < g->header->prog_size) //true
+		j = 0;
+		while (j < sizeof(shuffle->data))
+		{
+			str[head_str + j] =
+			j++;
 		}
-
-//		while (head_str < g->header->prog_size) //true
-//		j = 0;
-//		while (j < sizeof(shuffle->data))
-//		{
-//			str[head_str + j] =
-//			j++;
-//		}
-//		head_str = head_str + j;
+		head_str = head_str + j;
 		debugprint(shuffle, i);
 		i++;
 		shuffle = shuffle->next;
