@@ -23,7 +23,7 @@ typedef struct	s_cmd
 	uint8_t		args_types[3];
 	uint8_t		args_value[3];
 	char		*mark[3];
-	uint8_t		num_byte_loc_op;
+	uint32_t	size_op;
 }				t_cmd;
 
 #endif

@@ -18,7 +18,8 @@ void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 	uint8_t					*str;
 	uint32_t                iter;
 	uint8_t					*step;
-	unsigned int				calc;
+	uint32_t 			calc;
+	int32_t 			step_mark;
 
 
 	str = malloc(sizeof(t_cmd));
@@ -36,24 +37,28 @@ void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 	char            *mk2;
 	char            *mk3;
 	size_t          i = 0;
+	char            *tmp;
 
 	shuffle = operations->front;
 	while (shuffle)
 	{
-		while (iter < sizeof(t_cmd))
-		{
-			str = (uint8_t *)realloc(str, sizeof(t_cmd) * iter);
-			str[iter] = ((t_cmd *)(shuffle->data))->code;
-			//todo in [i] elem is mark
-			calc = (unsigned int)(long long)hashmap_get(mark, ((t_cmd*)(shuffle->data))->mark[2], ft_strlen(((t_cmd*)(shuffle->data))->mark[2]));
-			//(unsigned int)(long long)hashmap_get(mark, (void*)((t_cmd *)(shuffle->data))->mark[2], ft_strlen(((t_cmd *)(shuffle->data))->mark[2]));
-
-
-			iter++;
-		}
-
+//		while (iter < sizeof(t_cmd))
+//		{
+//			str = (uint8_t *)realloc(str, sizeof(t_cmd) * iter);
+//			str[iter] = ((t_cmd *)(shuffle->data))->code;
+//			//todo in [i] elem is mark
+//
+//
+//
+//			iter++;
+//		}
+//
 		cd = ((t_cmd *)(shuffle->data))->code;
-
+		//
+		tmp = ((t_cmd*)(shuffle->data))->mark[1];
+		calc = (unsigned int)(long long)hashmap_get(mark, tmp, ft_strlen(tmp));
+		step_mark = calc - ((t_cmd *)(shuffle->data))->size_op;
+		//
 		s1 = ((t_cmd *)(shuffle->data))->args_value[0];
 		s2 = ((t_cmd *)(shuffle->data))->args_value[1];
 		s3 = ((t_cmd *)(shuffle->data))->args_value[2];
