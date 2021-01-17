@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include "str.h"
 
-static void check_valid_arg_reg(t_cmd	*cmd, i)
+static void check_valid_arg_reg(t_cmd	*cmd, int i)
 {
 	if (cmd->args_types[i] == T_REG	&& (cmd->args_value[i] < 1
 										   && cmd->args_value > REG_NUMBER))

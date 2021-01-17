@@ -90,9 +90,8 @@ void	parse_operation(char *str, t_list *all_str, t_parse *g)
 
 	list_cmd->code = g_op[i].code;
 	parse_args(str + ft_strlen(g_op[i].name) + 1, list_cmd);
-//todo при переводе в байт код смотрим args_value[i] == 0 значит mark[i] != 0 и наоборот
-//todo лично для Паши разъяснение СНАЧАЛА СМОТРИМ НА МЕТКИ
-//todo но как по мне в лююбом случае смотри и туда
-//todo list_cmd	 добавить в all_str
+	get_prog_size(list_cmd);
+	list_cmd->size_op = list_cmd->size_op + g->header->prog_size;
+	g->header->prog_size = list_cmd->size_op;
 	list_push_back(all_str, list_cmd);
 }

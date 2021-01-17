@@ -48,6 +48,7 @@
 # include "list.h"
 # include "op.h"
 # include "hash_map.h"
+# include "lexer.h"
 /*
 ** lexer
 */
@@ -112,5 +113,5 @@ void				parse_mark(char *str, t_hashmap *info_mark, t_parse *g);
 */
 
 void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g);
-
+void 				get_prog_size(t_cmd *cmd);
 #endif
