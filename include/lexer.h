@@ -16,7 +16,6 @@
 # include <stdint.h>
 # include	"list.h"
 
-
 typedef struct	s_cmd
 {
 	uint8_t			code;
@@ -26,5 +25,11 @@ typedef struct	s_cmd
 	char 			*mark[3];
 	uint32_t		size_op;
 }				t_cmd;
+
+typedef union s_codeint
+{
+	int digit;
+	char letter[4];
+}				t_codeint;
 
 #endif

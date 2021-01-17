@@ -74,6 +74,8 @@ typedef struct		s_parse
 	t_byte			*byte_str;
 }					t_parse;
 
+
+
 //void				*ft_strrev(register char *begin);
 void				assembler(char *filename);
 void				disassembler(char *filename);

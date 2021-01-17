@@ -48,9 +48,20 @@ static void	arg_types_to_byte(t_cmd *cmd)
 	}
 }
 
-static t_byte	*op_bytecode(t_cmd *cmd, t_parse *g)
+static void	op_bytecode(t_cmd *cmd, t_parse *g)
 {
 
+}
+
+//fixme
+void		int_to_byte(char **str, t_cmd *cmd)
+{
+	t_codeint 		unite;
+
+	str[0] = unite.letter[0];
+	str[1] = unite.letter[1];
+	str[2] = unite.letter[2];
+	str[3] = unite.letter[3];
 }
 
 void		translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
