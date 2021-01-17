@@ -31,25 +31,40 @@ static int 	get_type_args(char c)
 	return (0);
 }
 
-static int 	check_valid_arg_value(char *str, t_cmd	*cmd)
+//static int 	check_valid_arg_value(char *str, t_cmd	*cmd)
+//{
+//	int i;
+//
+//	i = 0;
+//	if (cmd->args_types[i] == T_REG	&& (cmd->args_value[i] < 1
+//		&& cmd->args_value > REG_NUMBER))
+//			log_error(__func__, "%s", ERR_INV_VAl);
+//	 ++i;
+//	return (0);
+//}
+static void		check_valid_arg_value(char *str, t_cmd *cmd, int i)
 {
-	int i;
+	uint8_t *tmp;
 
-	i = 0;
-	if (cmd->args_types[i] == T_REG	&& (cmd->args_value[i] < 1
-		&& cmd->args_value > REG_NUMBER))
-			log_error(__func__, "%s", ERR_INV_VAl);
-	 ++i;
-	return (0);
+	tmp = str;
+	if (*str == LABEL_CHAR)
+		cmd->mark[i] = ft_strdup(++str);
+	else
+	{
+		while (*str != '\0')
+		{
+			if (ft_isdigit(*str) == 0)
+				ft_kill(ERR_INV_CHAR, NULL, __func__, __FILE__);
+			str++;
+		}
+		cmd->args_value[i] = ft_atol(tmp); // todo t_reg check
+	}
 }
 
 static void	parse_args(char *str, t_cmd	*cmd)
-//todo проверить аргументы, если не метка то в аргументе то запятой может быть
-//todo r, % , -, числа, а также проверить чтобы всего вместе в одном арг этого тоже не было
 {
 	char **args;
 	register int 	i;
-	char *check_mark;
 
 	i = 0;
 	args = ft_strsplit(str, SEPARATOR_CHAR);
@@ -60,15 +75,19 @@ static void	parse_args(char *str, t_cmd	*cmd)
 		cmd->args_types[i] = get_type_args(*args[i]);
 		if (!(cmd->args_types[i] & g_op[cmd->code].args_types[i]))
 			ft_kill(ERR_INV_ARG, NULL, __func__, __FILE__);
-		if ((check_mark = ft_strchr(args[i], LABEL_CHAR)) != NULL)
-			cmd->mark[i] = ft_strdup(++check_mark);
-		else if (cmd->args_types[i] == T_IND && *args[i] != '+')
-			cmd->args_value[i] = ft_atol(args[i]);//todo указатель на начало числа
-		else if ((cmd->args_types[i] == T_DIR || cmd->args_types[i] == T_REG)
-				&& *(++(args[i])) != '+')
-			cmd->args_value[i] = ft_atol(args[i]);
+		if (cmd->args_types[i] == T_REG && ft_isdigit(args[i][1]) != 0)
+			check_valid_arg_value(&args[i][1], cmd, i);
+		else if (cmd->args_types[i] == T_IND && (ft_isdigit(*args[i]) != 0
+		|| *args[i] == '-' || *args[i] == LABEL_CHAR))
+			check_valid_arg_value(&args[i][0], cmd, i);
+		else if (cmd->args_types[i] == T_DIR  && (ft_isdigit(args[i][1]) != 0
+				|| args[i][1] == '-' || args[i][1] == LABEL_CHAR))
+			check_valid_arg_value(&args[i][1], cmd, i);
+		else
+			ft_kill(ERR_INV_CHAR, NULL, __func__, __FILE__);
 		i++;
 	}
+	ft_free_split(args);
 }
 
 void	parse_operation(char *str, t_list *all_str, t_parse *g)

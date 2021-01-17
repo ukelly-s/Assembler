@@ -16,16 +16,6 @@
 # include <stdint.h>
 #include	"list.h"
 
-# define LABEL 1
-# define CMD   2
-
-# define FOUND 1
-# define NOTFOUND 0
-
-
-# define REG_CODE				1
-# define DIR_CODE				2
-# define IND_CODE				3
 
 typedef struct	s_cmd
 {
@@ -33,6 +23,7 @@ typedef struct	s_cmd
 	uint8_t		args_types[3];
 	uint8_t		args_value[3];
 	char		*mark[3];
+	uint8_t		num_byte_loc_op;
 }				t_cmd;
 
 #endif

@@ -24,5 +24,6 @@
 # define ERR_INV_ARG_TYPE	"Invalid argument type"
 # define ERR_INV_ARG		"Invalid argument"
 # define ERR_INV_VAl		"Invalid argument value"
+# define ERR_INV_CHAR		"The argument value contains an invalid character"
 
 #endif
