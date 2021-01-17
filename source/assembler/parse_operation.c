@@ -31,17 +31,6 @@ static int 	get_type_args(char c)
 	return (0);
 }
 
-//static int 	check_valid_arg_value(char *str, t_cmd	*cmd)
-//{
-//	int i;
-//
-//	i = 0;
-//	if (cmd->args_types[i] == T_REG	&& (cmd->args_value[i] < 1
-//		&& cmd->args_value > REG_NUMBER))
-//			log_error(__func__, "%s", ERR_INV_VAl);
-//	 ++i;
-//	return (0);
-//}
 static void		check_valid_arg_value(char *str, t_cmd *cmd, int i)
 {
 	char *tmp;

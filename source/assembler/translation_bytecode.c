@@ -6,11 +6,12 @@
 #include <stdlib.h>
 #include "str.h"
 
-//void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
-//{
-//	//unsigned  int i = ARG1_REG | ARG2_DIR | ARG3_DIR;
-//
-//}
+static void check_valid_arg_reg(t_cmd	*cmd, i)
+{
+	if (cmd->args_types[i] == T_REG	&& (cmd->args_value[i] < 1
+										   && cmd->args_value > REG_NUMBER))
+		log_error(__func__, "%s", ERR_INV_VAl);
+}
 
 void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 {
