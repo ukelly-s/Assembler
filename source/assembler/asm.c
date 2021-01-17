@@ -47,8 +47,11 @@ void	assembler(char *filename)
 	translation_bytecode(info_operations, info_mark, g);
 	//TODO перевод в байт код и подсчёт размера исполняемого блока
 //	filename = replace_extension(filename, ".s", ".cor");
-//	if ((fd = open("test_header.cor", O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
-//	    ; //error(ERR_CREATE_FILE);
+	if ((fd = open("test_header.cor", O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 0644)) == -1)
+	    ; //error(ERR_CREATE_FILE);
+	write(fd, g->header, sizeof(t_header));
+	write(fd, g->byte_str, g->header->prog_size);
+
 //	printf("%lli\n", write(fd, g->header, sizeof(t_header)));
 	//bite code record in file
 	free(g->header);//TODO

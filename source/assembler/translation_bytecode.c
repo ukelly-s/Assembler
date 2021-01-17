@@ -63,8 +63,8 @@ void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 //TODO ввести ДРУГУЮ ПЕРЕМЕННУЮ вместо tmp
 	iter = -1;
 	ft_bzero(step_mark, sizeof(step_mark));
-//	str = malloc(g->header->prog_size);
-	str = malloc(200);
+	str = malloc((sizeof)g->header->prog_size + 1);
+	//str = malloc(200);
 	size_t					i = 0;
 	size_t					j = 0;
 	size_t					head_str = 0;
