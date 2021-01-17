@@ -38,7 +38,6 @@ void	parse_comment(char *str, t_parse *g)
 		ft_kill(ERR_COM_LEN, NULL, __func__, __FILE__);
 	while (i < len)
 		g->header->comment[i++] = *buff++;
-	ft_putstr(g->header->comment);//TODO delete
 }
 
 void	parse_name(char *str, t_parse *g)
@@ -54,5 +53,4 @@ void	parse_name(char *str, t_parse *g)
 		ft_kill(ERR_PROG_NAME_LEN, NULL, __func__, __FILE__);
 	while (i < len)
 		g->header->prog_name[i++] = *buff++;
-	ft_putstr(g->header->prog_name);//TODO delete
 }

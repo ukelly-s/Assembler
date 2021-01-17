@@ -118,7 +118,6 @@ void				parse(int fd, t_parse *g, t_list *info_operations,
 {
 	t_line_type	line_type;
 	char		*line;
-static int i;
 
 	while (get_line(fd, &line) > 0)
 	{
@@ -128,15 +127,13 @@ static int i;
 		else if (line_type == LINE_COMMENT)
 			parse_comment(line, g);
 		else if (line_type == LINE_OPERATION)
-			parse_operation(line, info_operations, g);//todo
+			parse_operation(line, info_operations, g);
 		else if (line_type == LINE_MARK)
-			parse_mark(line, info_mark, g);//todo
+			parse_mark(line, info_mark, g);
 		else if (line_type == LINE_UNDEFINED)
 			ft_kill(ERR_INV_LINE, NULL, __func__, __FILE__);
 		free(line);
 		line = NULL;
-		write(1, "\n", 1);//fixme delete
-		i++;
 	}
 	log_debug(__func__, "Size: '%u'", g->header->prog_size);
 }

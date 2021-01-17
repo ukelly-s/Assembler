@@ -79,7 +79,7 @@ static void	parse_args(char *str, t_cmd	*cmd)
 	ft_free_split(args);
 }
 
-void	parse_operation(char *str, t_list *all_str, t_parse *g)
+void	parse_operation(char *str, t_list *all_op, t_parse *g)
 {
 	register int		i;
 	t_cmd				*list_cmd;
@@ -91,5 +91,5 @@ void	parse_operation(char *str, t_list *all_str, t_parse *g)
 	get_prog_size(list_cmd);
 	list_cmd->size_op += g->header->prog_size;
 	g->header->prog_size = list_cmd->size_op;
-	list_push_back(all_str, list_cmd);
+	list_push_back(all_op, list_cmd);
 }
