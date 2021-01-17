@@ -44,7 +44,7 @@ static int 	get_type_args(char c)
 //}
 static void		check_valid_arg_value(char *str, t_cmd *cmd, int i)
 {
-	uint8_t *tmp;
+	char *tmp;
 
 	tmp = str;
 	if (*str == LABEL_CHAR)
