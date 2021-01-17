@@ -5,7 +5,7 @@ Ha, Ha, Ha, stayiiiiin' aliiiiiiiiiivevHa, Ha, Ha
 vealive"
 .comment "Ha, Ha, Ha, stayiiiiin' aliiiiiiiiiive"
 
-sti	r1, %:live, %1          ;change live by the right value
+sti	r1, %:live, %1             ;change live by the right value
 sti	r1, %:live2, %1			;change live by the right value
 ld	%75148, r3
 ld	%33, r6
@@ -24,5 +24,6 @@ endwhile:
 ld	%0, r4			;carry = 1
 
 live:
+
 live %1
 zjmp %:live

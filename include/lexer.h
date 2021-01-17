@@ -19,11 +19,12 @@
 
 typedef struct	s_cmd
 {
-	uint8_t		code;
-	uint8_t		args_types[3];
-	uint8_t		args_value[3];
-	char 		*mark[3];
-	uint32_t	size_op;
+	uint8_t			code;
+	uint8_t			args_types[3];
+	uint8_t 		byte_type;
+	int32_t 		args_value[3];
+	char 			*mark[3];
+	uint32_t		size_op;
 }				t_cmd;
 
 #endif

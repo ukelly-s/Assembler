@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "str.h"
 #include "mem.h"
+#include "op_struct.h"
 
 //static void check_valid_arg_reg(t_cmd	*cmd, int32_t i)
 //{
@@ -16,18 +17,20 @@
 
 void				debugprint(t_list_node *shuffle, size_t i)
 {
-	char			s1;
-	char			s2;
-	char			s3;
-	char			r1;
-	char			r2;
-	char			r3;
+	int32_t			s1;
+	int32_t			s2;
+	int32_t			s3;
+	int32_t			r1;
+	int32_t			r2;
+	int32_t			r3;
 	char			cd;
+	char 			bt;
 	char            *mk1;
 	char            *mk2;
 	char            *mk3;
 
 	cd = ((t_cmd *)(shuffle->data))->code;
+	bt = ((t_cmd *)(shuffle->data))->byte_type;
 
 	s1 = ((t_cmd *)(shuffle->data))->args_value[0];
 	s2 = ((t_cmd *)(shuffle->data))->args_value[1];
@@ -42,9 +45,10 @@ void				debugprint(t_list_node *shuffle, size_t i)
 	mk3 = ((t_cmd *)(shuffle->data))->mark[2];
 
 	ft_printf("CD:\t%hu\n", cd);
-	ft_printf("FA%llu:\t%hu -> %hu\t\t",i, s1, r1);
-	ft_printf("SA%llu:\t%hu -> %hu\t\t",i, s2, r2);
-	ft_printf("TA%llu:\t%hu -> %hu\n",i, s3, r3);
+	ft_printf("BT:\t%hhx\n", bt);
+	ft_printf("FA%llu:\t%i -> %i\t\t",i, s1, r1);
+	ft_printf("SA%llu:\t%i -> %i\t\t",i, s2, r2);
+	ft_printf("TA%llu:\t%i -> %i\n",i, s3, r3);
 
 	ft_printf("MK1:\t%s\n", mk1);
 	ft_printf("MK2:\t%s\n", mk2);
@@ -61,7 +65,7 @@ void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 	uint32_t 				calc;
 	int32_t 				step_mark[3];
 //TODO ввести ДРУГУЮ ПЕРЕМЕННУЮ вместо tmp
-	iter = -1;
+
 	ft_bzero(step_mark, sizeof(step_mark));
 //	str = malloc(g->header->prog_size);
 	str = malloc(200);
@@ -71,6 +75,7 @@ void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 	shuffle = operations->front;
 	while (shuffle)
 	{
+		iter = -1;
 		while (++iter < 3)
 		{
 			buff = ((t_cmd*)(shuffle->data))->mark[iter];
@@ -81,6 +86,20 @@ void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 			if(((t_cmd*)(shuffle->data))->mark[iter])
 				((t_cmd*)(shuffle->data))->args_value[iter] = calc - ((t_cmd *)(shuffle->data))->size_op;
 		}
+		iter = -1;
+		while (++iter < 3)
+		{
+			if(g_op[((t_cmd*)(shuffle->data))->code].args_types_code)
+			{
+				if (((t_cmd*)(shuffle->data))->args_types[iter] == T_DIR)
+					((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_DIR >> (iter * 2));
+				else if (((t_cmd*)(shuffle->data))->args_types[iter] == T_IND)
+					((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_IND >> (iter * 2));
+				else if (((t_cmd*)(shuffle->data))->args_types[iter] == T_REG)
+					((t_cmd *)(shuffle->data))->byte_type = ((t_cmd *)(shuffle->data))->byte_type | (ARG1_REG >> (iter * 2));
+			}
+		}
+
 //		while (head_str < g->header->prog_size) //true
 //		j = 0;
 //		while (j < sizeof(shuffle->data))
