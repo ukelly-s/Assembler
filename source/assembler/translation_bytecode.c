@@ -7,8 +7,9 @@
 #include "str.h"
 #include "mem.h"
 #include "op_struct.h"
+# include	"list.h"
 
-static void		mark_to_address(t_cmd *cmd, t_hashmap *mark)
+static void	mark_to_address(t_cmd *cmd, t_hashmap *mark)
 {
 	int32_t		iter;
 	char 		*buff;
@@ -27,7 +28,7 @@ static void		mark_to_address(t_cmd *cmd, t_hashmap *mark)
 	}
 }
 
-static void		arg_types_to_byte(t_cmd *cmd)
+static void	arg_types_to_byte(t_cmd *cmd)
 {
 	int32_t		iter;
 
@@ -47,31 +48,24 @@ static void		arg_types_to_byte(t_cmd *cmd)
 	}
 }
 
-void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
+static t_byte	*op_bytecode(t_cmd *cmd, t_parse *g)
+{
+
+}
+
+void		translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 {
 	t_list_node		*info_op;
-	register int 	i;
-	size_t			j;
 
-	j = 0;
-	i = 0;
-	g->byte_str = malloc(g->header->prog_size + 1);
+	g->byte_str = ft_memalloc(g->header->prog_size + 1);
 	info_op = operations->front;
 	while (info_op)
 	{
 		mark_to_address((t_cmd*)(info_op->data), mark);
-		arg_types_to_byte(info_op);
-//
-//		while (i < ) //true
-//		j = 0;
-//		while (j < sizeof(info_op->data))
-//		{
-//			str[head_str + j] =
-//			j++;
-//		}
-//		head_str = head_str + j;
-		//debugprint(info_op, i);
-		i++;
+		arg_types_to_byte((t_cmd*)(info_op->data));
+		op_bytecode((t_cmd*)(info_op->data), g);
+
+
 		info_op = info_op->next;
 	}
 

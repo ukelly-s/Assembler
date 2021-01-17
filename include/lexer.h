@@ -14,7 +14,7 @@
 # define ASSEMBLER_LEXER_H
 
 # include <stdint.h>
-#include	"list.h"
+# include	"list.h"
 
 
 typedef struct	s_cmd
