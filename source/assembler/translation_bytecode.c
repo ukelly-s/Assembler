@@ -28,35 +28,10 @@ static void	mark_to_address(t_cmd *cmd, t_hashmap *mark)
 	}
 }
 
-static void	arg_types_to_byte(t_cmd *cmd)
-{
-	int32_t		iter;
-
-	iter = -1;
-	while (++iter < 3)
-	{
-		if(g_op[cmd->code].args_types_code)
-		{
-			if (cmd->args_types[iter] == T_DIR)
-				cmd->byte_type |= (ARG_DIR >> (iter * 2));
-			else if (cmd->args_types[iter] == T_IND)
-				cmd->byte_type |= (ARG_IND >> (iter * 2));
-			else if (cmd->args_types[iter] == T_REG)
-				cmd->byte_type |= (ARG_REG >> (iter * 2));
-		}
-
-	}
-}
-
-static void	op_bytecode(t_cmd *cmd, t_parse *g)
-{
-
-}
-
 //fixme
-void		int_to_byte(char **str, t_cmd *cmd)
+static void		get_to_4byte(t_byte	*str, int32_t args_value)
 {
-	t_codeint 		unite;
+	t_code4b 		unite;
 
 	str[0] = unite.letter[0];
 	str[1] = unite.letter[1];
@@ -64,17 +39,76 @@ void		int_to_byte(char **str, t_cmd *cmd)
 	str[3] = unite.letter[3];
 }
 
+static void		get_to_2byte(t_byte	*str, int32_t args_value)
+{
+	t_code4b 		unite;
+
+	str[0] = unite.letter[0];
+	str[1] = unite.letter[1];
+}
+
+static uint8_t arg_types_to_byte(const uint8_t *args_types, uint8_t	code)
+{
+	int32_t		iter;
+	uint8_t 	byte_type;
+
+	byte_type = 0;
+	iter = -1;
+	while (++iter < 3)
+	{
+		if(g_op[code].args_types_code)
+		{
+			if (args_types[iter] == T_DIR)
+				byte_type |= (ARG_DIR >> (iter * 2));
+			else if (args_types[iter] == T_IND)
+				byte_type |= (ARG_IND >> (iter * 2));
+			else if (args_types[iter] == T_REG)
+				byte_type |= (ARG_REG >> (iter * 2));
+		}
+	}
+	return (byte_type);
+}
+
+static void	op_to_bytecode(t_cmd *cmd, t_parse *g)
+{
+	static int			i;
+	register int		j;
+
+	j = 0;
+	g->byte_str[0] = (uint8_t)cmd->code; //аааа, не работате
+	if (g_op[cmd->code].args_types_code)
+		g->byte_str[++i] = arg_types_to_byte(cmd->args_types, cmd->code);
+	while (cmd->args_types[j] && j < 3)
+	{
+		if (cmd->args_types[j] == T_REG)
+			g->byte_str[++i] = (uint8_t)cmd->args_value[j];
+		else if ((cmd->args_types[i] == T_DIR && g_op[i].t_dir_size == 2) ||
+				 (cmd->args_types[i] == T_IND))
+		{
+			get_to_2byte(&g->byte_str[i], cmd->args_value[j]);
+			i += 2;
+		}
+		else
+		{
+			get_to_4byte(&g->byte_str[i], cmd->args_value[j]);
+			i += 4;
+		}
+		j++;
+	}
+}
+
+
 void		translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 {
 	t_list_node		*info_op;
 
-	g->byte_str = ft_memalloc(g->header->prog_size + 1);
+	g->byte_str = malloc(g->header->prog_size);
 	info_op = operations->front;
 	while (info_op)
 	{
 		mark_to_address((t_cmd*)(info_op->data), mark);
-		arg_types_to_byte((t_cmd*)(info_op->data));
-		op_bytecode((t_cmd*)(info_op->data), g);
+	//	arg_types_to_byte((t_cmd*)(info_op->data));
+		op_to_bytecode((t_cmd*)(info_op->data), g);
 
 
 		info_op = info_op->next;

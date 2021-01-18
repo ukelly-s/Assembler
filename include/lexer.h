@@ -20,16 +20,21 @@ typedef struct	s_cmd
 {
 	uint8_t			code;
 	uint8_t			args_types[3];
-	uint8_t 		byte_type;
 	int32_t 		args_value[3];
 	char 			*mark[3];
 	uint32_t		size_op;
 }				t_cmd;
 
-typedef union s_codeint
+typedef union	s_code4b
 {
-	int digit;
-	char letter[4];
-}				t_codeint;
+	int32_t		digit;
+	uint8_t 	letter[4];
+}				t_code4b;
+
+typedef union	s_code2b
+{
+	int16_t		digit;
+	uint8_t		letter[2];
+}				t_code2b;
 
 #endif
