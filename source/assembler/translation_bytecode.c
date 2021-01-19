@@ -32,19 +32,19 @@ static void	mark_to_address(t_cmd *cmd, t_hashmap *mark)
 static void		get_to_4byte(t_byte	*str, int32_t args_value)
 {
 	t_code4b 		unite;
-
-	str[0] = unite.letter[0];
-	str[1] = unite.letter[1];
-	str[2] = unite.letter[2];
-	str[3] = unite.letter[3];
+	unite.digit = args_value;
+	str[0] = unite.letter[3];
+	str[1] = unite.letter[2];
+	str[2] = unite.letter[1];
+	str[3] = unite.letter[0];
 }
 
 static void		get_to_2byte(t_byte	*str, int32_t args_value)
 {
 	t_code4b 		unite;
-
-	str[0] = unite.letter[0];
-	str[1] = unite.letter[1];
+	unite.digit = args_value;
+	str[0] = unite.letter[1];
+	str[1] = unite.letter[0];
 }
 
 static uint8_t arg_types_to_byte(const uint8_t *args_types, uint8_t	code)
@@ -69,29 +69,30 @@ static uint8_t arg_types_to_byte(const uint8_t *args_types, uint8_t	code)
 	return (byte_type);
 }
 
-static void	op_to_bytecode(t_cmd *cmd, t_parse *g)
+static void		op_to_bytecode(t_cmd *cmd, t_parse *g)
 {
-	static int			i;
+	static int			i = -1;
 	register int		j;
 
 	j = 0;
-	g->byte_str[i] = (uint8_t)cmd->code; //аааа, не работате
+	g->byte_str[++i] = (uint8_t)cmd->code;
 	if (g_op[cmd->code].args_types_code)
 		g->byte_str[++i] = arg_types_to_byte(cmd->args_types, cmd->code);
 	while (cmd->args_types[j] && j < 3)
 	{
 		if (cmd->args_types[j] == T_REG)
 			g->byte_str[++i] = (uint8_t)cmd->args_value[j];
-		else if ((cmd->args_types[i] == T_DIR && g_op[i].t_dir_size == 2) ||
-				 (cmd->args_types[i] == T_IND))
+		else if ((cmd->args_types[j] == T_DIR
+				&& g_op[cmd->code].t_dir_size == 2)
+				|| (cmd->args_types[j] == T_IND))
 		{
-			get_to_2byte(&g->byte_str[i], cmd->args_value[j]);
-			i += 2;
+			get_to_2byte(&g->byte_str[++i], cmd->args_value[j]);
+			++i;
 		}
 		else
 		{
-			get_to_4byte(&g->byte_str[i], cmd->args_value[j]);
-			i += 4;
+			get_to_4byte(&g->byte_str[++i], cmd->args_value[j]);
+			i += 3;
 		}
 		j++;
 	}

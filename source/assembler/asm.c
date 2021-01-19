@@ -42,21 +42,18 @@ void	assembler(char *filename)
 	ft_assert(info_mark != NULL && info_operations != NULL,
 			  __func__, "malloc error");
 	if ((fd = open(filename, O_RDONLY)) == -1)
-		;//error(ERR_OPEN_FILE)
+		;
 	parse(fd, g, info_operations, info_mark);
 	translation_bytecode(info_operations, info_mark, g);
-	//TODO перевод в байт код и подсчёт размера исполняемого блока
 //	filename = replace_extension(filename, ".s", ".cor");
-	if ((fd = open("test_header.cor", O_CREAT | O_WRONLY | O_APPEND, 0644)) == -1)
+	if ((fd = open("test_header.cor", O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 0644)) == -1)
 	    ; //error(ERR_CREATE_FILE);
 	write(fd, g->header, sizeof(t_header));
     g->header->prog_size = rev_bytes(g->header->prog_size);
 	write(fd, g->byte_str, g->header->prog_size);
 
-//	printf("%lli\n", write(fd, g->header, sizeof(t_header)));
-	//bite code record in file
-	free(g->header);//TODO
-	free(g);//fixme
+	free(g->header);
+	free(g);
 	ft_putstr("Writing output program to ");
 	ft_putstr(filename);
 }

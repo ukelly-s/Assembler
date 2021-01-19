@@ -83,13 +83,15 @@ void	parse_operation(char *str, t_list *all_op, t_parse *g)
 {
 	register int		i;
 	t_cmd				*list_cmd;
+	static uint32_t 	save_size_op;
 
 	list_cmd = ft_memalloc(sizeof(t_cmd));
 	i = get_number_operation(str);
 	list_cmd->code = g_op[i].code;
 	parse_args(str + ft_strlen(g_op[i].name) + 1, list_cmd);
 	get_prog_size(list_cmd);
-	list_cmd->size_op += g->header->prog_size;
-	g->header->prog_size = list_cmd->size_op;
+	save_size_op = list_cmd->size_op;
+	list_cmd->size_op = g->header->prog_size;
+	g->header->prog_size = list_cmd->size_op + save_size_op;
 	list_push_back(all_op, list_cmd);
 }
