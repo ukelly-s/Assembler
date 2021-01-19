@@ -51,7 +51,7 @@ void	assembler(char *filename)
 	write(fd, g->header, sizeof(t_header));
     g->header->prog_size = rev_bytes(g->header->prog_size);
 	write(fd, g->byte_str, g->header->prog_size);
-	hashmap_destroy_1(&info_mark);
+	hashmap_destroy(&info_mark, NULL);
 	free(g->byte_str);
 	free(g->header);
 	free(g);

@@ -51,5 +51,5 @@ int					hashmap_insert(t_hashmap *hmap, t_hashmap_entry *entry);
 void				*hashmap_iter(t_hashmap *hmap, size_t *iter, void **keyp,
 					void **valp);
 void				hashmap_destroy(t_hashmap **hmap, void (*f)(void *));
-void				hashmap_destroy_1(t_hashmap **hmap);
+
 #endif
