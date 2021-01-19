@@ -102,7 +102,7 @@ void		translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 {
 	t_list_node		*info_op;
 
-	g->byte_str = malloc(g->header->prog_size);
+	g->byte_str = ft_memalloc(g->header->prog_size );
 	info_op = operations->front;
 	while (info_op)
 	{

@@ -50,6 +50,7 @@ void	assembler(char *filename)
 	if ((fd = open("test_header.cor", O_CREAT | O_WRONLY | O_APPEND, 0644)) == -1)
 	    ; //error(ERR_CREATE_FILE);
 	write(fd, g->header, sizeof(t_header));
+    g->header->prog_size = rev_bytes(g->header->prog_size);
 	write(fd, g->byte_str, g->header->prog_size);
 
 //	printf("%lli\n", write(fd, g->header, sizeof(t_header)));
