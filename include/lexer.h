@@ -18,11 +18,11 @@
 
 typedef struct	s_cmd
 {
-	uint8_t			code;
-	uint8_t			args_types[3];
-	int32_t 		args_value[3];
-	char 			*mark[3];
-	uint32_t		size_op;
+	uint8_t		code;
+	uint8_t		args_types[3];
+	int32_t 	args_value[3];
+	char 		*mark[3];
+	uint32_t	size_op;
 }				t_cmd;
 
 typedef union	s_code4b
@@ -36,5 +36,7 @@ typedef union	s_code2b
 	int16_t		digit;
 	uint8_t		letter[2];
 }				t_code2b;
+
+void			free_cmd(t_cmd *cmd);
 
 #endif

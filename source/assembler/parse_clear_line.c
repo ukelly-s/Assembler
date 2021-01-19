@@ -86,8 +86,17 @@ char			*clear_line(char **str)
 	{
 		len_mark = f_len_mark(*str) + 1;
 		line = clear_line_mark(str, len_mark);
-		if (*(*str = ft_strtrim(*str)) == '\0')
+		tmp = ft_strtrim(*str);
+		if (*tmp == '\0')
+		{
+			free(tmp);
 			*str = NULL;
+		}
+		else
+		{
+			free(*str);
+			*str = tmp;
+		}
 	}
 	else
 	{

@@ -61,3 +61,20 @@ void		get_prog_size(t_cmd *cmd)
 	}
 
 }
+
+void    free_cmd(t_cmd *cmd)
+{
+	int i;
+
+	i = 0;
+	while (i < 3)
+	{
+		if (cmd->mark != NULL)
+		{
+			free(cmd->mark[i]);
+			cmd->mark[i] = NULL;
+		}
+		i++;
+	}
+	free(cmd);
+}

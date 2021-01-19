@@ -55,6 +55,7 @@ void	assembler(char *filename)
 	free(g->byte_str);
 	free(g->header);
 	free(g);
+	list_clear(&info_operations, free_cmd);
 	ft_putstr("Writing output program to ");
 	ft_putstr(filename);
 }
