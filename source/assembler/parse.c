@@ -135,6 +135,5 @@ void				parse(int fd, t_parse *g, t_list *info_operations,
 		free(line);
 		line = NULL;
 	}
-	g->header->prog_size = rev_bytes(g->header->prog_size);
 	log_debug(__func__, "Size: '%u'", g->header->prog_size);
 }

@@ -113,5 +113,5 @@ void		translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 
 		info_op = info_op->next;
 	}
-
+    g->header->prog_size = rev_bytes(g->header->prog_size);
 }
