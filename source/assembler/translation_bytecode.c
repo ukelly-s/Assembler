@@ -75,7 +75,7 @@ static void	op_to_bytecode(t_cmd *cmd, t_parse *g)
 	register int		j;
 
 	j = 0;
-	g->byte_str[0] = (uint8_t)cmd->code; //аааа, не работате
+	g->byte_str[i] = (uint8_t)cmd->code; //аааа, не работате
 	if (g_op[cmd->code].args_types_code)
 		g->byte_str[++i] = arg_types_to_byte(cmd->args_types, cmd->code);
 	while (cmd->args_types[j] && j < 3)
