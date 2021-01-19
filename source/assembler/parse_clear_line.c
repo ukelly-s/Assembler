@@ -90,6 +90,7 @@ char			*clear_line(char **str)
 		if (*tmp == '\0')
 		{
 			free(tmp);
+			free(*str);
 			*str = NULL;
 		}
 		else
