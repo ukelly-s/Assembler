@@ -42,7 +42,7 @@ static void		check_valid_arg_value(char *str, t_cmd *cmd, int i)
 	{
 		while (*str != '\0')
 		{
-			if (ft_isdigit(*str) == 0)
+			if (*str != '-' && ft_isdigit(*str) == 0)
 				ft_kill(ERR_INV_CHAR, NULL, __func__, __FILE__);
 			str++;
 		}
