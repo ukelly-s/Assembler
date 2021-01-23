@@ -42,7 +42,7 @@ UTILPATH:= util/
 UTIL:= ft_assert ft_kill  ft_log_error
 
 MATHPATH:= math/
-MATH:= ft_min abs divmod max moddiv numlen pow sqrt
+MATH:= min abs divmod max moddiv numlen pow sqrt
 
 SYSTEMPATH:= system/
 SYSTEM:= ft_path

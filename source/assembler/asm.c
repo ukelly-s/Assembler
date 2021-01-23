@@ -42,12 +42,12 @@ void	assembler(char *filename)
 	ft_assert(info_mark != NULL && info_operations != NULL,
 			  __func__, "malloc error");
 	if ((fd = open(filename, O_RDONLY)) == -1)
-		;
+		ft_kill("Error", NULL, __func__, __FILE__);;
 	parse(fd, g, info_operations, info_mark);
 	translation_bytecode(info_operations, info_mark, g);
 	filename = replace_extension(filename, ".cor");
 	if ((fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 0644)) == -1)
-		; //error(ERR_CREATE_FILE);
+		ft_kill("Error create file", NULL, __func__, __FILE__);; //error(ERR_CREATE_FILE);
 	write(fd, g->header, sizeof(t_header));
 	g->header->prog_size = rev_bytes(g->header->prog_size);
 	write(fd, g->byte_str, g->header->prog_size);

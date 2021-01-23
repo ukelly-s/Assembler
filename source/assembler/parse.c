@@ -99,7 +99,10 @@ int					get_line(int fd, char **line)//fixme
 					|| tmp[0] == ALT_COMMENT_CHAR) && (*line = tmp)))
 		return (i);
 	if (!(*(buff = ft_strtrim(tmp))) && (*line = buff) && !(buff = NULL))
+	{
+		free(tmp);
 		return (i);
+	}
 	free(tmp);
 	if (ft_strnequ(NAME_CMD_STRING, buff, 5) ||
 		(ft_strnequ(COMMENT_CMD_STRING, buff, 8)))
