@@ -1,9 +1,22 @@
 #include "asm.h"
+#include "asm_errors.h"
+# include <stdbool.h>
+# include <fcntl.h>
+# include <unistd.h>
+#include <logger.h>
+# include "array_list.h"
+# include "conv.h"
+# include "hash_map.h"
+# include "io_.h"
 # include "list.h"
+# include "math.h"
 # include "mem.h"
 # include "str.h"
+# include "util.h"
 # include "op.h"
-#include "logger.h"
+# include "op_struct.h"
+# include "lexer.h"
+#include "ft_printf.h"
 
 static int		len_clear_line(char *str)
 {
@@ -22,10 +35,17 @@ static int		len_clear_line(char *str)
 static int		f_len_mark(char *str)
 {
 	register int		i;
+	register int		j;
 
 	i = 0;
-	while(*str++ != LABEL_CHAR)
+	j = 0;
+	while(str[j] != LABEL_CHAR)
+	{
+		if (str[j] == ' ')
+			ft_kill(ERR_SYNTAX, NULL, __func__, __FILE__);
+		j++;
 		i++;
+	}
 	return (i);
 }
 
@@ -81,23 +101,30 @@ char			*clear_line(char **str)
 
 	if ((tmp = ft_strchr(*str, COMMENT_CHAR)) != NULL ||
 		(tmp = ft_strchr(*str, ALT_COMMENT_CHAR)) != NULL)
+	{
+
 		ft_bzero(tmp, ft_strlen(tmp));
+		if (!**str)
+		{
+			line = NULL;
+			free (*str);
+			*str = NULL;
+			return (line);
+		}
+	}
 	if (mark_operation_type(*str) == LINE_MARK)
 	{
 		len_mark = f_len_mark(*str) + 1;
 		line = clear_line_mark(str, len_mark);
 		tmp = ft_strtrim(*str);
+		free(*str);
 		if (*tmp == '\0')
 		{
 			free(tmp);
-			free(*str);
 			*str = NULL;
 		}
 		else
-		{
-			free(*str);
 			*str = tmp;
-		}
 	}
 	else
 	{

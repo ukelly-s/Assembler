@@ -98,7 +98,8 @@ int					get_line(int fd, char **line)//fixme
 	if (i == 0 || ((!*tmp || tmp[0] == COMMENT_CHAR
 					|| tmp[0] == ALT_COMMENT_CHAR) && (*line = tmp)))
 		return (i);
-	buff = ft_strtrim(tmp);
+	if (!(*(buff = ft_strtrim(tmp))) && (*line = buff) && !(buff = NULL))
+		return (i);
 	free(tmp);
 	if (ft_strnequ(NAME_CMD_STRING, buff, 5) ||
 		(ft_strnequ(COMMENT_CMD_STRING, buff, 8)))
@@ -112,6 +113,7 @@ int					get_line(int fd, char **line)//fixme
 		*line = clear_line(&buff);
 	return (i);
 }
+
 
 void				parse(int fd, t_parse *g, t_list *info_operations,
 						  t_hashmap *info_mark)
@@ -135,5 +137,8 @@ void				parse(int fd, t_parse *g, t_list *info_operations,
 		free(line);
 		line = NULL;
 	}
-	//log_debug(__func__, "Size: '%u'", g->header->prog_size);
+	if (g->name == FLAG_DEFAULT || g->comment == FLAG_DEFAULT)
+		ft_kill("No name/comment", NULL, __func__, __FILE__);
+	if (info_operations->front == NULL && info_mark->size == 0)
+		ft_kill("No operation", NULL, __func__, __FILE__);
 }

@@ -7,7 +7,7 @@
 #include "hash_map.h"
 #include <fcntl.h>
 #include <stdlib.h>
-
+#include <ft_printf.h>
 //debug
 #include <unistd.h>
 #include <stdio.h>
@@ -45,17 +45,17 @@ void	assembler(char *filename)
 		;
 	parse(fd, g, info_operations, info_mark);
 	translation_bytecode(info_operations, info_mark, g);
-//	filename = replace_extension(filename, ".s", ".cor");
-	if ((fd = open("test_header.cor", O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 0644)) == -1)
-	    ; //error(ERR_CREATE_FILE);
+	filename = replace_extension(filename, ".cor");
+	if ((fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 0644)) == -1)
+		; //error(ERR_CREATE_FILE);
 	write(fd, g->header, sizeof(t_header));
-    g->header->prog_size = rev_bytes(g->header->prog_size);
+	g->header->prog_size = rev_bytes(g->header->prog_size);
 	write(fd, g->byte_str, g->header->prog_size);
 	hashmap_destroy(&info_mark, NULL);
 	free(g->byte_str);
 	free(g->header);
 	free(g);
 	list_clear(&info_operations, free_cmd);
-	ft_putstr("Writing output program to ");
-	ft_putstr(filename);
+	ft_printf("Writing output program to %s", filename);
+	free(filename);
 }

@@ -22,7 +22,7 @@ static void	mark_to_address(t_cmd *cmd, t_hashmap *mark)
 		if (!buff)
 			continue ;
 		val_byte_mark = (unsigned int)(long long)hashmap_get(mark,
-													   buff, ft_strlen(buff));
+															 buff, ft_strlen(buff));
 		if(cmd->mark[iter])
 			cmd->args_value[iter] = val_byte_mark -	cmd->size_op;
 	}
@@ -83,8 +83,8 @@ static void		op_to_bytecode(t_cmd *cmd, t_parse *g)
 		if (cmd->args_types[j] == T_REG)
 			g->byte_str[++i] = (uint8_t)cmd->args_value[j];
 		else if ((cmd->args_types[j] == T_DIR
-				&& g_op[cmd->code].t_dir_size == 2)
-				|| (cmd->args_types[j] == T_IND))
+				  && g_op[cmd->code].t_dir_size == 2)
+				 || (cmd->args_types[j] == T_IND))
 		{
 			get_to_2byte(&g->byte_str[++i], cmd->args_value[j]);
 			++i;
@@ -108,11 +108,11 @@ void		translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g)
 	while (info_op)
 	{
 		mark_to_address((t_cmd*)(info_op->data), mark);
-	//	arg_types_to_byte((t_cmd*)(info_op->data));
+		//	arg_types_to_byte((t_cmd*)(info_op->data));
 		op_to_bytecode((t_cmd*)(info_op->data), g);
 
 
 		info_op = info_op->next;
 	}
-    g->header->prog_size = rev_bytes(g->header->prog_size);
+	g->header->prog_size = rev_bytes(g->header->prog_size);
 }

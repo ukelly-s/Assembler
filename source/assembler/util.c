@@ -8,15 +8,23 @@
 
 t_line_type		mark_operation_type(const char *str)
 {
-	while (*str != '\0')
+	register int 	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (*str == SEPARATOR || *str == ALT_SEPARATOR)
+		if ((str[i]  == SEPARATOR || str[i]  == ALT_SEPARATOR)
+			&& (str[i + 1]  == SEPARATOR || str[i + 1]  == ALT_SEPARATOR))
+			;
+		else if ((str[i]  == SEPARATOR || str[i]  == ALT_SEPARATOR)
+				 && (str[i + 1] == '-' || ft_isdigit(str[i + 1]) == 1
+					 || str[i + 1] == '%' || str[i + 1] == 'r'))
 			return (LINE_OPERATION);
-		if (ft_strchr(LABEL_CHARS, *str) == NULL && *str != LABEL_CHAR)
+		else if (ft_strchr(LABEL_CHARS, str[i] ) == NULL && str[i] != LABEL_CHAR)
 			ft_kill(ERR_INVALID_STRING, NULL, __func__, __FILE__);
-		if (*str == LABEL_CHAR)
+		else if (str[i] == LABEL_CHAR)
 			return (LINE_MARK);
-		str++;
+		i++;
 	}
 	ft_kill(ERR_INVALID_STRING, NULL, __func__, __FILE__);
 	return (LINE_UNDEFINED);
@@ -69,7 +77,7 @@ void    free_cmd(t_cmd *cmd)
 	i = 0;
 	while (i < 3)
 	{
-		if (cmd->mark != NULL)
+		if (cmd->mark[i] != NULL)
 		{
 			free(cmd->mark[i]);
 			cmd->mark[i] = NULL;
@@ -77,4 +85,17 @@ void    free_cmd(t_cmd *cmd)
 		i++;
 	}
 	free(cmd);
+}
+
+char 	*replace_extension(char *filename, char *file_extension)
+{
+	char	*new_file_name;
+	char	*buff;
+	size_t	len;
+
+	len = ft_strlen(filename) - 2;
+	buff = ft_strndup(filename, len);
+	new_file_name = ft_concat(2, buff, file_extension);
+	free (buff);
+	return (new_file_name);
 }

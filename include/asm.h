@@ -87,6 +87,9 @@ int					get_number_operation(const char *str);
 void				parse_name(char *str, t_parse *g);
 void				parse_comment(char *str, t_parse *g);
 t_line_type			mark_operation_type(const char *str);
+
+char 	*replace_extension(char *filename, char *file_extension);
+
 /*
 ** libft
 */
