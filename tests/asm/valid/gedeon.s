@@ -1,6 +1,7 @@
 .name		"Gédéon le Cochon"
 .comment	"Tout est bon dans Gédéon"
 
+	#ld		%0, r2
 tmp:
 	sti		r1, %:youshallnotpass, %1
 	sti		r1, %:core, %1

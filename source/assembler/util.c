@@ -17,8 +17,8 @@ t_line_type		mark_operation_type(const char *str)
 			&& (str[i + 1]  == SEPARATOR || str[i + 1]  == ALT_SEPARATOR))
 			;
 		else if ((str[i]  == SEPARATOR || str[i]  == ALT_SEPARATOR)
-				 && (str[i + 1] == '-' || ft_isdigit(str[i + 1]) == 1
-					 || str[i + 1] == '%' || str[i + 1] == 'r'))
+				 && (str[i + 1] == '-' || str[i + 1] == '%' || str[i + 1] == 'r'
+				 || ft_isdigit(str[i + 1]) == 1 || str[i + 1] == LABEL_CHAR))
 			return (LINE_OPERATION);
 		else if (ft_strchr(LABEL_CHARS, str[i] ) == NULL && str[i] != LABEL_CHAR)
 			ft_kill(ERR_INVALID_STRING, NULL, __func__, __FILE__);

@@ -95,7 +95,7 @@ static char		*clear_line_mark(char **str, int len)
 
 char			*clear_line(char **str)
 {
-	char	*line;
+	char	*line;//TODO не могу нихуя понять на карте tests/asm/valid/gedeon.s тут появляется в памяти какая-то хрень
 	char	*tmp;
 	int		len_mark;
 
@@ -106,7 +106,7 @@ char			*clear_line(char **str)
 		ft_bzero(tmp, ft_strlen(tmp));
 		if (!**str)
 		{
-			line = malloc(1);//todo с null никак нельзя
+			line = ft_memalloc(1);//todo с null никак нельзя
 			free (*str);
 			*str = NULL;
 			return (line);
