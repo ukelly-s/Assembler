@@ -106,7 +106,7 @@ char			*clear_line(char **str)
 		ft_bzero(tmp, ft_strlen(tmp));
 		if (!**str)
 		{
-			line = NULL;
+			line = malloc(1);//todo с null никак нельзя
 			free (*str);
 			*str = NULL;
 			return (line);
