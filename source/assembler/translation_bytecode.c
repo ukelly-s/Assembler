@@ -28,25 +28,6 @@ static void	mark_to_address(t_cmd *cmd, t_hashmap *mark)
 	}
 }
 
-//fixme
-static void		get_to_4byte(t_byte	*str, int32_t args_value)
-{
-	t_code4b 		unite;
-	unite.digit = args_value;
-	str[0] = unite.letter[3];
-	str[1] = unite.letter[2];
-	str[2] = unite.letter[1];
-	str[3] = unite.letter[0];
-}
-
-static void		get_to_2byte(t_byte	*str, int32_t args_value)
-{
-	t_code4b 		unite;
-	unite.digit = args_value;
-	str[0] = unite.letter[1];
-	str[1] = unite.letter[0];
-}
-
 static uint8_t arg_types_to_byte(const uint8_t *args_types, uint8_t	code)
 {
 	int32_t		iter;

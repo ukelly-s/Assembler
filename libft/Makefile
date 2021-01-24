@@ -51,7 +51,7 @@ CC:=gcc
 OBJPATH:=obj/
 SRCPATH:=src/
 HPATH:=inc/
-CFLAGS:=  -Wall -Wextra -Werror -I $(HPATH)
+CFLAGS:=  -Wall -Wextra -I $(HPATH)
 
 
 BLACK:="\033[1;30m"

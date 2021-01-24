@@ -14,7 +14,7 @@ ASM = asm
 LIBFT_A = libft/libft.a
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra
 
 LIBFT_DIR = libft
 
@@ -40,6 +40,7 @@ SRCS_ASM += assembler/parse_name_comment.c
 SRCS_ASM += assembler/parse_clear_line.c
 SRCS_ASM += assembler/parse_operation.c
 SRCS_ASM += assembler/parse_mark.c
+SRCS_ASM += assembler/big_endian_realisation.c
 SRCS_ASM += assembler/translation_bytecode.c
 SRCS_COMMON += common/ft_isdigit.c
 SRCS_COMMON = common/ft_strtrim.c
