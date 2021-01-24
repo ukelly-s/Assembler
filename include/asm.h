@@ -76,9 +76,7 @@ typedef struct		s_parse
 
 
 
-//void				*ft_strrev(register char *begin);
 void				assembler(char *filename);
-void				disassembler(char *filename);
 int					get_line(int fd, char **line);
 void				parse(int fd, t_parse *g, t_list *info_operations,
 						  t_hashmap *info_mark);
@@ -94,7 +92,6 @@ char 	*replace_extension(char *filename, char *file_extension);
 ** libft
 */
 char				*ft_strtrim(char const *s);
-int                 ft_isdigit(int c);
 
 /*
 ** parse header

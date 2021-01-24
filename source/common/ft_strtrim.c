@@ -3,23 +3,6 @@
 # include "mem.h"
 # include "str.h"
 
-static size_t	ft_lensp(char const *src)
-{
-	size_t len;
-	size_t i;
-
-	if (*src == '\0')
-		return (0);
-	len = ft_strlen(src) - 1;
-	i = 0;
-	while (src[len] == ' ' || src[len] == '\n' || src[len] == '\t')
-	{
-		i++;
-		len--;
-	}
-	return (i);
-}
-
 static size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t len;
@@ -47,6 +30,23 @@ static char	*ft_strnew(size_t size)
 	if (str == NULL)
 		return (NULL);
 	return (ft_memset(str, '\0', size + 1));
+}
+
+static size_t	ft_lensp(char const *src)
+{
+	size_t len;
+	size_t i;
+
+	if (*src == '\0')
+		return (0);
+	len = ft_strlen(src) - 1;
+	i = 0;
+	while (src[len] == ' ' || src[len] == '\n' || src[len] == '\t')
+	{
+		i++;
+		len--;
+	}
+	return (i);
 }
 
 char			*ft_strtrim(char const *s)
