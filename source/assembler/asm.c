@@ -1,16 +1,13 @@
 #include "asm.h"
 #include "list.h"
 #include "op.h"
+#include "asm_errors.h"
 #include "util.h"
-#include "io_.h"
 #include "hash_map.h"
 #include <fcntl.h>
 #include <stdlib.h>
 #include <ft_printf.h>
-//debug
 #include <unistd.h>
-#include <stdio.h>
-#include "io_.h"
 
 static t_parse		*new_parse(void)
 {
@@ -28,6 +25,15 @@ static t_parse		*new_parse(void)
 	return (g);
 }
 
+static void		free_all_struct(t_parse *g, t_list *info_operations, t_hashmap *info_mark)
+{
+	hashmap_destroy(&info_mark, NULL);
+	free(g->byte_str);
+	free(g->header);
+	free(g);
+	list_clear(&info_operations, (void *)free_cmd);
+}
+
 void	assembler(char *filename)
 {
 	int			fd;
@@ -41,20 +47,16 @@ void	assembler(char *filename)
 	ft_assert(info_mark != NULL && info_operations != NULL,
 			  __func__, "malloc error");
 	if ((fd = open(filename, O_RDONLY)) == -1)
-		ft_kill("Error", NULL, __func__, __FILE__);;
+		ft_kill(ERR_OPEN_FILE, NULL, __func__, __FILE__);
 	parse(fd, g, info_operations, info_mark);
 	translation_bytecode(info_operations, info_mark, g);
 	filename = replace_extension(filename, ".cor");
 	if ((fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 0644)) == -1)
-		ft_kill("Error create file", NULL, __func__, __FILE__);; //error(ERR_CREATE_FILE);
+		ft_kill(ERR_CREATE_FILE, NULL, __func__, __FILE__);; //error(ERR_CREATE_FILE);
 	write(fd, g->header, sizeof(t_header));
 	g->header->prog_size = rev_bytes(g->header->prog_size);
 	write(fd, g->byte_str, g->header->prog_size);
-	hashmap_destroy(&info_mark, NULL);
-	free(g->byte_str);
-	free(g->header);
-	free(g);
-	list_clear(&info_operations, (void *)free_cmd);
+	free_all_struct(g, info_operations, info_mark);
 	ft_printf("Writing output program to %s", filename);
 	free(filename);
 }

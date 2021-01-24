@@ -12,12 +12,8 @@
 
 #include "asm.h"
 #include <string.h>
-#include <stdbool.h>
-#include <logger.h>
 #include "str.h"
 #include "io_.h"
-#include "ft_printf.h"
-#include "conv.h"
 
 static _Bool	check_name_the_file(char *name_the_file, char *file_extension)
 {
@@ -31,8 +27,6 @@ int		main(int ac, char **av)
 {
 	if (ac == 2 && check_name_the_file(*(av + 1), ".s"))
 		assembler(*(av + 1));
-	else if (ac == 2 && check_name_the_file(*(av + 1), ".cor"))
-		ft_putstr("Someday we'll screw disassembler here\n");
 	else
 		ft_putstr("usage: ./asm file_name\n");
 	return (0);

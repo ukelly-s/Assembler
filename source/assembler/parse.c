@@ -1,22 +1,13 @@
 #include "asm.h"
 #include "asm_errors.h"
-# include <stdbool.h>
-# include <fcntl.h>
-# include <unistd.h>
-#include <logger.h>
-# include "array_list.h"
-# include "conv.h"
 # include "hash_map.h"
 # include "io_.h"
 # include "list.h"
-# include "math.h"
 # include "mem.h"
 # include "str.h"
 # include "util.h"
 # include "op.h"
 # include "op_struct.h"
-# include "lexer.h"
-#include "ft_printf.h"
 
 int					get_number_operation(const char *str)
 {
@@ -98,22 +89,17 @@ int					get_line(int fd, char **line)//fixme
 	if (i == 0 || ((!*tmp || tmp[0] == COMMENT_CHAR
 					|| tmp[0] == ALT_COMMENT_CHAR) && (*line = tmp)))
 		return (i);
-	if (!(*(buff = ft_strtrim(tmp))) && (*line = buff) && !(buff = NULL))
-	{
-		free(tmp);
-		return (i);
-	}
-	free(tmp);
-	if (ft_strnequ(NAME_CMD_STRING, buff, 5) ||
+	if (!(*(buff = ft_strtrim(tmp))) && (*line = buff))
+		buff = NULL;
+	else if (ft_strnequ(NAME_CMD_STRING, buff, 5) ||
 		(ft_strnequ(COMMENT_CMD_STRING, buff, 8)))
 	{
-		if (ft_strchr(buff, '\"') == NULL)
-			ft_kill(ERR_SYNTAX, NULL, __func__, __FILE__);
 		*line = get_line_name_comment(fd, buff);
 		buff = NULL;
 	}
 	else
 		*line = clear_line(&buff);
+	free(tmp);
 	return (i);
 }
 
