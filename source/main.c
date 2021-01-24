@@ -12,14 +12,10 @@
 
 #include "asm.h"
 #include <string.h>
-#include <stdbool.h>
-#include <logger.h>
 #include "str.h"
 #include "io_.h"
-#include "ft_printf.h"
-#include "conv.h"
 
-static _Bool	check_name_the_file(char *name_the_file, char *file_extension)
+_Bool	check_name_the_file(char *name_the_file, char *file_extension)
 {
 	char	*tmp;
 

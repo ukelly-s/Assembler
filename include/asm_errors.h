@@ -25,5 +25,8 @@
 # define ERR_INV_ARG		"Invalid argument"
 # define ERR_INV_VAl		"Invalid argument value"
 # define ERR_INV_CHAR		"The argument value contains an invalid character"
+# define ERR_NO_NC			"Haven't name/comment"
+# define ERR_EMP_FILE		"Empty file"
+# define ERR_CREATE_FILE	"Error create file"
 
 #endif

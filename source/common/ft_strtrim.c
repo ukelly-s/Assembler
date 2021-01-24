@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/24 20:04:50 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/24 20:04:52 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "asm.h"
-# include "list.h"
-# include "mem.h"
-# include "str.h"
+#include "list.h"
+#include "mem.h"
+#include "str.h"
 
 static size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t len;
+	size_t	len;
 
 	if (dst == NULL || src == NULL)
 		return (0);
@@ -20,9 +32,9 @@ static size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (len);
 }
 
-static char	*ft_strnew(size_t size)
+static char		*ft_strnew(size_t size)
 {
-	char *str;
+	char	*str;
 
 	if (size + 1 == 0)
 		return (NULL);
@@ -34,8 +46,8 @@ static char	*ft_strnew(size_t size)
 
 static size_t	ft_lensp(char const *src)
 {
-	size_t len;
-	size_t i;
+	size_t	len;
+	size_t	i;
 
 	if (*src == '\0')
 		return (0);

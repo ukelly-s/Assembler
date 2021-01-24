@@ -5,7 +5,7 @@ set(CMAKE_C_STANDARD 99)
 
 #-pedantic -Wshadow
 
-set(CMAKE_C_FLAGS " -Wall -Wextra")
+set(CMAKE_C_FLAGS " -Wall -Wextra -Werror -Wshadow")
 
 include_directories(includes include)
 include_directories(includes libft/inc)
@@ -76,6 +76,7 @@ add_library(libft STATIC
 		libft/src/string/ft_strndup.c
 		libft/src/string/ft_strnlen.c
 		libft/src/string/ft_strsplit.c
+		libft/src/string/ft_isdigit.c
 		libft/src/string/ft_words_count.c
 		libft/src/string/ft_concat.c
 		libft/src/string/ft_strany.c
@@ -140,5 +141,6 @@ add_executable(Asssembler $<TARGET_OBJECTS:libft>
         source/assembler/parse_mark.c
         source/common/ft_strtrim.c
 		source/assembler/translation_bytecode.c
+		source/assembler/big_endian_realisation.c
         )
 

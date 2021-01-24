@@ -1,26 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   util.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/24 19:56:46 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/24 19:56:48 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "asm.h"
 #include "asm_errors.h"
-# include "array_list.h"
-# include "str.h"
-# include "util.h"
-# include "op.h"
-# include "op_struct.h"
+#include "array_list.h"
+#include "str.h"
+#include "util.h"
+#include "op.h"
+#include "op_struct.h"
 
 t_line_type		mark_operation_type(const char *str)
 {
-	register int 	i;
+	int		i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i]  == SEPARATOR || str[i]  == ALT_SEPARATOR)
-			&& (str[i + 1]  == SEPARATOR || str[i + 1]  == ALT_SEPARATOR))
+		if ((str[i] == SEPARATOR || str[i] == ALT_SEPARATOR)
+			&& (str[i + 1] == SEPARATOR || str[i + 1] == ALT_SEPARATOR))
 			;
-		else if ((str[i]  == SEPARATOR || str[i]  == ALT_SEPARATOR)
-				 && (str[i + 1] == '-' || str[i + 1] == '%' || str[i + 1] == 'r'
-				 || ft_isdigit(str[i + 1]) == 1 || str[i + 1] == LABEL_CHAR))
+		else if ((str[i] == SEPARATOR || str[i] == ALT_SEPARATOR)
+				&& (str[i + 1] == '-' || str[i + 1] == '%' || str[i + 1] == 'r'
+				|| ft_isdigit(str[i + 1]) == 1 || str[i + 1] == LABEL_CHAR))
 			return (LINE_OPERATION);
-		else if (ft_strchr(LABEL_CHARS, str[i] ) == NULL && str[i] != LABEL_CHAR)
+		else if (ft_strchr(LABEL_CHARS, str[i]) == NULL && str[i] != LABEL_CHAR)
 			ft_kill(ERR_INVALID_STRING, NULL, __func__, __FILE__);
 		else if (str[i] == LABEL_CHAR)
 			return (LINE_MARK);
@@ -30,27 +42,11 @@ t_line_type		mark_operation_type(const char *str)
 	return (LINE_UNDEFINED);
 }
 
-uint32_t		rev_bytes(uint32_t define)
+void			get_prog_size(t_cmd *cmd)
 {
-	uint32_t	rev_dig;
-	uint8_t		*col;
-	uint8_t		*rev_col;
-
-	col = (uint8_t *)&define;
-	rev_col = (uint8_t *)&rev_dig;
-	rev_col[0] = col[3];
-	rev_col[1] = col[2];
-	rev_col[2] = col[1];
-	rev_col[3] = col[0];
-	return (rev_dig);
-}
-
-void		get_prog_size(t_cmd *cmd)
-{
-	register int 	i;
+	int		i;
 
 	i = 0;
-
 	cmd->size_op++;
 	if (g_op[cmd->code].args_types_code == true)
 		cmd->size_op++;
@@ -67,12 +63,28 @@ void		get_prog_size(t_cmd *cmd)
 		}
 		i++;
 	}
-
 }
 
-void    free_cmd(t_cmd *cmd)
+char			*replace_extension(char *filename, char *file_extension_asm,
+						char *file_extension_disasm)
 {
-	int i;
+	char	*new_file_name;
+	char	*buff;
+	size_t	len;
+
+	len = ft_strlen(filename) - 2;
+	buff = ft_strndup(filename, len);
+	if (check_name_the_file(filename, file_extension_asm))
+		new_file_name = ft_concat(2, buff, file_extension_disasm);
+	else
+		new_file_name = ft_concat(2, buff, file_extension_asm);
+	free(buff);
+	return (new_file_name);
+}
+
+void			free_cmd(t_cmd *cmd)
+{
+	int		i;
 
 	i = 0;
 	while (i < 3)
@@ -85,17 +97,4 @@ void    free_cmd(t_cmd *cmd)
 		i++;
 	}
 	free(cmd);
-}
-
-char 	*replace_extension(char *filename, char *file_extension)
-{
-	char	*new_file_name;
-	char	*buff;
-	size_t	len;
-
-	len = ft_strlen(filename) - 2;
-	buff = ft_strndup(filename, len);
-	new_file_name = ft_concat(2, buff, file_extension);
-	free (buff);
-	return (new_file_name);
 }

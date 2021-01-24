@@ -1,24 +1,28 @@
-#include "asm.h"
-# include <stdbool.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include "array_list.h"
-# include "conv.h"
-# include "hash_map.h"
-# include "io_.h"
-# include "list.h"
-# include "math.h"
-# include "mem.h"
-# include "str.h"
-# include "util.h"
-# include "ft_printf.h"
-# include "op.h"
-# include "op_struct.h"
-# include "lexer.h"
-# include "asm_errors.h"
-#include "logger.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_operation.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/24 19:39:00 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/24 19:39:02 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int 	get_type_args(char c)
+#include "asm.h"
+#include "conv.h"
+#include "hash_map.h"
+#include "list.h"
+#include "mem.h"
+#include "str.h"
+#include "util.h"
+#include "op.h"
+#include "op_struct.h"
+#include "lexer.h"
+#include "asm_errors.h"
+
+static int		get_type_args(char c)
 {
 	if (c == DIRECT_CHAR)
 		return (T_DIR);
@@ -33,7 +37,7 @@ static int 	get_type_args(char c)
 
 static void		check_valid_arg_value(char *str, t_cmd *cmd, int i)
 {
-	char *tmp;
+	char	*tmp;
 
 	tmp = str;
 	if (*str == LABEL_CHAR)
@@ -46,11 +50,10 @@ static void		check_valid_arg_value(char *str, t_cmd *cmd, int i)
 				ft_kill(ERR_INV_CHAR, NULL, __func__, __FILE__);
 			str++;
 		}
-		cmd->args_value[i] = ft_atol(tmp); // todo t_reg check
-		if (cmd->args_types[i] == T_REG && (cmd->args_value[i]  <= 0
-											|| cmd->args_value[i]  > REG_NUMBER)) //TODO REG_NUMBER переделать в 99
-			ft_kill("Syntax error at token", NULL, __func__, __FILE__);
-
+		cmd->args_value[i] = ft_atol(tmp);
+		if (cmd->args_types[i] == T_REG && (cmd->args_value[i] <= 0
+								|| cmd->args_value[i] > REG_NUMBER))
+			ft_kill(ERR_SYNTAX, NULL, __func__, __FILE__);
 	}
 }
 
@@ -68,41 +71,40 @@ static	size_t	quantity_sep_char(char const *s, char c)
 	return (separator_char);
 }
 
-static void	parse_args(char *str, t_cmd	*cmd)
+static void		parse_args(char *str, t_cmd *cmd)
 {
-	char **args;
-	register int 	i;
+	char	**args;
+	int		i;
 
-	i = 0;
+	i = -1;
 	if ((g_op[cmd->code].args_num != ft_words_count(str, SEPARATOR_CHAR))
-		|| (ft_words_count(str, SEPARATOR_CHAR) - quantity_sep_char(str, SEPARATOR_CHAR)) != 1)
+		|| (ft_words_count(str, SEPARATOR_CHAR)
+			- quantity_sep_char(str, SEPARATOR_CHAR)) != 1)
 		ft_kill(ERR_LOTS_ARG, NULL, __func__, __FILE__);
 	args = ft_strsplit(str, SEPARATOR_CHAR);
-	while (args[i] != NULL)
+	while (args[++i] != NULL)
 	{
 		cmd->args_types[i] = get_type_args(*args[i]);
 		if (!(cmd->args_types[i] & g_op[cmd->code].args_types[i]))
 			ft_kill(ERR_INV_ARG, NULL, __func__, __FILE__);
-		if (cmd->args_types[i] == T_REG && ft_isdigit(args[i][1]) != 0)
+		if ((cmd->args_types[i] == T_REG && ft_isdigit(args[i][1]) != 0) ||
+				(cmd->args_types[i] == T_DIR && (ft_isdigit(args[i][1]) != 0
+				|| args[i][1] == '-' || args[i][1] == LABEL_CHAR)))
 			check_valid_arg_value(&args[i][1], cmd, i);
 		else if (cmd->args_types[i] == T_IND && (ft_isdigit(*args[i]) != 0
-												 || *args[i] == '-' || *args[i] == LABEL_CHAR))
+					|| *args[i] == '-' || *args[i] == LABEL_CHAR))
 			check_valid_arg_value(&args[i][0], cmd, i);
-		else if (cmd->args_types[i] == T_DIR  && (ft_isdigit(args[i][1]) != 0
-												  || args[i][1] == '-' || args[i][1] == LABEL_CHAR))
-			check_valid_arg_value(&args[i][1], cmd, i);
 		else
 			ft_kill(ERR_INV_CHAR, NULL, __func__, __FILE__);
-		i++;
 	}
 	ft_free_split(args);
 }
 
-void	parse_operation(char *str, t_list *all_op, t_parse *g)
+void			parse_operation(char *str, t_list *all_op, t_parse *g)
 {
-	register int		i;
-	t_cmd				*list_cmd;
-	static uint32_t 	save_size_op;
+	int				i;
+	t_cmd			*list_cmd;
+	static uint32_t	save_size_op;
 
 	list_cmd = ft_memalloc(sizeof(t_cmd));
 	i = get_number_operation(str);

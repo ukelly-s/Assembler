@@ -34,8 +34,8 @@
 
 # define LABEL_CHARS			"abcdefghijklmnopqrstuvwxyz_0123456789"
 
-# define NAME_CMD_STRING		".name"
-# define COMMENT_CMD_STRING		".comment"
+# define NAME_CMD				".name"
+# define COMMENT_CMD			".comment"
 
 # define REG_NUMBER				16
 

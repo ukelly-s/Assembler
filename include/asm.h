@@ -77,7 +77,6 @@ typedef struct		s_parse
 
 
 void				assembler(char *filename);
-int					get_line(int fd, char **line);
 void				parse(int fd, t_parse *g, t_list *info_operations,
 						  t_hashmap *info_mark);
 char				*clear_line(char **str);
@@ -86,18 +85,14 @@ void				parse_name(char *str, t_parse *g);
 void				parse_comment(char *str, t_parse *g);
 t_line_type			mark_operation_type(const char *str);
 
-char 	*replace_extension(char *filename, char *file_extension);
+char			*replace_extension(char *filename, char *file_extension_asm,
+								   char *file_extension_disasm);
 
 /*
 ** libft
 */
 char				*ft_strtrim(char const *s);
 
-/*
-** parse header
- */
-
-uint32_t			rev_bytes(uint32_t define);
 
 /*
 ** parse_operation
@@ -112,4 +107,6 @@ void				parse_mark(char *str, t_hashmap *info_mark, t_parse *g);
 
 void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g);
 void 				get_prog_size(t_cmd *cmd);
+_Bool	check_name_the_file(char *name_the_file, char *file_extension);
+
 #endif

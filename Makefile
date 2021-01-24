@@ -14,7 +14,7 @@ ASM = asm
 LIBFT_A = libft/libft.a
 
 CC = gcc
-FLAGS = -Wall -Wextra
+FLAGS = -Wall -Wextra -Werror
 
 LIBFT_DIR = libft
 
@@ -41,8 +41,8 @@ SRCS_ASM += assembler/parse_clear_line.c
 SRCS_ASM += assembler/parse_operation.c
 SRCS_ASM += assembler/parse_mark.c
 SRCS_ASM += assembler/translation_bytecode.c
-SRCS_COMMON = common/ft_isdigit.c
-SRCS_COMMON += common/ft_strtrim.c
+SRCS_ASM += assembler/big_endian_realisation.c
+SRCS_COMMON = common/ft_strtrim.c
 
 
 SRCS_PATH = $(addprefix $(SRC_DIR)/,$(SRCS))
