@@ -208,8 +208,8 @@ void					get_formatted_arg(t_ptf_info *info);
 void					get_char_arg(t_ptf_info *info, int16_t is_wide_char);
 void					get_string_arg(t_ptf_info *info,
 						int16_t is_wide_string);
-void					get_signed_arg(t_ptf_info *info, int16_t base);
-void					get_unsigned_arg(t_ptf_info *info, int16_t base);
+void					get_signed_arg(t_ptf_info *info, int_fast16_t base);
+void					get_unsigned_arg(t_ptf_info *info, int_fast16_t base);
 void					do_print_string(t_ptf_info *info, char *str,
 						size_t size);
 

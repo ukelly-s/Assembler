@@ -14,7 +14,6 @@
 # include "str.h"
 # include "util.h"
 # include "op.h"
-# include "op_struct.h"
 # include "lexer.h"
 #include "ft_printf.h"
 

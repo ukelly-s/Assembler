@@ -55,7 +55,7 @@ void					get_signed_arg(t_ptf_info *info, int_fast16_t base)
 	else if (info->flags & SIZE_LONG)
 		value = va_arg(info->ap, long);
 	else if (info->flags & SIZE_SIZE_T)
-		value = va_arg(info->ap, ssize_t);
+		value = va_arg(info->ap, size_t);
 	else if (info->flags & SIZE_INTMAX)
 		value = (va_arg(info->ap, intmax_t));
 	else if (info->flags & SIZE_SHORT)

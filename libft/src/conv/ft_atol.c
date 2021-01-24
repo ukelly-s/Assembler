@@ -40,10 +40,10 @@ long long	ft_atol(const char *str)
 	{
 		res = res * 10 + (*str - '0');
 		str++;
-		if (res > LONG_LONG_MAX && sign > 0)
+		if (res > LLONG_MAX && sign > 0)
 			return (-1);
 		if (res > 0)
-			if (res - 1 > LONG_LONG_MAX && sign < 0)
+			if (res - 1 > LLONG_MAX && sign < 0)
 				return (0);
 		if (nbr_len(res) >= 19 && (*str >= '0' && *str <= '9'))
 			return ((sign > 0) ? (-1) : (0));

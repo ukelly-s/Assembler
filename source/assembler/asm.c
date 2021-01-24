@@ -1,7 +1,6 @@
 #include "asm.h"
 #include "list.h"
 #include "op.h"
-#include "op_struct.h"
 #include "util.h"
 #include "io_.h"
 #include "hash_map.h"
@@ -55,7 +54,7 @@ void	assembler(char *filename)
 	free(g->byte_str);
 	free(g->header);
 	free(g);
-	list_clear(&info_operations, free_cmd);
+	list_clear(&info_operations, (void *)free_cmd);
 	ft_printf("Writing output program to %s", filename);
 	free(filename);
 }

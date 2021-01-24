@@ -33,7 +33,7 @@ unsigned long long	math_llabs(long long num);
 /**
 * @file divmod.c
 */
-int					math_divmod(int dividend, int divisor, int *remainder);
+int					math_divmod(int dividend, int divisor, int_fast32_t *remainder);
 long				math_ldivmod(long dividend, long divisor, long *remainder);
 long long			math_lldivmod(long long dividend, long long divisor,
 					long long *remainder);
