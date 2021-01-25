@@ -11,11 +11,8 @@
 /* ************************************************************************** */
 
 #include "asm.h"
-#include "lexer.h"
 #include "str.h"
-#include "mem.h"
 #include "op_struct.h"
-#include "list.h"
 
 static void		mark_to_address(t_cmd *cmd, t_hashmap *mark)
 {

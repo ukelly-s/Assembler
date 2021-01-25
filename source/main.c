@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "asm.h"
-#include <string.h>
+#include <string.h>//fixme
 #include "str.h"
 #include "io_.h"
 
@@ -19,7 +19,7 @@ _Bool	check_name_the_file(char *name_the_file, char *file_extension)
 {
 	char	*tmp;
 
-	tmp = strrchr(name_the_file, '.');
+	tmp = strrchr(name_the_file, '.');//fixme
 	return (ft_strequ(tmp, file_extension));
 }
 

@@ -12,11 +12,8 @@
 
 #include "asm.h"
 #include "asm_errors.h"
-#include "list.h"
-#include "mem.h"
 #include "str.h"
 #include "util.h"
-#include "op.h"
 
 static int		len_clear_line(char *str)
 {

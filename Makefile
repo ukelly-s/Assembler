@@ -27,7 +27,6 @@ INCLUDE += -I./libft/inc
 
 HEADERS = include/asm.h
 HEADERS += include/asm_errors.h
-HEADERS += include/lexer.h
 HEADERS += include/op.h
 HEADERS += include/op_struct.h
 

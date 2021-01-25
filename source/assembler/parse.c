@@ -12,13 +12,9 @@
 
 #include "asm.h"
 #include "asm_errors.h"
-#include "hash_map.h"
 #include "io_.h"
-#include "list.h"
-#include "mem.h"
 #include "str.h"
 #include "util.h"
-#include "op.h"
 #include "op_struct.h"
 
 int					get_number_operation(const char *str)

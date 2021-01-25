@@ -21,30 +21,13 @@
 # define ARG_REG 0b01000000
 # define ARG_DIR 0b10000000
 # define ARG_IND 0b11000000
-/*
- # include <stdbool.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include "array_list.h"
-# include "conv.h"
-# include "hash_map.h"
-# include "io_.h"
+
 # include "list.h"
-# include "math.h"
+# include "op.h"
+# include "hash_map.h"
+# include "list.h"
 # include "mem.h"
-# include "str.h"
-# include "util.h"
-# include "op.h"
-# include "op_struct.h"
-# include "lexer.h"
 
- */
-
-#include <mem.h>
-# include "list.h"
-# include "op.h"
-# include "hash_map.h"
-# include "lexer.h"
 /*
 ** lexer
 */
@@ -66,6 +49,27 @@ typedef enum		e_line_type
 	LINE_MARK
 }					t_line_type;
 
+typedef struct	s_cmd
+{
+	uint8_t		code;
+	uint8_t		args_types[3];
+	int32_t 	args_value[3];
+	char 		*mark[3];
+	uint32_t	size_op;
+}				t_cmd;
+
+typedef union	s_code4b
+{
+	int32_t		digit;
+	uint8_t 	letter[4];
+}				t_code4b;
+
+typedef union	s_code2b
+{
+	int16_t		digit;
+	uint8_t		letter[2];
+}				t_code2b;
+
 typedef struct		s_parse
 {
 	int				name;
@@ -74,44 +78,78 @@ typedef struct		s_parse
 	t_byte			*byte_str;
 }					t_parse;
 
+/*
+** main.c
+*/
 
+_Bool	check_name_the_file(char *name_the_file, char *file_extension);
 
-void				assembler(char *filename);
+/*
+** asm.c
+*/
+void			assembler(char *filename);
+
+/*
+** big_endian_realisation.c
+*/
+
+uint32_t		rev_bytes(uint32_t define);
+void			get_to_4byte(t_byte *str, int32_t args_value);
+void			get_to_2byte(t_byte *str, int32_t args_value);
+
+/*
+** parse.c
+*/
+
+int					get_number_operation(const char *str);
 int					get_line(int fd, char **line);
 void				parse(int fd, t_parse *g, t_list *info_operations,
 						  t_hashmap *info_mark);
-char				*clear_line(char **str);
-int					get_number_operation(const char *str);
-void				parse_name(char *str, t_parse *g);
-void				parse_comment(char *str, t_parse *g);
-t_line_type			mark_operation_type(const char *str);
 
-char				*replace_extension(char *filename, char *file_extension_asm,
-								   char *file_extension_disasm);
+/*
+** parse_clear_line.c
+*/
 
-_Bool	check_name_the_file(char *name_the_file, char *file_extension);
+char			*clear_line(char **str);
+
 /*
 ** libft
 */
 char				*ft_strtrim(char const *s);
 
 /*
-** parse header
+** parse_mark.c
  */
 
-uint32_t			rev_bytes(uint32_t define);
+void	parse_mark(char *str, t_hashmap *info_mark, t_parse *g);
 
 /*
-** parse_operation
+** parse_name_comment.c
 */
 
-void				parse_operation(char *str, t_list *all_op, t_parse *g);
-void				parse_mark(char *str, t_hashmap *info_mark, t_parse *g);
+void			parse_comment(char *str, t_parse *g);
+void			parse_name(char *str, t_parse *g);
 
 /*
-** translation to bytecode
+** parse_operation.c
 */
 
-void				translation_bytecode(t_list *operations, t_hashmap *mark, t_parse *g);
-void 				get_prog_size(t_cmd *cmd);
+void			parse_operation(char *str, t_list *all_op, t_parse *g);
+
+/*
+** translation_bytecode
+*/
+void			translation_bytecode(t_list *operations,
+									 t_hashmap *mark, t_parse *g);
+
+/*
+** util.c
+*/
+
+t_line_type		mark_operation_type(const char *str);
+void			get_prog_size(t_cmd *cmd);
+char			*replace_extension(char *filename, char *file_extension_asm,
+								   char *file_extension_disasm);
+void			free_cmd(void *data);
+
 #endif

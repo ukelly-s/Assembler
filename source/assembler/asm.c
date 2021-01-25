@@ -12,10 +12,7 @@
 
 #include "asm.h"
 #include "asm_errors.h"
-#include "list.h"
-#include "op.h"
 #include "util.h"
-#include "hash_map.h"
 #include <fcntl.h>
 #include <stdlib.h>
 #include <ft_printf.h>

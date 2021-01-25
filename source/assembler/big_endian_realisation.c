@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lexer.h"
-#include "mem.h"
+#include "asm.h"
 
 uint32_t		rev_bytes(uint32_t define)
 {

@@ -12,14 +12,9 @@
 
 #include "asm.h"
 #include "conv.h"
-#include "hash_map.h"
-#include "list.h"
-#include "mem.h"
 #include "str.h"
 #include "util.h"
-#include "op.h"
 #include "op_struct.h"
-#include "lexer.h"
 #include "asm_errors.h"
 
 static int		get_type_args(char c)
