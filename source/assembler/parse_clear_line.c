@@ -1,25 +1,14 @@
 #include "asm.h"
 #include "asm_errors.h"
-# include <stdbool.h>
-# include <fcntl.h>
-# include <unistd.h>
-#include <logger.h>
-# include "array_list.h"
-# include "conv.h"
-# include "hash_map.h"
-# include "io_.h"
 # include "list.h"
-# include "math.h"
 # include "mem.h"
 # include "str.h"
 # include "util.h"
 # include "op.h"
-# include "lexer.h"
-#include "ft_printf.h"
 
 static int		len_clear_line(char *str)
 {
-	register int		i;
+	int		i;
 
 	i = 0;
 	while (*str != '\0')
@@ -33,8 +22,8 @@ static int		len_clear_line(char *str)
 
 static int		f_len_mark(char *str)
 {
-	register int		i;
-	register int		j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -48,29 +37,29 @@ static int		f_len_mark(char *str)
 	return (i);
 }
 
+#include <unistd.h>
+#include "io_.h"
 static char		*clear_line_operation(char **str)
 {
-	char				*line;
-	char				*tmp;
-	int					len;
-	int					check_space;
-	register int		i;
+	char	*line;
+	int		len;
+	int		check_space;
+	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
 	check_space = 0;
 	len = len_clear_line(*str) + 1;
 	line = malloc(sizeof(char) * (len + 1));
-	tmp = *str;
-	while (**str != '\0')
+	while (str[0][j] != '\0')
 	{
-		if(**str != ' ' && **str != '\t')
-			line[i++] = **str;
-		if ((**str == ' ' || **str == '\t') && check_space++ == 0)
+		if(str[0][j] != ' ' && str[0][j] != '\t')
+			line[i++] = str[0][j];
+		if ((str[0][j] == ' ' || str[0][j] == '\t') && check_space++ == 0)
 			line[i++] = ' ';
-		(*str)++;
+		j++;
 	}
-	free(tmp);
-	tmp = NULL;
 	line[i] = '\0';
 	return (line);
 }
@@ -100,35 +89,24 @@ char			*clear_line(char **str)
 
 	if ((tmp = ft_strchr(*str, COMMENT_CHAR)) != NULL ||
 		(tmp = ft_strchr(*str, ALT_COMMENT_CHAR)) != NULL)
-	{
-
-		ft_bzero(tmp, ft_strlen(tmp));
-		if (!**str)
-		{
-			line = ft_memalloc(1);//todo с null никак нельзя
-			free (*str);
-			*str = NULL;
-			return (line);
-		}
-	}
-	if (mark_operation_type(*str) == LINE_MARK)
+			ft_bzero(tmp, ft_strlen(tmp));
+	if (!**str)
+		line = ft_memalloc(1);//todo с null никак нельзя
+	else if (mark_operation_type(*str) == LINE_MARK)
 	{
 		len_mark = f_len_mark(*str) + 1;
 		line = clear_line_mark(str, len_mark);
-		tmp = ft_strtrim(*str);
-		free(*str);
-		if (*tmp == '\0')
+		if (*(tmp = ft_strtrim(*str)) != '\0')
 		{
-			free(tmp);
-			*str = NULL;
-		}
-		else
+			free(*str);
 			*str = tmp;
+			return (line);
+		}
+		free(tmp);
 	}
 	else
-	{
 		line = clear_line_operation(str);
-		*str = NULL;
-	}
+	free(*str);
+	*str = NULL;
 	return (line);
 }
