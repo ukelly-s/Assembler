@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_clear_line.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/24 19:28:52 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/24 19:28:54 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "asm.h"
 #include "asm_errors.h"
-# include "list.h"
-# include "mem.h"
-# include "str.h"
-# include "util.h"
-# include "op.h"
+#include "list.h"
+#include "mem.h"
+#include "str.h"
+#include "util.h"
+#include "op.h"
 
 static int		len_clear_line(char *str)
 {
@@ -13,7 +25,7 @@ static int		len_clear_line(char *str)
 	i = 0;
 	while (*str != '\0')
 	{
-		if(*str != ' ' && *str != '\t')
+		if (*str != ' ' && *str != '\t')
 			i++;
 		str++;
 	}
@@ -27,7 +39,7 @@ static int		f_len_mark(char *str)
 
 	i = 0;
 	j = 0;
-	while(str[j] != LABEL_CHAR)
+	while (str[j] != LABEL_CHAR)
 	{
 		if (str[j] == ' ')
 			ft_kill(ERR_SYNTAX, NULL, __func__, __FILE__);
@@ -37,8 +49,6 @@ static int		f_len_mark(char *str)
 	return (i);
 }
 
-#include <unistd.h>
-#include "io_.h"
 static char		*clear_line_operation(char **str)
 {
 	char	*line;
@@ -54,7 +64,7 @@ static char		*clear_line_operation(char **str)
 	line = malloc(sizeof(char) * (len + 1));
 	while (str[0][j] != '\0')
 	{
-		if(str[0][j] != ' ' && str[0][j] != '\t')
+		if (str[0][j] != ' ' && str[0][j] != '\t')
 			line[i++] = str[0][j];
 		if ((str[0][j] == ' ' || str[0][j] == '\t') && check_space++ == 0)
 			line[i++] = ' ';
@@ -83,19 +93,17 @@ static char		*clear_line_mark(char **str, int len)
 
 char			*clear_line(char **str)
 {
-	char	*line;//TODO не могу нихуя понять на карте tests/asm/valid/gedeon.s тут появляется в памяти какая-то хрень
+	char	*line;
 	char	*tmp;
-	int		len_mark;
 
 	if ((tmp = ft_strchr(*str, COMMENT_CHAR)) != NULL ||
 		(tmp = ft_strchr(*str, ALT_COMMENT_CHAR)) != NULL)
-			ft_bzero(tmp, ft_strlen(tmp));
+		ft_bzero(tmp, ft_strlen(tmp));
 	if (!**str)
-		line = ft_memalloc(1);//todo с null никак нельзя
+		line = ft_memalloc(1);
 	else if (mark_operation_type(*str) == LINE_MARK)
 	{
-		len_mark = f_len_mark(*str) + 1;
-		line = clear_line_mark(str, len_mark);
+		line = clear_line_mark(str, (f_len_mark(*str) + 1));
 		if (*(tmp = ft_strtrim(*str)) != '\0')
 		{
 			free(*str);

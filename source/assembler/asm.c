@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   asm.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/24 16:44:27 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/24 16:44:29 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "asm.h"
+#include "asm_errors.h"
 #include "list.h"
 #include "op.h"
-#include "asm_errors.h"
 #include "util.h"
 #include "hash_map.h"
 #include <fcntl.h>
@@ -9,9 +21,9 @@
 #include <ft_printf.h>
 #include <unistd.h>
 
-static t_parse		*new_parse(void)
+static t_parse	*new_parse(void)
 {
-	t_parse *g;
+	t_parse	*g;
 
 	g = malloc(sizeof(t_parse));
 	ft_assert(g != NULL, __func__, "malloc error");
@@ -20,21 +32,22 @@ static t_parse		*new_parse(void)
 	g->header = malloc(sizeof(t_header));
 	ft_assert(g->header != NULL, __func__, "malloc error");
 	g->header->magic = rev_bytes(COREWAR_EXEC_MAGIC);
-	g->header->prog_size = 0; //fixme debug
+	g->header->prog_size = 0;
 	g->byte_str = NULL;
 	return (g);
 }
 
-static void		free_all_struct(t_parse *g, t_list *info_operations, t_hashmap *info_mark)
+static void		free_all_struct(t_parse *g, t_list *info_operations,
+									t_hashmap *info_mark)
 {
 	hashmap_destroy(&info_mark, NULL);
 	free(g->byte_str);
 	free(g->header);
 	free(g);
-	list_clear(&info_operations, (void *)free_cmd);
+	list_clear(&info_operations, free_cmd);
 }
 
-void	assembler(char *filename)
+void			assembler(char *filename)
 {
 	int			fd;
 	t_parse		*g;
@@ -45,14 +58,15 @@ void	assembler(char *filename)
 	info_mark = hashmap_new();
 	info_operations = list_new();
 	ft_assert(info_mark != NULL && info_operations != NULL,
-			  __func__, "malloc error");
+			__func__, "malloc error");
 	if ((fd = open(filename, O_RDONLY)) == -1)
 		ft_kill(ERR_OPEN_FILE, NULL, __func__, __FILE__);
 	parse(fd, g, info_operations, info_mark);
 	translation_bytecode(info_operations, info_mark, g);
-	filename = replace_extension(filename, ".cor");
-	if ((fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 0644)) == -1)
-		ft_kill(ERR_CREATE_FILE, NULL, __func__, __FILE__);; //error(ERR_CREATE_FILE);
+	filename = replace_extension(filename, ".s", ".cor");
+	if ((fd = open(filename, O_CREAT | O_TRUNC
+										| O_WRONLY | O_APPEND, 0644)) == -1)
+		ft_kill(ERR_CREATE_FILE, NULL, __func__, __FILE__);
 	write(fd, g->header, sizeof(t_header));
 	g->header->prog_size = rev_bytes(g->header->prog_size);
 	write(fd, g->byte_str, g->header->prog_size);

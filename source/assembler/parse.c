@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/24 16:39:04 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/24 16:39:08 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "asm.h"
 #include "asm_errors.h"
-# include "hash_map.h"
-# include "io_.h"
-# include "list.h"
-# include "mem.h"
-# include "str.h"
-# include "util.h"
-# include "op.h"
-# include "op_struct.h"
+#include "hash_map.h"
+#include "io_.h"
+#include "list.h"
+#include "mem.h"
+#include "str.h"
+#include "util.h"
+#include "op.h"
+#include "op_struct.h"
 
 int					get_number_operation(const char *str)
 {
@@ -35,7 +47,7 @@ static t_line_type	get_line_type(const char *line, t_parse *g)
 		return (LINE_NAME);
 	}
 	else if (ft_strnequ(COMMENT_CMD_STRING, line, 8)
-			 && g->comment == FLAG_DEFAULT)
+			&& g->comment == FLAG_DEFAULT)
 	{
 		g->comment = FLAG_COMMENT;
 		return (LINE_COMMENT);
@@ -60,7 +72,7 @@ static char			*get_line_name_comment(int fd, char *line)
 	{
 		if ((buff = ft_strchr(line, '\"')) != NULL)
 			if ((buff = ft_strchr(++buff, '\"')) != NULL)
-				break;
+				break ;
 		if ((i = get_next_line(fd, &buff)) < 0)
 			ft_kill(ERR_READINING, NULL, __func__, __FILE__);
 		if (*buff == '\0')
@@ -76,7 +88,7 @@ static char			*get_line_name_comment(int fd, char *line)
 	return (line);
 }
 
-int					get_line(int fd, char **line)//fixme
+int					get_line(int fd, char **line)
 {
 	char				*tmp;
 	static char			*buff;
@@ -89,7 +101,8 @@ int					get_line(int fd, char **line)//fixme
 	if (i == 0 || ((!*tmp || tmp[0] == COMMENT_CHAR
 					|| tmp[0] == ALT_COMMENT_CHAR) && (*line = tmp)))
 		return (i);
-	if (!(*(buff = ft_strtrim(tmp))) && (*line = buff))
+	buff = ft_strtrim(tmp);
+	if (!*buff && (*line = buff))
 		buff = NULL;
 	else if (ft_strnequ(NAME_CMD_STRING, buff, 5) ||
 		(ft_strnequ(COMMENT_CMD_STRING, buff, 8)))
@@ -103,9 +116,8 @@ int					get_line(int fd, char **line)//fixme
 	return (i);
 }
 
-
 void				parse(int fd, t_parse *g, t_list *info_operations,
-						  t_hashmap *info_mark)
+							t_hashmap *info_mark)
 {
 	t_line_type	line_type;
 	char		*line;
@@ -127,7 +139,7 @@ void				parse(int fd, t_parse *g, t_list *info_operations,
 		line = NULL;
 	}
 	if (g->name == FLAG_DEFAULT || g->comment == FLAG_DEFAULT)
-		ft_kill("No name/comment", NULL, __func__, __FILE__);
+		ft_kill(ERR_NO_NC, NULL, __func__, __FILE__);
 	if (info_operations->front == NULL && info_mark->size == 0)
-		ft_kill("No operation", NULL, __func__, __FILE__);
+		ft_kill(ERR_EMP_FILE, NULL, __func__, __FILE__);
 }

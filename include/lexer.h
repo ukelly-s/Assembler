@@ -38,7 +38,7 @@ typedef union	s_code2b
 	uint8_t		letter[2];
 }				t_code2b;
 
-void			free_cmd(t_cmd *cmd);
+void			free_cmd(void *data);
 uint32_t		rev_bytes(uint32_t define);
 void			get_to_4byte(t_byte *str, int32_t args_value);
 void			get_to_2byte(t_byte *str, int32_t args_value);
