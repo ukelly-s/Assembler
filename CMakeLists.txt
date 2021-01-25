@@ -83,6 +83,7 @@ add_library(libft STATIC
 		libft/src/string/ft_wstrlen.c
 		libft/src/util/ft_assert.c
 		libft/src/util/ft_kill.c
+		libft/src/string/ft_isdigit.c
 		libft/src/util/ft_log_error.c
 		libft/src/system/ft_path.c
 		libft/src/logger/logger_.h
@@ -138,7 +139,7 @@ add_executable(Asssembler $<TARGET_OBJECTS:libft>
         source/assembler/parse_clear_line.c
         source/assembler/parse_operation.c
         source/assembler/parse_mark.c
-        source/common/ft_strtrim.c
+        source/ft_strtrim.c
 		source/assembler/translation_bytecode.c
         source/assembler/big_endian_realisation.c)
 
