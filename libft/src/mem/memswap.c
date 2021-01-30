@@ -41,11 +41,11 @@ static inline void	swap_64(size_t *restrict m1, size_t *restrict m2)
 
 void				ft_memswap(void *b1, void *b2, size_t n)
 {
-	t_byte		*b1_8;
-	t_byte		*b2_8;
-	size_t		*b1_64;
-	size_t		*b2_64;
-	register	size_t	i;
+	t_byte			*b1_8;
+	t_byte			*b2_8;
+	size_t			*b1_64;
+	size_t			*b2_64;
+	register size_t	i;
 
 	b1_8 = (t_byte *)b1;
 	b2_8 = (t_byte *)b2;

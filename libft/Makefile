@@ -36,16 +36,16 @@ MEM:= memalloc memchr memcmp memcpy memmem memset memswap
 STRINGPATH:= string/
 STRING:= ft_chars_count ft_isint ft_strdup ft_strjoin ft_strndup ft_strsplit \
         ft_free_split ft_strchr ft_strequ ft_strlen ft_strnlen ft_words_count ft_strnequ \
-        ft_concat ft_strany ft_strrev ft_wstrlen ft_isdigit
+        ft_concat ft_strany ft_strrev ft_wstrlen ft_isdigit  ft_strend  ft_strstart
 
 UTILPATH:= util/
-UTIL:= ft_assert ft_kill  ft_log_error
+UTIL:= ft_assert ft_kill  ft_log_error ft_exit
 
 MATHPATH:= math/
 MATH:= min abs divmod max moddiv numlen pow sqrt
 
 SYSTEMPATH:= system/
-SYSTEM:= ft_path
+SYSTEM:= byte_swap_signed  byte_swap_unsigned  endian ft_path
 
 CC:=gcc
 OBJPATH:=obj/

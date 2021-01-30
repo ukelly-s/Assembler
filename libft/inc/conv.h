@@ -14,7 +14,7 @@
 # define CONV_H
 
 # include <stdint.h>
-# include <wchar.h>
+# include <stddef.h>
 
 long long	ft_atol(const char *str);
 size_t		ft_ultoa_base(unsigned long long value, char *buff, int base,
@@ -22,6 +22,5 @@ size_t		ft_ultoa_base(unsigned long long value, char *buff, int base,
 size_t		ft_uitoa_dec(uint32_t val, char *buff);
 size_t		ft_uitoa_hex(uint32_t value, char *buff, int_fast16_t is_upper);
 size_t		ft_ultoa_hex(uint64_t value, char *buff, int_fast16_t is_upper);
-size_t		ft_wstrlen(const wint_t *s);
 
 #endif

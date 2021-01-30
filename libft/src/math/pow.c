@@ -1,10 +1,23 @@
-/**
-* @brief Raises the number @a base to the power of @a n
-* @param [in] base Base.
-* @param [in] n Power.
-* @return The @a n-th power of @a base
-* @ingroup math
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pow.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/30 16:57:40 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/30 16:57:41 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
+** @brief Raises the number @a base to the power of @a n
+** @param [in] base Base.
+** @param [in] n Power.
+** @return The @a n-th power of @a base
+** @ingroup math
 */
+
 double		math_pow(const double base, const int n)
 {
 	if (n == 0)
@@ -16,9 +29,10 @@ double		math_pow(const double base, const int n)
 	return (math_pow(base * base, n / 2));
 }
 
-/**
-* @copydoc math_pow
+/*
+** @copydoc math_pow
 */
+
 float		math_fpow(const float base, const int n)
 {
 	if (n == 0)
@@ -30,9 +44,10 @@ float		math_fpow(const float base, const int n)
 	return (math_fpow(base * base, n / 2));
 }
 
-/**
-* @copydoc math_pow
+/*
+** @copydoc math_pow
 */
+
 long double	math_lpow(const long double base, const int n)
 {
 	if (n == 0)

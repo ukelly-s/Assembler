@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strstart.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 16:20:31 by ukelly            #+#    #+#             */
-/*   Updated: 2021/01/30 16:20:32 by ukelly           ###   ########.fr       */
+/*   Created: 2021/01/30 15:57:52 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/30 15:57:53 by ukelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 
-int		ft_isdigit(int c)
+int	ft_strstart(const char *str, const char *prefix)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	return (ft_strnequ(str, prefix, ft_strlen(prefix)));
 }

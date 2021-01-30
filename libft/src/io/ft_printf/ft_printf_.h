@@ -18,9 +18,9 @@
 */
 
 # include <stdint.h>
-# include <float.h>
+# include <stddef.h>
 # include <stdarg.h>
-# include <wchar.h>
+# include <float.h>
 
 # if defined(_POSIX_VERSION) || defined(__unix__) || defined(linux)
 #  include <sys/select.h>
@@ -69,10 +69,10 @@ enum					e_fxd_assets
 	FP_LD_POINT = (LDBL_MAX_10_EXP / FP_R_LEN) + 2,
 	FP_LD_LEN = (FP_LD_POINT + FP_LD_MAX_PREC / FP_R_LEN) + 3,
 	FP_LD_CHAR_LEN = DBL_MAX_10_EXP + FP_LD_MAX_PREC
-//	FP_LD_64BIT = 1ULL << 63
 };
 
-#define FP_LD_64BIT (1ULL << 63)
+# define FP_LD_64BIT (1ULL << 63)
+
 enum					e_ptf_assets
 {
 	BUFF_SIZE = 512,
@@ -208,8 +208,8 @@ void					get_formatted_arg(t_ptf_info *info);
 void					get_char_arg(t_ptf_info *info, int16_t is_wide_char);
 void					get_string_arg(t_ptf_info *info,
 						int16_t is_wide_string);
-void					get_signed_arg(t_ptf_info *info, int_fast16_t base);
-void					get_unsigned_arg(t_ptf_info *info, int_fast16_t base);
+void					get_signed_arg(t_ptf_info *info, int16_t base);
+void					get_unsigned_arg(t_ptf_info *info, int16_t base);
 void					do_print_string(t_ptf_info *info, char *str,
 						size_t size);
 

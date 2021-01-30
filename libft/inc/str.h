@@ -14,7 +14,7 @@
 # define STR_H
 
 # include <stddef.h>
-# include <wchar.h>
+# include <wctype.h>
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strnlen(const char *s, size_t maxlen);
@@ -28,11 +28,14 @@ char	**ft_strsplit(char const *s, char c);
 void	*ft_free_split(char **split);
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
-int		ft_isint(char *str);
-int		ft_isdigit(int c);
+int		ft_isint(const char *str);
+int		ft_isuint(const char *str);
 char	*ft_concat(size_t count, ...);
 int		ft_strany(char const *str, int c);
 void	ft_strrev(register char *begin, register char *end);
 size_t	ft_wstrlen(const wint_t *s);
+int		ft_strstart(const char *str, const char *prefix);
+int		ft_strend(const char *str, const char *suffix);
+int		ft_isdigit(int c);
 
 #endif

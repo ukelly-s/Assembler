@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   logger_config.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/30 15:47:12 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/30 15:47:14 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "logger_.h"
 #include "logger.h"
 
@@ -54,5 +66,4 @@ void	logger_set_app_log_lvl(const char *name, enum e_log_level log_lvl)
 	}
 	else
 		log_error(__func__, "Incorrect value of log level: '%d'", log_lvl);
-
 }

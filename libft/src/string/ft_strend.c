@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strend.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 16:20:31 by ukelly            #+#    #+#             */
-/*   Updated: 2021/01/30 16:20:32 by ukelly           ###   ########.fr       */
+/*   Created: 2021/01/30 15:57:39 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/30 15:57:41 by ukelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 
-int		ft_isdigit(int c)
+int	ft_strend(const char *str, const char *suffix)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	const size_t	str_len = ft_strlen(str);
+	const size_t	suffix_len = ft_strlen(suffix);
+
+	if (str_len < suffix_len)
+		return (0);
+	else
+		return (ft_strequ(str + str_len - suffix_len, suffix));
 }

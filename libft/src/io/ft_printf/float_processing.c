@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   float_processing.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/30 16:56:52 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/30 16:56:55 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "math.h"
 #include "util.h"
 #include "mem.h"
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stddef.h>
 #include "ft_printf_.h"
 
 void			fxd_del(t_fxd *fp1, t_fxd *fp2)

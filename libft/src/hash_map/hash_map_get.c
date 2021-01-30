@@ -13,7 +13,7 @@
 #include "hash_map.h"
 #include "mem.h"
 
-void	*hashmap_get(t_hashmap *hmap, const void *key, size_t key_len)//todo add del!
+void	*hashmap_get(t_hashmap *hmap, const void *key, size_t key_len)
 {
 	uint64_t					hash;
 	register size_t				offset;

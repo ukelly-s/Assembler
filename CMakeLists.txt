@@ -5,7 +5,7 @@ set(CMAKE_C_STANDARD 99)
 
 #-pedantic -Wshadow
 
-set(CMAKE_C_FLAGS " -Wall -Wextra")
+set(CMAKE_C_FLAGS " -Wall -Wextra -Werror ")
 
 include_directories(includes include)
 include_directories(includes libft/inc)
@@ -34,6 +34,7 @@ add_library(libft STATIC
 		libft/src/array_list/arrlisti_pop.c
 		libft/src/array_list/arrlisti_push.c
 		libft/src/array_list/arrlisti_utils.c
+		libft/src/conv/ft_atol.c
 		libft/src/hash_map/hash_map_destroy.c
 		libft/src/hash_map/hash_map_get.c
 		libft/src/hash_map/hash_map_iterate.c
@@ -81,11 +82,16 @@ add_library(libft STATIC
 		libft/src/string/ft_strany.c
 		libft/src/string/ft_strrev.c
 		libft/src/string/ft_wstrlen.c
+		libft/src/string/ft_strstart.c
+		libft/src/string/ft_strend.c
 		libft/src/util/ft_assert.c
 		libft/src/util/ft_kill.c
-		libft/src/string/ft_isdigit.c
 		libft/src/util/ft_log_error.c
+		libft/src/util/ft_exit.c
 		libft/src/system/ft_path.c
+		libft/src/system/endian.c
+		libft/src/system/byte_swap_unsigned.c
+		libft/src/system/byte_swap_signed.c
 		libft/src/logger/logger_.h
 		libft/src/logger/logger.c
 		libft/src/logger/logger_appenders.c
@@ -117,6 +123,11 @@ add_library(libft STATIC
 		libft/src/io/ft_printf/get_format_arg.c
 		libft/src/io/ft_printf/number_processing.c
 		libft/src/io/ft_printf/string_processing.c
+
+		libft/src/util/ft_log_error.c
+		libft/src/regex/o_regex.c libft/src/regex/o_regex_compile.c
+		libft/src/string/ft_isdigit.c
+
 		)
 
 set_target_properties(libft PROPERTIES PUBLIC_HEADER

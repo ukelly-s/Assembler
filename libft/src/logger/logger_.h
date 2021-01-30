@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   logger_.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/30 17:00:44 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/30 17:00:46 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LOGGER__H
 # define LOGGER__H
 
 # include "logger.h"
 # include "hash_map.h"
 
-struct			s_appender
+struct					s_appender
 {
 	enum e_log_level	log_lvl;
 	char				*name;
@@ -13,7 +25,7 @@ struct			s_appender
 	int					enabled;
 };
 
-struct			s_logger
+struct					s_logger
 {
 	enum e_log_level	log_lvl;
 	t_appender			*stdout_app;

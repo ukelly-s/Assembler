@@ -1,10 +1,23 @@
-/**
-* @brief Calculates a floor square root of a number.
-* @param [in] n Number to calculate.
-* @return Floor square root of a number @a n.
-* @ingroup math
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sqrt.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/30 16:40:06 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/30 16:40:09 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
+** @brief Calculates a floor square root of a number.
+** @param [in] n Number to calculate.
+** @return Floor square root of a number @a n.
+** @ingroup math
 */
-int math_floor_sqrt(int n)
+
+int	math_floor_sqrt(int n)
 {
 	int start;
 	int end;
