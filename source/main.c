@@ -11,21 +11,12 @@
 /* ************************************************************************** */
 
 #include "asm.h"
-#include <string.h>//fixme
 #include "str.h"
 #include "io_.h"
 
-_Bool	check_name_the_file(char *name_the_file, char *file_extension)
-{
-	char	*tmp;
-
-	tmp = strrchr(name_the_file, '.');//fixme
-	return (ft_strequ(tmp, file_extension));
-}
-
 int		main(int ac, char **av)
 {
-	if (ac == 2 && check_name_the_file(*(av + 1), ".s"))
+	if (ac == 2 && ft_strend(*(av + 1), ".s"))
 		assembler(*(av + 1));
 	else
 		ft_putstr("usage: ./asm file_name\n");

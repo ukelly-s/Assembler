@@ -47,7 +47,7 @@ static void		check_valid_arg_value(char *str, t_cmd *cmd, int i)
 		}
 		cmd->args_value[i] = ft_atol(tmp);
 		if (cmd->args_types[i] == T_REG && (cmd->args_value[i] <= 0
-			|| cmd->args_value[i] > REG_NUMBER))
+			|| cmd->args_value[i] > REG_MAX))
 			ft_kill(ERR_SYNTAX, NULL, __func__, __FILE__);
 	}
 }

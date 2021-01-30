@@ -73,7 +73,7 @@ char			*replace_extension(char *filename, char *file_extension_asm,
 
 	len = ft_strlen(filename) - 2;
 	buff = ft_strndup(filename, len);
-	if (check_name_the_file(filename, file_extension_asm))
+	if (ft_strend(filename, file_extension_asm))
 		new_file_name = ft_concat(2, buff, file_extension_disasm);
 	else
 		new_file_name = ft_concat(2, buff, file_extension_asm);

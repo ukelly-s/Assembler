@@ -29,5 +29,6 @@
 # define ERR_NO_NC			"Haven't name/comment"
 # define ERR_EMP_FILE		"Empty file"
 # define ERR_CREATE_FILE	"Error create file"
+# define ERR_NO_LAB			"No such label"
 
 #endif

@@ -12,7 +12,9 @@
 
 #include "asm.h"
 #include "str.h"
+#include "util.h"
 #include "op_struct.h"
+#include "asm_errors.h"
 
 static void		mark_to_address(t_cmd *cmd, t_hashmap *mark)
 {
@@ -26,8 +28,9 @@ static void		mark_to_address(t_cmd *cmd, t_hashmap *mark)
 		buff = cmd->mark[iter];
 		if (!buff)
 			continue ;
-		val_byte_mark = (unsigned int)(long long)hashmap_get(mark,
-													buff, ft_strlen(buff));
+		if (hashmap_get(mark, buff, ft_strlen(buff)) == NULL)
+			ft_exit(1, ERR_NO_LAB);
+		val_byte_mark = *((int*)hashmap_get(mark, buff, ft_strlen(buff)));
 		if (cmd->mark[iter])
 			cmd->args_value[iter] = val_byte_mark - cmd->size_op;
 	}

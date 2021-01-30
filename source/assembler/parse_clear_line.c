@@ -31,19 +31,16 @@ static int		len_clear_line(char *str)
 
 static int		f_len_mark(char *str)
 {
-	int		i;
 	int		j;
 
-	i = 0;
 	j = 0;
-	while (str[j] != LABEL_CHAR)
+	while (str[j] && str[j] != LABEL_CHAR)
 	{
-		if (str[j] == ' ')
+		if (str[j] == ' ' || str[j] == '\t')
 			ft_kill(ERR_SYNTAX, NULL, __func__, __FILE__);
 		j++;
-		i++;
 	}
-	return (i);
+	return (j);
 }
 
 static char		*clear_line_operation(char **str)

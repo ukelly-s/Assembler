@@ -17,6 +17,7 @@
 # define ALT_SEPARATOR		'\t'
 # define ALT_COMMENT_CHAR	';'
 # define REGISTER_CHAR		'r'
+# define REG_MAX			99
 
 # define ARG_REG			0b01000000
 # define ARG_DIR			0b10000000
@@ -77,12 +78,6 @@ typedef struct	s_parse
 	t_header	*header;
 	t_byte		*byte_str;
 }				t_parse;
-
-/*
-** main.c
-*/
-
-_Bool			check_name_the_file(char *name_the_file, char *file_extension);
 
 /*
 ** asm.c

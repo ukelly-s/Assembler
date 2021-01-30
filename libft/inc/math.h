@@ -18,7 +18,7 @@
 /*
 ** @defgroup math Math
 ** @brief Math functions and constants
-** @details Math desc here!//FIXME
+** @details Math desc here!
 ** @{
 */
 

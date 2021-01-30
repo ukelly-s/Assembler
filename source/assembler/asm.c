@@ -37,7 +37,7 @@ static t_parse	*new_parse(void)
 static void		free_all_struct(t_parse *g, t_list *info_operations,
 									t_hashmap *info_mark)
 {
-	hashmap_destroy(&info_mark, NULL);
+	hashmap_destroy(&info_mark, free);
 	free(g->byte_str);
 	free(g->header);
 	free(g);

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(Asssembler C)
+project(Asssembler1 C)
 
 set(CMAKE_C_STANDARD 99)
 
@@ -125,7 +125,6 @@ add_library(libft STATIC
 		libft/src/io/ft_printf/string_processing.c
 
 		libft/src/util/ft_log_error.c
-		libft/src/regex/o_regex.c libft/src/regex/o_regex_compile.c
 		libft/src/string/ft_isdigit.c
 
 		)
@@ -141,7 +140,7 @@ set_target_properties(libft PROPERTIES PUBLIC_HEADER
         libft/inc/str.h
         libft/inc/util.h)
 
-add_executable(Asssembler $<TARGET_OBJECTS:libft>
+add_executable(Asssembler1 $<TARGET_OBJECTS:libft>
         source/main.c
         source/assembler/parse.c
         source/assembler/asm.c

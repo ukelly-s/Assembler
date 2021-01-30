@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <util.h>
+#include <error.h>
 #include "asm.h"
 #include "hash_map.h"
 #include "list.h"
@@ -17,8 +19,12 @@
 
 void	parse_mark(char *str, t_hashmap *info_mark, t_parse *g)
 {
+	int	*mark_pos;
+
 	if (hashmap_get(info_mark, str, ft_strlen(str) - 1) != NULL)
 		return ;
-	hashmap_put(info_mark, str, ft_strlen(str) - 1,
-				(void*)(long long)g->header->prog_size);
+	mark_pos = malloc(sizeof(int));
+	ft_assert(mark_pos != NULL, __func__, E_ALLOC);
+	*mark_pos = (int)g->header->prog_size;
+	hashmap_put(info_mark, str, ft_strlen(str) - 1, mark_pos);
 }
