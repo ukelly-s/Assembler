@@ -12,10 +12,13 @@
 
 #include "asm.h"
 #include "str.h"
+#include "logger.h"
 #include "io_.h"
 
 int		main(int ac, char **av)
 {
+	logger_switch_flags(L_USE_COLORS, L_ENABLE);
+	logger_set_app_log_lvl(L_STDOUT, TRACE);
 	if (ac == 2 && ft_strend(*(av + 1), ".s"))
 		assembler(*(av + 1));
 	else

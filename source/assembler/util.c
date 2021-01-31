@@ -32,12 +32,12 @@ t_line_type		mark_operation_type(const char *str)
 				|| ft_isdigit(str[i + 1]) == 1 || str[i + 1] == LABEL_CHAR))
 			return (LINE_OPERATION);
 		else if (ft_strchr(LABEL_CHARS, str[i]) == NULL && str[i] != LABEL_CHAR)
-			ft_kill(ERR_INVALID_STRING, NULL, __func__, __FILE__);
+			ft_exit(1, ERR_INVALID_STRING);
 		else if (str[i] == LABEL_CHAR)
 			return (LINE_MARK);
 		i++;
 	}
-	ft_kill(ERR_INVALID_STRING, NULL, __func__, __FILE__);
+	ft_exit(1, ERR_INVALID_STRING);
 	return (LINE_UNDEFINED);
 }
 
@@ -77,25 +77,7 @@ char			*replace_extension(char *filename, char *file_extension_asm,
 		new_file_name = ft_concat(2, buff, file_extension_disasm);
 	else
 		new_file_name = ft_concat(2, buff, file_extension_asm);
+	ft_at_exit_ptr(free, new_file_name, "Freeing file name");
 	free(buff);
 	return (new_file_name);
-}
-
-void			free_cmd(void *data)
-{
-	t_cmd	*cmd;
-	int		i;
-
-	i = 0;
-	cmd = (t_cmd *)data;
-	while (i < 3)
-	{
-		if (cmd->mark[i] != NULL)
-		{
-			free(cmd->mark[i]);
-			cmd->mark[i] = NULL;
-		}
-		i++;
-	}
-	free(cmd);
 }

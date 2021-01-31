@@ -151,5 +151,6 @@ add_executable(Asssembler1 $<TARGET_OBJECTS:libft>
         source/assembler/parse_mark.c
         source/ft_strtrim.c
 		source/assembler/translation_bytecode.c
-        source/assembler/big_endian_realisation.c)
+        source/assembler/big_endian_realisation.c
+		source/assembler/free.c)
 

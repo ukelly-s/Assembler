@@ -42,6 +42,7 @@ SRCS_ASM += assembler/parse_operation.c
 SRCS_ASM += assembler/parse_mark.c
 SRCS_ASM += assembler/big_endian_realisation.c
 SRCS_ASM += assembler/translation_bytecode.c
+SRCS_ASM += assembler/free.c
 
 
 SRCS_PATH = $(addprefix $(SRC_DIR)/,$(SRCS))

@@ -28,7 +28,7 @@ static void		check_excess_information(char *str)
 			break ;
 		}
 		if (*buff != SEPARATOR && *buff != ALT_SEPARATOR)
-			ft_kill(ERR_NAME_COMMENT, NULL, __func__, __FILE__);
+			ft_exit(1, ERR_NAME_COMMENT);
 		buff++;
 	}
 }
@@ -44,7 +44,7 @@ void			parse_comment(char *str, t_parse *g)
 	buff = ft_strchr(str, '"') + 1;
 	if ((len = ft_strlen(buff) - ft_strlen(ft_strchr(buff, '"')))
 		> COMMENT_LENGTH)
-		ft_kill(ERR_COM_LEN, NULL, __func__, __FILE__);
+		ft_exit(1, ERR_COM_LEN);
 	while (i < len)
 		g->header->comment[i++] = *buff++;
 }
@@ -60,7 +60,7 @@ void			parse_name(char *str, t_parse *g)
 	buff = ft_strchr(str, '"') + 1;
 	if ((len = ft_strlen(buff) - ft_strlen(ft_strchr(buff, '"')))
 		> PROG_NAME_LENGTH)
-		ft_kill(ERR_PROG_NAME_LEN, NULL, __func__, __FILE__);
+		ft_exit(1, ERR_PROG_NAME_LEN);
 	while (i < len)
 		g->header->prog_name[i++] = *buff++;
 }

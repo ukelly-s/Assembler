@@ -37,7 +37,7 @@ static int		f_len_mark(char *str)
 	while (str[j] && str[j] != LABEL_CHAR)
 	{
 		if (str[j] == ' ' || str[j] == '\t')
-			ft_kill(ERR_SYNTAX, NULL, __func__, __FILE__);
+			ft_exit(1, ERR_SYNTAX);
 		j++;
 	}
 	return (j);

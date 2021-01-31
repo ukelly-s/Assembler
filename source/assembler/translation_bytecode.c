@@ -93,6 +93,7 @@ void			translation_bytecode(t_list *operations,
 	t_list_node	*info_op;
 
 	g->byte_str = ft_memalloc(g->header->prog_size);
+	ft_assert(g->byte_str != NULL, __func__, "malloc error");
 	info_op = operations->front;
 	while (info_op)
 	{

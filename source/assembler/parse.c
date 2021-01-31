@@ -70,7 +70,7 @@ static char			*get_line_name_comment(int fd, char *line)
 			if ((buff = ft_strchr(++buff, '\"')) != NULL)
 				break ;
 		if ((i = get_next_line(fd, &buff)) < 0)
-			ft_kill(ERR_READINING, NULL, __func__, __FILE__);
+			ft_exit(1, ERR_READINING);
 		if (*buff == '\0')
 			tmp = ft_concat(2, line, "\n");
 		else if (ft_strchr(buff, '\"') != NULL)
@@ -93,7 +93,7 @@ int					get_line(int fd, char **line)
 	if (buff != NULL && (*line = clear_line(&buff)))
 		return (1);
 	if ((i = get_next_line(fd, &tmp)) < 0)
-		ft_kill(ERR_READINING, NULL, __func__, __FILE__);
+		ft_exit(1, ERR_READINING);
 	if (i == 0 || ((!*tmp || tmp[0] == COMMENT_CHAR
 					|| tmp[0] == ALT_COMMENT_CHAR) && (*line = tmp)))
 		return (i);
@@ -130,12 +130,12 @@ void				parse(int fd, t_parse *g, t_list *info_operations,
 		else if (line_type == LINE_MARK)
 			parse_mark(line, info_mark, g);
 		else if (line_type == LINE_UNDEFINED)
-			ft_kill(ERR_INV_LINE, NULL, __func__, __FILE__);
+			ft_exit(1, ERR_INV_LINE);
 		free(line);
 		line = NULL;
 	}
 	if (g->name == FLAG_DEFAULT || g->comment == FLAG_DEFAULT)
-		ft_kill(ERR_NO_NC, NULL, __func__, __FILE__);
+		ft_exit(1, ERR_NO_NC);
 	if (info_operations->front == NULL && info_mark->size == 0)
-		ft_kill(ERR_EMP_FILE, NULL, __func__, __FILE__);
+		ft_exit(1, ERR_EMP_FILE);
 }

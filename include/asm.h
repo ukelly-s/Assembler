@@ -145,6 +145,13 @@ t_line_type		mark_operation_type(const char *str);
 void			get_prog_size(t_cmd *cmd);
 char			*replace_extension(char *filename, char *file_extension_asm,
 									char *file_extension_disasm);
-void			free_cmd(void *data);
+
+/*
+** free.c
+*/
+
+void			free_global_struct(void *data);
+void			wrap_hashmap_free(void *data);
+void			wrap_list_free(void *data);
 
 #endif
