@@ -11,3 +11,5 @@ libft/.cache_exists
 libft/libft.a
 vm_champs
 42-corewar
+tests/asm/valid/*.cor
+tests/asm/valid2/*.cor
