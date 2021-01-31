@@ -1,5 +1,16 @@
-#include "asm.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/31 04:55:56 by ukelly            #+#    #+#             */
+/*   Updated: 2021/01/31 04:55:58 by ukelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "asm.h"
 
 static void		free_cmd(void *data)
 {
@@ -12,7 +23,7 @@ static void		free_cmd(void *data)
 	free(cmd);
 }
 
-void		free_global_struct(void *data)
+void			free_global_struct(void *data)
 {
 	t_parse	*g;
 
@@ -22,7 +33,7 @@ void		free_global_struct(void *data)
 	free(g);
 }
 
-void		wrap_hashmap_free(void *data)
+void			wrap_hashmap_free(void *data)
 {
 	t_hashmap	*info_mark;
 
@@ -30,7 +41,7 @@ void		wrap_hashmap_free(void *data)
 	hashmap_destroy(&info_mark, free);
 }
 
-void		wrap_list_free(void *data)
+void			wrap_list_free(void *data)
 {
 	t_list	*info_operations;
 
