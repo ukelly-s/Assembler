@@ -58,6 +58,6 @@ void			assembler(char *filename)
 	write(fd, g->header, sizeof(t_header));
 	g->header->prog_size = rev_bytes(g->header->prog_size);
 	write(fd, g->byte_str, g->header->prog_size);
-	ft_printf("Writing output program to %s", filename);
+	ft_printf("Writing output program to %s\n", filename);
 	ft_exit(EXIT_SUCCESS, "Program has finished successfully");
 }
