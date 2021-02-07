@@ -22,7 +22,7 @@ void	parse_mark(char *str, t_hashmap *info_mark, t_parse *g)
 	int	*mark_pos;
 
 	if (*str == ':')
-		return ;
+		return ;//	ft_exit(1, ERR_INV_VAL);
 	if (hashmap_get(info_mark, str, ft_strlen(str) - 1) != NULL)
 		return ;
 	mark_pos = malloc(sizeof(int));
