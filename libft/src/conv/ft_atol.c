@@ -6,15 +6,15 @@
 /*   By: ojustine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 00:05:49 by ojustine          #+#    #+#             */
-/*   Updated: 2021/01/30 15:35:16 by ukelly           ###   ########.fr       */
+/*   Updated: 2019/09/07 18:49:45 by ojustine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 
-static int		nbr_len(unsigned long long n)
+static int	nbr_len(unsigned long long n)
 {
-	int		len;
+	int len;
 
 	len = 1;
 	while ((n /= 10) != 0)
@@ -22,7 +22,7 @@ static int		nbr_len(unsigned long long n)
 	return (len);
 }
 
-long long		ft_atol(const char *str)
+long long	ft_atol(const char *str)
 {
 	int					sign;
 	unsigned long long	res;

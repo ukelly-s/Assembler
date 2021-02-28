@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_path.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 16:34:17 by ukelly            #+#    #+#             */
-/*   Updated: 2021/01/30 16:34:18 by ukelly           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <limits.h>
 #include <sys/stat.h>
 #include <errno.h>
@@ -17,21 +5,17 @@
 #include "mem.h"
 #include "str.h"
 
+int	ft_mkdir(const char *path)
+{
 #ifdef WIN32
 
-int	ft_mkdir(const char *path)
-{
 	return (mkdir(path));
-}
-
 #else
 
-int	ft_mkdir(const char *path)
-{
 	return (mkdir(path, S_IRWXU));
-}
-
 #endif
+
+}
 
 int	ft_mkpath(const char *path)
 {

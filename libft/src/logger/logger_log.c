@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   logger_log.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 15:57:16 by ukelly            #+#    #+#             */
-/*   Updated: 2021/01/30 15:57:17 by ukelly           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdarg.h>
 #include <time.h>
 #include "str.h"
@@ -18,24 +6,23 @@
 #include "logger.h"
 
 static const char		*g_logger_prefix[OFF - ALL] = {
-	L_PREFIX_ALL,
-	L_PREFIX_TRACE,
-	L_PREFIX_DEBUG,
-	L_PREFIX_INFO,
-	L_PREFIX_WARN,
-	L_PREFIX_ERROR
+		L_PREFIX_ALL,
+		L_PREFIX_TRACE,
+		L_PREFIX_DEBUG,
+		L_PREFIX_INFO,
+		L_PREFIX_WARN,
+		L_PREFIX_ERROR
 };
-
 static const char		*g_logger_colors[OFF - ALL] = {
-	L_CLR_RESET,
-	L_CLR_TRACE,
-	L_CLR_DEBUG,
-	L_CLR_INFO,
-	L_CLR_WARN,
-	L_CLR_ERROR
+		L_CLR_RESET,
+		L_CLR_TRACE,
+		L_CLR_DEBUG,
+		L_CLR_INFO,
+		L_CLR_WARN,
+		L_CLR_ERROR
 };
 
-static void	log_func(int fd, const char *func)
+static void	log_func(int fd, const char *func)//ft_dprintf(app->fd, "%.80s: ", func);
 {
 	static const char	*spaces = "                              ";
 	static size_t		max = 0;
@@ -46,7 +33,7 @@ static void	log_func(int fd, const char *func)
 }
 
 static void	log_prefix(enum e_log_level log_lvl, const char *func,
-						t_appender *app)
+			t_appender *app)
 {
 	char		date[L_DATETIME_MAX + 1];
 	time_t		raw_time;
@@ -76,7 +63,7 @@ static void	log_line(int fd, const char *fmt, va_list ap)
 }
 
 void		do_log(enum e_log_level log_lvl, const char *func, const char *fmt,
-					va_list ap)
+			va_list ap)
 {
 	t_appender	*app;
 	size_t		i;
@@ -104,7 +91,7 @@ void		do_log(enum e_log_level log_lvl, const char *func, const char *fmt,
 }
 
 void		log_msg(enum e_log_level log_lvl, const char *func,
-					const char *fmt, ...)
+			const char *fmt, ...)
 {
 	va_list	ap;
 
@@ -117,3 +104,4 @@ void		log_msg(enum e_log_level log_lvl, const char *func,
 	do_log(log_lvl, func, fmt, ap);
 	va_end(ap);
 }
+

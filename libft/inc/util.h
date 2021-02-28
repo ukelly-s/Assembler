@@ -13,11 +13,11 @@
 #ifndef UTIL_H
 # define UTIL_H
 
-# define VOID_EXIT_FUNC_MAX	8
-# define PTR_EXIT_FUNC_MAX	16
+# define	VOID_EXIT_FUNC_MAX	8
+# define	PTR_EXIT_FUNC_MAX	16
 
-typedef void	(*t_ptr_exit_func)(void *);
-typedef void	(*t_void_exit_func)(void);
+typedef	void (*t_ptr_exit_func)(void *);
+typedef	void (*t_void_exit_func)(void);
 
 void	ft_exit(int code, const char *msg);
 void	ft_at_exit(t_void_exit_func func, const char *msg);

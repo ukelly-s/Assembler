@@ -1,24 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   divmod.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 16:42:13 by ukelly            #+#    #+#             */
-/*   Updated: 2021/01/30 16:42:16 by ukelly           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/*
-** @brief Calculates division result and remainder.
-** @param [in] dividend Dividend.
-** @param [in] divisor Divisor.
-** @param [out] remainder Pointer to write the remainder.
-** @return Division result.
-** @ingroup math
+/**
+* @brief Calculates division result and remainder.
+* @param [in] dividend Dividend.
+* @param [in] divisor Divisor.
+* @param [out] remainder Pointer to write the remainder.
+* @return Division result.
+* @ingroup math
 */
-
 int			math_divmod(const int dividend, const int divisor, int *remainder)
 {
 	if (remainder)
@@ -26,10 +13,9 @@ int			math_divmod(const int dividend, const int divisor, int *remainder)
 	return (dividend / divisor);
 }
 
-/*
-** @copydoc math_divmod
+/**
+* @copydoc math_divmod
 */
-
 long		math_ldivmod(const long dividend, const long divisor,
 			long *remainder)
 {
@@ -38,10 +24,9 @@ long		math_ldivmod(const long dividend, const long divisor,
 	return (dividend / divisor);
 }
 
-/*
-** @copydoc math_divmod
+/**
+* @copydoc math_divmod
 */
-
 long long	math_lldivmod(const long long dividend, const long long divisor,
 			long long *remainder)
 {

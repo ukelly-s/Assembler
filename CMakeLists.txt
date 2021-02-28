@@ -3,9 +3,9 @@ project(Asssembler1 C)
 
 set(CMAKE_C_STANDARD 99)
 
-#-pedantic -Wshadow
+#-pedantic -Wshadow -Werror
 
-set(CMAKE_C_FLAGS " -Wall -Wextra -Werror ")
+set(CMAKE_C_FLAGS " -Wall -Wextra ")
 
 include_directories(includes include)
 include_directories(includes libft/inc)
@@ -125,23 +125,22 @@ add_library(libft STATIC
 		libft/src/io/ft_printf/string_processing.c
 
 		libft/src/util/ft_log_error.c
-		libft/src/string/ft_isdigit.c
-
+		libft/inc/ft_regex.h libft/src/regex/o_regex.c libft/src/regex/o_regex_compile.c
 		)
 
 set_target_properties(libft PROPERTIES PUBLIC_HEADER
-        libft/inc/array_list.h
-        libft/inc/conv.h
-        libft/inc/hash_map.h
-        libft/inc/io.h
-        libft/inc/list.h
-        libft/inc/math.h
-        libft/inc/mem.h
-        libft/inc/str.h
-        libft/inc/util.h)
+		libft/inc/array_list.h
+		libft/inc/conv.h
+		libft/inc/hash_map.h
+		libft/inc/io_.h
+		libft/inc/list.h
+		libft/inc/math.h
+		libft/inc/mem.h
+		libft/inc/str.h
+		libft/inc/util.h)
 
 add_executable(Asssembler1 $<TARGET_OBJECTS:libft>
-        source/main.c
+		source/assembler/asm_run.c
         source/assembler/parse.c
         source/assembler/asm.c
         source/assembler/util.c
@@ -154,3 +153,34 @@ add_executable(Asssembler1 $<TARGET_OBJECTS:libft>
         source/assembler/big_endian_realisation.c
 		source/assembler/free.c)
 
+add_executable(corewar $<TARGET_OBJECTS:libft>
+		source/vm/vm_options.c
+		source/vm/vm_champion_load.c
+		source/vm/vm_champion_read.c
+		source/vm/vm_print.c
+		source/vm/vm_options_logger.c
+		source/vm/vm_run.c
+		source/vm/vm_cursor.c
+		source/vm/vm_exec.c
+		source/vm/vm_eval.c
+		source/vm/vm_util.c
+		source/vm/vm_fetch.c
+		source/op/op_live.c
+		source/op/op_ld.c
+		source/op/op_st.c
+		source/op/op_and.c
+		source/op/op_sub.c
+		source/op/op_add.c
+		source/op/util.c
+		source/op/op_or.c
+		source/op/op_xor.c
+		source/op/op_zjmp.c
+		source/op/op_ldi.c
+		source/op/op_sti.c
+		source/op/op_fork.c
+		source/op/op_lld.c
+		source/op/op_lldi.c
+		source/op/op_lfork.c
+		source/vm/vm_verbose.c
+		source/vm/vm_check.c
+		source/op/op_aff.c)

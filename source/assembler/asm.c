@@ -27,7 +27,7 @@ static t_parse	*new_parse(void)
 	ft_at_exit_ptr(free_global_struct, g, "Freeing header struct");
 	g->name = FLAG_DEFAULT;
 	g->comment = FLAG_DEFAULT;
-	g->header = malloc(sizeof(t_header));
+	g->header = malloc(sizeof(t_header_asm));
 	ft_assert(g->header != NULL, __func__, "malloc error");
 	g->header->magic = rev_bytes(COREWAR_EXEC_MAGIC);
 	return (g);
@@ -55,7 +55,7 @@ void			assembler(char *filename)
 	if ((fd = open(filename, O_CREAT | O_TRUNC
 										| O_WRONLY | O_APPEND, 0644)) == -1)
 		ft_exit(1, ERR_CREATE_FILE);
-	write(fd, g->header, sizeof(t_header));
+	write(fd, g->header, sizeof(t_header_asm));
 	g->header->prog_size = rev_bytes(g->header->prog_size);
 	write(fd, g->byte_str, g->header->prog_size);
 	ft_printf("Writing output program to %s\n", filename);

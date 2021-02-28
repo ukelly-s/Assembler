@@ -47,7 +47,7 @@ void			get_prog_size(t_cmd *cmd)
 
 	i = 0;
 	cmd->size_op++;
-	if (g_op[cmd->code].args_types_code == true)
+	if (g_op[cmd->code].args_types_code == 1)
 		cmd->size_op++;
 	while (i < g_op[cmd->code].args_num)
 	{
@@ -58,7 +58,7 @@ void			get_prog_size(t_cmd *cmd)
 			else if (cmd->args_types[i] == T_IND)
 				cmd->size_op += 2;
 			else
-				cmd->size_op += g_op[cmd->code].t_dir_size;
+				cmd->size_op += g_op[cmd->code].dir_size;
 		}
 		i++;
 	}

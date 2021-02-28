@@ -72,7 +72,7 @@ static void		op_to_bytecode(t_cmd *cmd, t_parse *g)
 		if (cmd->args_types[j] == T_REG)
 			g->byte_str[++i] = (uint8_t)cmd->args_value[j];
 		else if ((cmd->args_types[j] == T_DIR
-				&& g_op[cmd->code].t_dir_size == 2)
+				&& g_op[cmd->code].dir_size == 2)
 				|| (cmd->args_types[j] == T_IND))
 		{
 			get_to_2byte(&g->byte_str[++i], cmd->args_value[j]);
