@@ -31,9 +31,9 @@ HEADERS += include/op.h
 HEADERS += include/op_struct.h
 
 
-SRCS = main.c
-SRCS += ft_strtrim.c
+SRCS = ft_strtrim.c
 SRCS_ASM = assembler/asm.c
+SRCS_ASM += assembler/asm_run.c
 SRCS_ASM += assembler/parse.c
 SRCS_ASM += assembler/util.c
 SRCS_ASM += assembler/parse_name_comment.c

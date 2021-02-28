@@ -69,10 +69,10 @@ enum					e_fxd_assets
 	FP_LD_POINT = (LDBL_MAX_10_EXP / FP_R_LEN) + 2,
 	FP_LD_LEN = (FP_LD_POINT + FP_LD_MAX_PREC / FP_R_LEN) + 3,
 	FP_LD_CHAR_LEN = DBL_MAX_10_EXP + FP_LD_MAX_PREC
+//	FP_LD_64BIT = 1ULL << 63
 };
 
-# define FP_LD_64BIT (1ULL << 63)
-
+#define FP_LD_64BIT (1ULL << 63)
 enum					e_ptf_assets
 {
 	BUFF_SIZE = 512,

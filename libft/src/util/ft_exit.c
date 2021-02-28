@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_exit.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ukelly <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 16:19:01 by ukelly            #+#    #+#             */
-/*   Updated: 2021/01/30 16:19:03 by ukelly           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdlib.h>
 #include "util.h"
 #include "logger.h"
@@ -59,7 +47,7 @@ void	ft_at_exit_ptr(t_ptr_exit_func func, void *ptr, const char *msg)
 			PTR_EXIT_FUNC_MAX);
 }
 
-void	ft_exit(int code, const char *msg)
+void ft_exit(int code, const char *msg)
 {
 	register size_t	i;
 

@@ -33,14 +33,14 @@
 ** lexer
 */
 
-typedef enum	e_name_comment_flags
+typedef enum		e_name_comment_flags
 {
 	FLAG_DEFAULT,
 	FLAG_NAME,
 	FLAG_COMMENT
-}				t_name_comment_flags;
+}					t_name_comment_flags;
 
-typedef enum	e_line_type
+typedef enum		e_line_type
 {
 	LINE_UNDEFINED,
 	LINE_EMPTY,
@@ -48,36 +48,36 @@ typedef enum	e_line_type
 	LINE_COMMENT,
 	LINE_OPERATION,
 	LINE_MARK
-}				t_line_type;
+}					t_line_type;
 
-typedef struct	s_cmd
+typedef struct		s_cmd
 {
-	uint8_t		code;
-	uint8_t		args_types[3];
-	int32_t		args_value[3];
-	char		*mark[3];
-	uint32_t	size_op;
-}				t_cmd;
+	uint8_t			code;
+	uint8_t			args_types[3];
+	int32_t			args_value[3];
+	char			*mark[3];
+	uint32_t		size_op;
+}					t_cmd;
 
 typedef union	u_code4b
 {
-	int32_t		digit;
-	uint8_t		letter[4];
-}				t_code4b;
+	int32_t			digit;
+	uint8_t			letter[4];
+}					t_code4b;
 
-typedef union	u_code2b
+typedef union		u_code2b
 {
-	int16_t		digit;
-	uint8_t		letter[2];
-}				t_code2b;
+	int16_t			digit;
+	uint8_t			letter[2];
+}					t_code2b;
 
-typedef struct	s_parse
+typedef struct		s_parse
 {
-	int			name;
-	int			comment;
-	t_header	*header;
-	t_byte		*byte_str;
-}				t_parse;
+	int				name;
+	int				comment;
+	t_header_asm	*header;
+	t_byte			*byte_str;
+}					t_parse;
 
 /*
 ** asm.c

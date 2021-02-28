@@ -36,6 +36,5 @@ void	ft_strrev(register char *begin, register char *end);
 size_t	ft_wstrlen(const wint_t *s);
 int		ft_strstart(const char *str, const char *prefix);
 int		ft_strend(const char *str, const char *suffix);
-int		ft_isdigit(int c);
 
 #endif

@@ -69,7 +69,7 @@ static char			*get_line_name_comment(int fd, char *line)
 		if ((buff = ft_strchr(line, '\"')) != NULL)
 			if ((buff = ft_strchr(++buff, '\"')) != NULL)
 				break ;
-		if ((i = get_next_line(fd, &buff)) < 0)
+		if ((i = get_next_line(fd, &buff)) <= 0)
 			ft_exit(1, ERR_READINING);
 		if (*buff == '\0')
 			tmp = ft_concat(2, line, "\n");
